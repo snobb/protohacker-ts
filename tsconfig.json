@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "strict": true,
+        "strictNullChecks": true,
+        "target": "esnext",
+        "alwaysStrict": true,
+        "allowJs": false,
+        "noImplicitAny": true,
+        "removeComments": false,
+        "skipLibCheck": true,
+        "preserveConstEnums": true,
+        "importHelpers": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "declaration": true,
+        "declarationMap": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "types": [
+            "node",
+            "@types/mocha",
+            "@types/chai"
+        ]
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
+}

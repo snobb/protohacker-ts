@@ -1,0 +1,5 @@
+.nvmrc
+coverage
+dist
+node_modules
+.c8out
