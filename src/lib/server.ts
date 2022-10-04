@@ -4,7 +4,7 @@ import { Socket, createServer } from 'node:net';
 
 export function tcpServer (port: number, handle: (conn: Socket)=> void) {
     const server = createServer()
-        .on('connection', (conn: Socket) => {
+        .on('connection', async (conn: Socket) => {
             const rAddr = conn.remoteAddress;
             const rPort = conn.remotePort;
 
@@ -16,9 +16,13 @@ export function tcpServer (port: number, handle: (conn: Socket)=> void) {
 
             conn.on('error', (err) => {
                 console.log('Error for %s:%d: %s', rAddr, rPort, err.message);
+                conn.destroy();
             });
 
-            return handle(conn);
+            await handle(conn);
+        })
+        .on('error', (err: Error) => {
+            console.error('Server error: %s', err.message);
         });
 
     server.listen(port, () => {
