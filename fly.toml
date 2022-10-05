@@ -1,0 +1,25 @@
+# fly.toml file generated for protohacker-ts on 2022-10-05T11:13:09+01:00
+
+app = "protohacker-ts"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[env]
+  PORT = "8080"
+  NODE_ENV = "production"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    port = "10002"
+
+  [[services.tcp_checks]]
+    interval = "15s"
+    timeout = "2s"

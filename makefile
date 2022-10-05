@@ -62,6 +62,11 @@ clean-dist:
 	rm -rf coverage dist node_modules package-lock.json
 
 
+## deploy:	deploys the latest change to fly.io
+.PHONY: deploy
+deploy: build
+	flyctl deploy --local-only
+
 ## clean:		delete generated files
 .PHONY: clean
 clean:
