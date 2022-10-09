@@ -6,7 +6,6 @@ kill_timeout = 5
 processes = []
 
 [env]
-  PORT = "8080"
   NODE_ENV = "production"
 
 [[services]]
@@ -18,7 +17,7 @@ processes = []
     soft_limit = 20
 
   [[services.ports]]
-    port = "10002"
+    port = "10001"
 
   [[services.tcp_checks]]
     interval = "15s"
