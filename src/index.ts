@@ -1,5 +1,7 @@
 // import { Price } from './price/price';
-import { Chat } from './chat/chat';
+import { FixedChunkStream } from './lib/fixed-chunk-stream';
+import { PriceStream } from './price-stream/price';
+// import { Chat } from './chat/chat';
 import { Socket } from 'node:net';
 // import { prime } from './prime/prime';
 import { tcpServer } from './lib/server';
@@ -10,7 +12,7 @@ const port = 8080;
 
 function main () {
     // 03. Budget Chat - https://protohackers.com/problem/3
-    const chat = new Chat();
+    // const chat = new Chat();
 
     return tcpServer(port, (conn: Socket) => {
         // 00. Smoke Test - https://protohackers.com/problem/0
@@ -24,8 +26,13 @@ function main () {
         // await price.handle(conn);
         // conn.destroy();
 
-        // 03. Budget Chat - https://protohackers.com/problem/3
-        chat.handle(conn);
+        const price = new PriceStream();
+        const fixedChunkStream = new FixedChunkStream({ size: PriceStream.msgSize, highWaterMark: 9 });
+        conn
+            .pipe(fixedChunkStream)
+            .pipe(price)
+            .pipe(conn)
+            .on('error', console.error);
     });
 }
 
