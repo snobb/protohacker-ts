@@ -1,5 +1,5 @@
+import * as assert from 'node:assert';
 import { FixedChunkStream } from './fixed-chunk-stream';
-import { expect } from 'chai';
 
 describe('streams', () => {
     context('FixedChunkStream', () => {
@@ -13,7 +13,7 @@ describe('streams', () => {
             const expSizes = [5];
             stream.end('12345');
             stream.on('data', (buf) => {
-                expect(buf.length).to.equal(expSizes.shift());
+                assert.equal(buf.length, expSizes.shift());
 
                 if (expSizes.length === 0) {
                     done();
@@ -25,7 +25,7 @@ describe('streams', () => {
             const expSizes = [5, 4];
             stream.end('123451234');
             stream.on('data', (buf) => {
-                expect(buf.length).to.equal(expSizes.shift());
+                assert.equal(buf.length, expSizes.shift());
 
                 if (expSizes.length === 0) {
                     done();
@@ -36,7 +36,7 @@ describe('streams', () => {
         it('should produce fixed size chunked from the stream that is spoonfeeding', (done) => {
             const expSizes = [5, 5, 5];
             stream.on('data', (buf) => {
-                expect(buf.length).to.equal(expSizes.shift());
+                assert.equal(buf.length, expSizes.shift());
 
                 if (expSizes.length === 0) {
                     done();
@@ -64,7 +64,7 @@ describe('streams', () => {
             const expSizes = [3];
             stream.end('123');
             stream.on('data', (buf) => {
-                expect(buf.length).to.equal(expSizes.shift());
+                assert.equal(buf.length, expSizes.shift());
 
                 if (expSizes.length === 0) {
                     done();

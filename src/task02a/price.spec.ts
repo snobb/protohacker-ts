@@ -1,5 +1,5 @@
+import * as assert from 'node:assert';
 import { Price } from './price';
-import { expect } from 'chai';
 
 describe('price', () => {
     describe('message', () => {
@@ -17,7 +17,7 @@ describe('price', () => {
 
         it('should parse message successfully', () => {
             const msg = price.parseMessage(data);
-            expect(msg).to.eql({
+            assert.deepEqual(msg, {
                 type: 'I',
                 payload: {
                     time: 12345,
