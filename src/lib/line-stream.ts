@@ -4,7 +4,7 @@ export class LineStream extends Transform {
     private chunks: Buffer[];
     private buffer: string[];
 
-    constructor (opts: TransformOptions) {
+    constructor (opts?: TransformOptions) {
         super({ ...opts });
         this.chunks = [];
         this.buffer = [];
@@ -31,7 +31,8 @@ export class LineStream extends Transform {
                 return this.buffer.push(chunk.substring(start));
 
             } else {
-                this.buffer.push(chunk.substring(start, idx));
+                // include the new line character with every line
+                this.buffer.push(chunk.substring(start, idx + 1));
                 cb(this.buffer.join(''));
 
                 this.buffer = [];

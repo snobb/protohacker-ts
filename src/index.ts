@@ -1,5 +1,7 @@
+import { BogusCoinTransform } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
 import { FixedChunkStream } from './lib/fixed-chunk-stream';
+import { LineStream } from './lib/line-stream';
 import { Price } from './task02a/price';
 import { PriceStream } from './task02b/price';
 import { Socket } from 'node:net';
@@ -75,4 +77,27 @@ export function task04 () {
     return udpServer({ address, port: udpPort }, db.handle.bind(db));
 }
 
-task04();
+// 05. Mob in the Middle - https://protohackers.com/problem/5
+export function task05 () {
+    return tcpServer(tcpPort, (conn: Socket) => {
+        // backend connection
+        const be = new Socket();
+        be.on('data', (chunk) => {
+            console.log('got data: %s', chunk);
+        });
+
+        const proxyPort = parseInt(process.env.PROXY_PORT || '8100', 10);
+        const proxyAddress = process.env.PROXY_ADDRESS || 'localhost';
+        be.connect(proxyPort, proxyAddress);
+
+        conn
+            .pipe(new LineStream())
+            .pipe(new BogusCoinTransform())
+            .pipe(be)
+            .pipe(new LineStream())
+            .pipe(new BogusCoinTransform())
+            .pipe(conn);
+    });
+}
+
+task05();
