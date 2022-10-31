@@ -1,12 +1,12 @@
 import * as assert from 'node:assert';
-import { FixedChunkStream } from './fixed-chunk-stream';
+import { FixedChunkTransform } from './fixed-chunk-transform';
 
 describe('streams', () => {
     context('FixedChunkStream', () => {
-        let stream: FixedChunkStream;
+        let stream: FixedChunkTransform;
 
         beforeEach(() => {
-            stream = new FixedChunkStream({ size: 5 });
+            stream = new FixedChunkTransform({ size: 5 });
         });
 
         it('should produce fixed size chunked from the stream', (done) => {

@@ -12,7 +12,7 @@ export type Msg = {
     payload: MsgData
 };
 
-export class PriceStream extends Transform {
+export class PriceTransform extends Transform {
     static msgSize = 9;
     private pricelog: MsgData[] = [];
 
@@ -22,7 +22,7 @@ export class PriceStream extends Transform {
     }
 
     handleMsg (buf: Buffer, cb: (buf: Buffer)=> void) {
-        if (buf.length !== PriceStream.msgSize) {
+        if (buf.length !== PriceTransform.msgSize) {
             console.error('corrupt buffer:', buf);
             return;
         }

@@ -1,12 +1,13 @@
 import { BogusCoinTransform } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
-import { FixedChunkStream } from './lib/fixed-chunk-stream';
-import { LineStream } from './lib/line-stream';
+import { FixedChunkTransform } from './lib/fixed-chunk-transform';
+import { LineTransform } from './lib/line-transform';
 import { Price } from './task02a/price';
-import { PriceStream } from './task02b/price';
+import { PriceTransform } from './task02b/price';
+import { PrimeTransform } from './task01b/prime';
 import { Socket } from 'node:net';
 import { UnusualDB } from './task04/db';
-import { prime } from './task01/prime';
+import { prime } from './task01a/prime';
 import { tcpServer } from './lib/tcp-server';
 import { udpServer } from './lib/udp-server';
 
@@ -25,9 +26,20 @@ export function task00 () {
 }
 
 // 01. Prime Time - https://protohackers.com/problem/1
-export function task01 () {
+export function task01a () {
     return tcpServer(tcpPort, (conn: Socket) => {
         prime(conn);
+    });
+}
+
+// 01. Prime Time - https://protohackers.com/problem/1
+export function task01b () {
+    return tcpServer(tcpPort, (conn: Socket) => {
+        conn
+            .pipe(new LineTransform())
+            .pipe(new PrimeTransform())
+            .pipe(conn)
+            .on('error', console.error);
     });
 }
 
@@ -44,8 +56,8 @@ export function task02a () {
 export function task02b () {
     return tcpServer(tcpPort, (conn: Socket) => {
         // stream based implementation.
-        const price = new PriceStream();
-        const fixedChunkStream = new FixedChunkStream({ size: PriceStream.msgSize });
+        const price = new PriceTransform();
+        const fixedChunkStream = new FixedChunkTransform({ size: PriceTransform.msgSize });
         conn
             .pipe(fixedChunkStream)
             .pipe(price)
@@ -91,13 +103,13 @@ export function task05 () {
         be.connect(proxyPort, proxyAddress);
 
         conn
-            .pipe(new LineStream())
+            .pipe(new LineTransform())
             .pipe(new BogusCoinTransform())
             .pipe(be)
-            .pipe(new LineStream())
+            .pipe(new LineTransform())
             .pipe(new BogusCoinTransform())
             .pipe(conn);
     });
 }
 
-task05();
+task01b();
