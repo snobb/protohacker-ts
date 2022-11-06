@@ -6,6 +6,8 @@ import { Price } from './task02a/price';
 import { PriceTransform } from './task02b/price';
 import { PrimeTransform } from './task01b/prime';
 import { Socket } from 'node:net';
+import { SpeedMessageTransform } from './task06/speed-msg-transform';
+import { SpeedTransform } from './task06/speed-transform';
 import { UnusualDB } from './task04/db';
 import { prime } from './task01a/prime';
 import { tcpServer } from './lib/tcp-server';
@@ -108,8 +110,23 @@ export function task05 () {
             .pipe(be)
             .pipe(new LineTransform())
             .pipe(new BogusCoinTransform())
-            .pipe(conn);
+            .pipe(conn)
+            .on('error', console.error);
     });
 }
 
-task01b();
+// 06. Speed daemon - https://protohackers.com/problem/6
+export function task06 () {
+    const speedTransform = new SpeedTransform();
+    const speedMessageTransform = new SpeedMessageTransform();
+
+    return tcpServer(tcpPort, (conn: Socket) => {
+        conn
+            .pipe(speedMessageTransform)
+            .pipe(speedTransform)
+            .pipe(conn)
+            .on('error', console.error);
+    });
+}
+
+task06();

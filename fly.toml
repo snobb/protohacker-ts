@@ -1,4 +1,4 @@
-# fly.toml file generated for protohacker-ts on 2022-10-15T11:28:12+01:00
+# fly.toml file generated for protohacker-ts on 2022-11-07T16:59:32Z
 
 app = "protohacker-ts"
 kill_signal = "SIGINT"
@@ -6,18 +6,16 @@ kill_timeout = 5
 processes = []
 
 [env]
-  #SOCKET_ADDRESS = "fly-global-services"
-  TCP_PORT = "8080"
   PROXY_ADDRESS = "chat.protohackers.com"
   PROXY_PORT = "16963"
-  # UDP_PORT = "5000"
+  TCP_PORT = "8080"
 
 [[services]]
   internal_port = 8080
   protocol = "tcp"
   [services.concurrency]
-    hard_limit = 25
-    soft_limit = 20
+    hard_limit = 150
+    soft_limit = 75
 
   [[services.ports]]
     port = "10001"
@@ -25,10 +23,3 @@ processes = []
   [[services.tcp_checks]]
     interval = "15s"
     timeout = "2s"
-
-# [[services]]
-#   internal_port = 5000
-#   protocol = "udp"
-#
-#   [[services.ports]]
-#     port = 5000
