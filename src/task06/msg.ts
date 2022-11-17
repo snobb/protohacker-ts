@@ -40,16 +40,10 @@ export type MsgPlate = {
     timestamp: number,
 }
 
-export function readPlateMessage (conn: NodeJS.ReadableStream) {
-    let buf = <Buffer>conn.read(1);
-    if (!buf) {
-        throw new Error('EOF');
-    }
-
-    const len = buf.readUint8();
-    buf = <Buffer>conn.read(len + 4);
-    const plate = buf.subarray(0, len).toString();
-    const timestamp = buf.readUint32BE(len);
+export function readPlateMessage (msg: Buffer) {
+    const len = msg.readUint8();
+    const plate = msg.subarray(1, 1 + len).toString();
+    const timestamp = msg.readUint32BE(len + 1);
 
     return { plate, timestamp };
 }
@@ -61,39 +55,24 @@ export type MsgIAMCamera = {
     limit: number,
 }
 
-export function readCameraMessage (conn: NodeJS.ReadableStream) {
-    const buf = <Buffer>conn.read(6);
-    if (!buf) {
-        throw new Error('EOF');
-    }
-
+export function readCameraMessage (msg: Buffer) {
     return {
-        road: buf.readUint16BE(),
-        mile: buf.readUint16BE(2),
-        limit: buf.readUint16BE(4),
+        road: msg.readUint16BE(),
+        mile: msg.readUint16BE(2),
+        limit: msg.readUint16BE(4),
     };
 }
 
 // === Dispatcher =======================================================
-export function readDispatcherMessage (conn: NodeJS.ReadableStream) {
-    let buf = <Buffer>conn.read(1);
-    if (!buf) {
-        throw new Error('EOF');
-    }
-
-    const len = buf.readUint8();
-    console.log(len);
-    buf = <Buffer>conn.read(len * 2);
-    if (!buf) {
-        console.log('invalid message');
-        return [];
-    }
+export function readDispatcherMessage (msg: Buffer) {
+    const len = msg.readUint8();
 
     const roads: number[] = [];
-    let offset = 0;
+    let offset = 1;
 
     for (let i = 0; i < len; i += 1) {
-        offset = roads.push(buf.readUint16BE(offset));
+        roads.push(msg.readUint16BE(offset));
+        offset += 2;
     }
 
     return roads;
