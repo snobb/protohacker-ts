@@ -1,3 +1,4 @@
+import { LRCP, LineReverseTransform, Session } from './task07';
 import { BogusCoinTransform } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
 import { FixedChunkTransform } from './lib/fixed-chunk-transform';
@@ -17,7 +18,7 @@ import { udpServer } from './lib/udp-server';
 // make sure it listens on ipv4 address.
 const udpPort = parseInt(process.env.UDP_PORT || '5000', 10);
 const tcpPort = parseInt(process.env.TCP_PORT || '8080', 10);
-const address = process.env.SOCKET_ADDRESS;
+const address = process.env.SOCKET_ADDRESS || '127.0.0.1';
 
 // 00. Smoke Test - https://protohackers.com/problem/0
 export function task00 () {
@@ -120,4 +121,32 @@ export function task06 () {
     return tcpServer(tcpPort, (conn: Socket) => speed.handle(conn));
 }
 
-task06();
+// 07. Line Reversal  - https://protohackers.com/problem/7
+export function task07 () {
+    // comment out the tcp part of the fly.toml and add UDP section like below to make it work.
+    // [env]
+    //   SOCKET_ADDRESS = "fly-global-services"
+    //   UDP_PORT = "5000"
+    //   DEBUG = 1
+    //
+    // [[services]]
+    //   internal_port = 5000
+    //   protocol = "udp"
+    //
+    //   [[services.ports]]
+    //     port = 5000
+    //
+    const lrcp = new LRCP();
+
+    lrcp.on('session', (session: Session) => {
+        session
+            .pipe(new LineTransform())
+            .pipe(new LineReverseTransform())
+            .pipe(session);
+    });
+
+    return udpServer({ address, port: udpPort }, lrcp.handle.bind(lrcp))
+        .on('close', () => lrcp.close());
+}
+
+task07();
