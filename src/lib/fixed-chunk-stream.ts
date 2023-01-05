@@ -2,7 +2,7 @@ import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 
 /* eslint-disable no-console */
 
-export class FixedChunkTransform extends Transform {
+export class FixedChunkStream extends Transform {
     private need: number;
     private shards: Buffer[] = [];
     chunkSize: number;

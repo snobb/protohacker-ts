@@ -11,7 +11,7 @@ const c_A = 'A'.charCodeAt(0);
 const c_Z = 'Z'.charCodeAt(0);
 const c_space = ' '.charCodeAt(0);
 
-export class BogusCoinTransform extends Transform {
+export class BogusCoinStream extends Transform {
     constructor (opts?: TransformOptions) {
         super({ ...opts });
     }

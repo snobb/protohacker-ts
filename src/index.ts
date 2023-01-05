@@ -1,11 +1,11 @@
-import { LRCP, LineReverseTransform, Session } from './task07';
-import { BogusCoinTransform } from './task05/bogus-coin';
+import { LRCP, LineReverseStream, Session } from './task07';
+import { BogusCoinStream } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
-import { FixedChunkTransform } from './lib/fixed-chunk-transform';
-import { LineTransform } from './lib/line-transform';
+import { FixedChunkStream } from './lib/fixed-chunk-stream';
+import { LineStream } from './lib/line-stream';
 import { Price } from './task02a/price';
 import { PriceTransform } from './task02b/price';
-import { PrimeTransform } from './task01b/prime';
+import { PrimeStream } from './task01b/prime';
 import { Socket } from 'node:net';
 import { SpeedDaemon } from './task06/speed-daemon';
 import { UnusualDB } from './task04/db';
@@ -38,8 +38,8 @@ export function task01a () {
 export function task01b () {
     return tcpServer(tcpPort, (conn: Socket) => {
         conn
-            .pipe(new LineTransform())
-            .pipe(new PrimeTransform())
+            .pipe(new LineStream())
+            .pipe(new PrimeStream())
             .pipe(conn)
             .on('error', console.error);
     });
@@ -59,7 +59,7 @@ export function task02b () {
     return tcpServer(tcpPort, (conn: Socket) => {
         // stream based implementation.
         const price = new PriceTransform();
-        const fixedChunkStream = new FixedChunkTransform({ size: PriceTransform.msgSize });
+        const fixedChunkStream = new FixedChunkStream({ size: PriceTransform.msgSize });
         conn
             .pipe(fixedChunkStream)
             .pipe(price)
@@ -105,11 +105,11 @@ export function task05 () {
         be.connect(proxyPort, proxyAddress);
 
         conn
-            .pipe(new LineTransform())
-            .pipe(new BogusCoinTransform())
+            .pipe(new LineStream())
+            .pipe(new BogusCoinStream())
             .pipe(be)
-            .pipe(new LineTransform())
-            .pipe(new BogusCoinTransform())
+            .pipe(new LineStream())
+            .pipe(new BogusCoinStream())
             .pipe(conn)
             .on('error', console.error);
     });
@@ -140,8 +140,8 @@ export function task07 () {
 
     lrcp.on('session', (session: Session) => {
         session
-            .pipe(new LineTransform())
-            .pipe(new LineReverseTransform())
+            .pipe(new LineStream())
+            .pipe(new LineReverseStream())
             .pipe(session);
     });
 

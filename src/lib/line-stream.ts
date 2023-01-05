@@ -1,6 +1,6 @@
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 
-export class LineTransform extends Transform {
+export class LineStream extends Transform {
     private chunks: Buffer[];
     private buffer: string[];
 

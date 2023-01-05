@@ -7,7 +7,7 @@ type request = {
     number: number
 }
 
-export class PrimeTransform extends Transform {
+export class PrimeStream extends Transform {
     cache: Set<number>;
     constructor (opts?: TransformOptions) {
         super({ ...opts });

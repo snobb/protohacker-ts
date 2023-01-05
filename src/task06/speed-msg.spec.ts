@@ -1,5 +1,5 @@
 import * as assert from 'node:assert';
-import { SpeedMessageTransform } from './speed-msg-transform';
+import { SpeedMessageTransform } from './speed-msg';
 import { TypeError } from './msg';
 
 describe('streams', () => {

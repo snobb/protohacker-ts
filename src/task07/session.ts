@@ -259,20 +259,20 @@ export class Session extends Duplex {
     sendData (pos: number, data: Buffer): Promise<void> {
         return new Promise((resolve) => {
             if (data.length > Session.maxPayloadSize) {
-                const loop = (lo: number, hi: number, cb: ()=> void) => {
+                const loop = (lo: number, hi: number) => {
                     const buf = data.subarray(lo, hi);
                     this.sendDataChunk(pos, buf);
                     pos += buf.length;
 
                     if (hi >= data.length) {
-                        return cb();
+                        return resolve();
                     }
 
                     setImmediate(() => loop(hi,
-                        Math.min(hi + Session.maxPayloadSize, data.length), cb));
+                        Math.min(hi + Session.maxPayloadSize, data.length)));
                 };
 
-                loop(0, Math.min(Session.maxPayloadSize, data.length), resolve);
+                loop(0, Math.min(Session.maxPayloadSize, data.length));
 
             } else {
                 setImmediate(() => {

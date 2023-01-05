@@ -5,8 +5,8 @@ import {
     writeTicket
 } from './msg';
 import { Socket } from 'node:net';
-import { SpeedMessageTransform } from './speed-msg-transform';
-import { SpeedTransform } from './speed-transform';
+import { SpeedMessageTransform } from './speed-msg';
+import { SpeedTransform } from './speed';
 
 /* eslint-disable no-console */
 

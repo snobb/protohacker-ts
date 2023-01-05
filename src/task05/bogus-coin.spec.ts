@@ -1,12 +1,12 @@
 import * as assert from 'node:assert';
-import { BogusCoinTransform } from './bogus-coin';
+import { BogusCoinStream } from './bogus-coin';
 
 describe('BogusCoinTransform', () => {
-    let stream: BogusCoinTransform;
+    let stream: BogusCoinStream;
     const evilAddress = '7YWHMfk9JZe0LM0g1ZauHuiSxhI';
 
     beforeEach(() => {
-        stream = new BogusCoinTransform();
+        stream = new BogusCoinStream();
     });
 
     it('should return unmodified strings if there is no address', (done) => {
