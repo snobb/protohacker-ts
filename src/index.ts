@@ -1,3 +1,4 @@
+import { AppStream, InsecureDecoderStream } from './task08';
 import { LRCP, LineReverseStream, Session } from './task07';
 import { BogusCoinStream } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
@@ -149,4 +150,31 @@ export function task07 () {
         .on('close', () => lrcp.close());
 }
 
-task07();
+// 08. Insecure Sockets Layer - https://protohackers.com/problem/8
+export function task08 () {
+    return tcpServer(tcpPort, (conn: Socket) => {
+        const decoder = new InsecureDecoderStream();
+
+        const log = (...msg: string[]) => {
+            console.log(`[${conn.remoteAddress}:${conn.remotePort}]:`, ...msg);
+        };
+
+        conn
+            .pipe(decoder)
+            .on('error', (err: Error) => {
+                log(`Decoder error: ${err.message}`);
+                conn.destroy();
+            })
+            .pipe(new LineStream())
+            .on('data', (chunk: Buffer) => {
+                log(`processing: ${chunk.toString().trim()}`);
+            })
+            .pipe(new AppStream())
+            .on('data', (chunk: Buffer) => {
+                log(`result: ${chunk.toString().trim()}`);
+                conn.write(decoder.encode(chunk));
+            });
+    });
+}
+
+task08();
