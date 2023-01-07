@@ -3,6 +3,7 @@ import { LRCP, LineReverseStream, Session } from './task07';
 import { BogusCoinStream } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
 import { FixedChunkStream } from './lib/fixed-chunk-stream';
+import { JobCentreStream } from './task09/job-centre';
 import { LineStream } from './lib/line-stream';
 import { Price } from './task02a/price';
 import { PriceTransform } from './task02b/price';
@@ -177,4 +178,16 @@ export function task08 () {
     });
 }
 
-task08();
+// 09. Job Centre - https://protohackers.com/problem/9
+export function task09 () {
+    return tcpServer(tcpPort, (conn: Socket) => {
+        const jobcentre = new JobCentreStream(conn);
+
+        conn
+            .pipe(new LineStream())
+            .pipe(jobcentre)
+            .pipe(conn);
+    });
+}
+
+task09();
