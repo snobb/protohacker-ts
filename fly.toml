@@ -1,4 +1,4 @@
-# fly.toml file generated for protohacker-ts on 2022-12-24T22:48:59Z
+# fly.toml file generated for protohacker-ts on 2023-01-08T12:29:30Z
 
 app = "protohacker-ts"
 kill_signal = "SIGINT"
@@ -7,13 +7,14 @@ processes = []
 
 [env]
   TCP_PORT = "8080"
+  DEBUG = 1
 
 [[services]]
   internal_port = 8080
   protocol = "tcp"
   [services.concurrency]
-    hard_limit = 150
-    soft_limit = 75
+    hard_limit = 1100
+    soft_limit = 750
 
   [[services.ports]]
     port = "10001"
