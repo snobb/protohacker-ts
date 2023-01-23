@@ -2,42 +2,32 @@ import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 
 export class LineStream extends Transform {
     private chunks: Buffer[];
-    private buffer: string[];
 
     constructor (opts?: TransformOptions) {
         super({ ...opts });
         this.chunks = [];
-        this.buffer = [];
     }
 
     _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
-        this.chunks.push(chunk);
-        this.process(chunk.toString(), (data: string) => this.push(data));
-
-        done();
-    }
-
-    process (chunk: string, cb: (arg: string)=> void) {
-        let start = 0;
-
-        if (chunk === '') {
+        if (chunk.length === 0) {
             return;
         }
 
-        for (;;) {
-            const idx = chunk.indexOf('\n', start);
-
-            if (idx === -1) {
-                return this.buffer.push(chunk.substring(start));
-
-            } else {
+        let lo = 0;
+        for (let hi = 0; hi < chunk.length; hi += 1) {
+            if (chunk[hi] === '\n'.charCodeAt(0)) {
                 // include the new line character with every line
-                this.buffer.push(chunk.substring(start, idx + 1));
-                cb(this.buffer.join(''));
-
-                this.buffer = [];
-                start = idx + 1;
+                this.chunks.push(chunk.subarray(lo, hi + 1));
+                this.push(Buffer.concat(this.chunks));
+                this.chunks = [];
+                lo = hi + 1;
             }
         }
+
+        if (lo < chunk.length) {
+            this.chunks.push(chunk.subarray(lo));
+        }
+
+        done();
     }
 }
