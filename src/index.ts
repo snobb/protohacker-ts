@@ -2,8 +2,10 @@ import { AppStream, InsecureDecoderStream } from './task08';
 import { LRCP, LineReverseStream, Session } from './task07';
 import { BogusCoinStream } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
+// import { CodeStore } from './task10/code-store';
 import { FixedChunkStream } from './lib/fixed-chunk-stream';
 import { JobCentreStream } from './task09/job-centre';
+import { LineBufStream } from './lib/line-buf-stream';
 import { LineStream } from './lib/line-stream';
 import { Price } from './task02a/price';
 import { PriceTransform } from './task02b/price';
@@ -189,5 +191,17 @@ export function task09 () {
             .pipe(conn);
     });
 }
+
+// 10. Voracious Code Storage - https://protohackers.com/problem/10
+// export function task10 () {
+//     return tcpServer(tcpPort, (conn: Socket) => {
+//         const store = new CodeStore(conn);
+//
+//         conn
+//             .pipe(new LineBufStream())
+//             .pipe(store)
+//             .pipe(conn);
+//     });
+// }
 
 task09();
