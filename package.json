@@ -12,14 +12,14 @@
   },
   "types": "./dist/index.d.ts",
   "devDependencies": {
-    "@types/mocha": "^10.0.1",
+    "@types/mocha": "*",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^5",
-    "@typescript-eslint/parser": "^5",
-    "c8": "^7.12.0",
-    "eslint": "^8",
-    "mocha": "^10.2.0",
-    "ts-mocha": "^10.0.0",
-    "typescript": "^4"
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "c8": "*",
+    "eslint": "*",
+    "mocha": "*",
+    "ts-mocha": "*",
+    "typescript": "*"
   }
 }
