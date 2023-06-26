@@ -5,7 +5,6 @@ import { Chat } from './task03/chat';
 // import { CodeStore } from './task10/code-store';
 import { FixedChunkStream } from './lib/fixed-chunk-stream';
 import { JobCentreStream } from './task09/job-centre';
-import { LineBufStream } from './lib/line-buf-stream';
 import { LineStream } from './lib/line-stream';
 import { Price } from './task02a/price';
 import { PriceTransform } from './task02b/price';
@@ -13,6 +12,7 @@ import { PrimeStream } from './task01b/prime';
 import { Socket } from 'node:net';
 import { SpeedDaemon } from './task06/speed-daemon';
 import { UnusualDB } from './task04/db';
+import { VCS } from './task10/vcs';
 import { prime } from './task01a/prime';
 import { tcpServer } from './lib/tcp-server';
 import { udpServer } from './lib/udp-server';
@@ -193,15 +193,9 @@ export function task09 () {
 }
 
 // 10. Voracious Code Storage - https://protohackers.com/problem/10
-// export function task10 () {
-//     return tcpServer(tcpPort, (conn: Socket) => {
-//         const store = new CodeStore(conn);
-//
-//         conn
-//             .pipe(new LineBufStream())
-//             .pipe(store)
-//             .pipe(conn);
-//     });
-// }
+export function task10 () {
+    const vcs = new VCS();
+    return tcpServer(tcpPort, (conn: Socket) => vcs.handleConnection(conn));
+}
 
-task09();
+task10();

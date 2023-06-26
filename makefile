@@ -1,5 +1,6 @@
 SRC   := $(shell find src -name *.ts)
 TESTS := $(shell find src -name *.spec.ts)
+FLY_APP := protohacker-ts
 
 all: help
 
@@ -11,7 +12,7 @@ help:
 ## run:		run the app
 .PHONY: run
 run: build
-	node ./dist
+	node --enable-source-maps ./dist
 
 ## build:		build TypeScript source
 .PHONY: build
@@ -53,7 +54,7 @@ endif
 test-debug:
 	# MUST pass FILE variable like make test-debug FILE=./test.ts
 	open -a 'google chrome' chrome://inspect && \
-		node --nolazy --inspect-brk \
+		node --nolazy --enable-source-maps --inspect-brk \
 		./node_modules/.bin/mocha -b -r ts-node/register --timeout 999999 ${FILE}
 
 ## clean-dist:	delete generated files and dependencies
@@ -61,6 +62,11 @@ test-debug:
 clean-dist:
 	rm -rf coverage dist node_modules package-lock.json
 
+## launch:	create a fly.io application for typescript (run one time)
+launch:
+		fly launch --copy-config --local-only --name ${FLY_APP} \
+			--no-deploy -r lhr && \
+		fly ips allocate-v6 -a ${FLY_APP}
 
 ## deploy:	deploys the latest change to fly.io
 .PHONY: deploy
