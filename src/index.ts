@@ -1,11 +1,12 @@
 import { AppStream, InsecureDecoderStream } from './task08';
+import { FrameReaderStream, FrameWriterStream, LoggerStream } from './task11';
 import { LRCP, LineReverseStream, Session } from './task07';
 import { BogusCoinStream } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
-// import { CodeStore } from './task10/code-store';
 import { FixedChunkStream } from './lib/fixed-chunk-stream';
 import { JobCentreStream } from './task09/job-centre';
 import { LineStream } from './lib/line-stream';
+import { PestControl } from './task11/pest-constrol';
 import { Price } from './task02a/price';
 import { PriceTransform } from './task02b/price';
 import { PrimeStream } from './task01b/prime';
@@ -198,4 +199,19 @@ export function task10 () {
     return tcpServer(tcpPort, (conn: Socket) => vcs.handleConnection(conn));
 }
 
-task10();
+// 11. Pest Control - https://protohackers.com/problem/11
+export function task11 () {
+    return tcpServer(tcpPort, (conn: Socket) => {
+        const connId = `${conn.remoteAddress}:${conn.remotePort}`;
+
+        conn
+            .pipe(new FrameReaderStream())
+            .pipe(new LoggerStream(connId, '>>>'))
+            .pipe(new PestControl())
+            .pipe(new LoggerStream(connId, '<<<'))
+            .pipe(new FrameWriterStream())
+            .pipe(conn);
+    });
+}
+
+task11();
