@@ -4,7 +4,7 @@ export const msgType = {
     'hello': 0x50,
     'error': 0x51,
     'ok': 0x52,
-    'dial_auth': 0x53,
+    'dialAuth': 0x53,
     'targetPopulations': 0x54,
     'createPolicy': 0x55,
     'deletePolicy': 0x56,
