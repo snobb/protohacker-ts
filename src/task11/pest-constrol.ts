@@ -1,6 +1,17 @@
+import {
+    MsgCreatePolicy,
+    MsgDeletePolicy,
+    MsgDialAuth,
+    MsgError,
+    MsgHello,
+    MsgOk,
+    MsgPolicyResult,
+    MsgTargetPopulations,
+    newError
+} from './msg';
+
 import { Payload, msgType } from './types';
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
-import { MsgError } from './msg';
 
 export class PestControl extends Transform {
     private handshake = false;
@@ -33,13 +44,20 @@ export class PestControl extends Transform {
                 return;
             }
 
-            // TODO: validate hello
+            try {
+                new MsgHello().fromPayload(data);
+            } catch (err) {
+                this.push(newError(<Error>err));
+                this.emit('error', new Error('handshake error'));
+            }
+
             this.handshake = true;
         }
 
         if (data.kind === msgType.siteVisit) {
         } else {
-            // todo send the error down.
+            this.push(newError(`unexpected message ${data.kind}`));
+            this.emit('error', new Error(`unexpected message ${data.kind}`));
         }
 
         done();
