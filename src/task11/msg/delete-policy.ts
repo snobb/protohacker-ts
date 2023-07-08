@@ -1,8 +1,8 @@
+import { Decodable, Encodable } from './index';
 import { Payload, msgType } from '../types';
-import { Encodable } from './index';
 
-export class MsgDeletePolicy implements Encodable {
-    kind = msgType.dialAuth;
+export class MsgDeletePolicy implements Encodable, Decodable {
+    kind = msgType.deletePolicy;
 
     constructor (public policy: number) {}
 
@@ -15,4 +15,14 @@ export class MsgDeletePolicy implements Encodable {
             payload: buf
         };
     }
+
+    fromPayload (data: Payload): this {
+        if (data.kind !== this.kind) {
+            throw new Error('invalid payload');
+        }
+
+        this.policy = data.payload.readUInt32BE();
+        return this;
+    }
+
 }

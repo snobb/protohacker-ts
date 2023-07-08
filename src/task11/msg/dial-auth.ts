@@ -1,7 +1,7 @@
+import { Decodable, Encodable } from './index';
 import { Payload, msgType } from '../types';
-import { Encodable } from './index';
 
-export class MsgDialAuth implements Encodable {
+export class MsgDialAuth implements Encodable, Decodable {
     kind = msgType.dialAuth;
 
     constructor (public site: number) {}
@@ -14,5 +14,14 @@ export class MsgDialAuth implements Encodable {
             kind: this.kind,
             payload: buf
         };
+    }
+
+    fromPayload (data: Payload): this {
+        if (data.kind !== this.kind) {
+            throw new Error('invalid payload');
+        }
+
+        this.site = data.payload.readUInt32BE();
+        return this;
     }
 }

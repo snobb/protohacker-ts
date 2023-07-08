@@ -1,15 +1,12 @@
 import { Payload, msgType } from '../types';
 import { Decodable } from './index';
 
-export type ObservedSpecies = {
-    name: string;
-    count: number;
-}
+export type ObservedSpecies = Record<string, number>;
 
 export class MsgSiteVisit implements Decodable {
     kind = msgType.siteVisit;
     site = -1;
-    populations: ObservedSpecies[] = [];
+    populations: ObservedSpecies = {};
 
     fromPayload (data: Payload): this {
         if (data.kind !== msgType.siteVisit) {
@@ -32,7 +29,7 @@ export class MsgSiteVisit implements Decodable {
             const count = data.payload.readUInt32BE(offset);
             offset += 4;
 
-            this.populations.push({ name, count });
+            this.populations[name] = count;
         }
 
         return this;

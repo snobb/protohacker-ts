@@ -1,4 +1,5 @@
 import {
+    LoggerStream,
     MsgCreatePolicy,
     MsgDeletePolicy,
     MsgDialAuth,
@@ -6,17 +7,20 @@ import {
     MsgOk,
     MsgPolicyResult,
     MsgTargetPopulations,
+    ObservedSpecies,
+    TargetSpecies,
     newError,
+    policyAction
 } from './msg';
 import { Payload, msgType } from './types';
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 import { FrameReaderStream } from './frame-reader-stream';
 import { FrameWriterStream } from './frame-writer-stream';
-import { LoggerStream } from './logger-stream';
 import { Socket } from 'node:net';
 import { log } from '../lib/log';
 
 type State = 'new'| 'handshake'| 'dialed' | 'closed';
+type Policies = Record<string, number>; // species -> policy
 
 const waitTimeout = 5000;
 
@@ -25,6 +29,7 @@ export class Authority extends Transform {
     private port: number;
     private sock: Socket;
     private state: State = 'new';
+    private policies: Policies = {};
 
     constructor (private site: number, options?: TransformOptions) {
         super({ ...options, readableObjectMode: true, writableObjectMode: true });
@@ -150,9 +155,9 @@ export class Authority extends Transform {
             const off = setTimeout(reject, waitTimeout);
             this.once('createResult', (res: MsgPolicyResult) => {
                 clearTimeout(off);
+                this.policies[species] = res.policy;
                 return resolve(res.policy);
             });
-
         });
     }
 
@@ -164,9 +169,38 @@ export class Authority extends Transform {
             const off = setTimeout(reject, waitTimeout);
             this.once('deleteResult', () => {
                 clearTimeout(off);
+                delete this.policies[policy];
                 return resolve();
             });
         });
+    }
+
+    async advisePolicies (observed: ObservedSpecies, target: TargetSpecies) {
+        for (const name of Object.keys(observed)) {
+            if (this.policies[name]) {
+                // delete the policy anyway if it exists.
+                await this.deletePolicy(this.policies[name]); // eslint-disable-line no-await-in-loop
+            }
+        }
+
+        for (const name of Object.keys(observed)) {
+            const targetRange = target[name];
+            if (!targetRange) {
+                continue; // no target for the species - no advice.
+            }
+
+            const count = observed[name] || 0;
+
+            if (count < targetRange.min) {
+                log.info(`site: ${this.site}, species:${name}, advice:conserve`);
+                await this.createPolicy(name, policyAction.conserve); // eslint-disable-line no-await-in-loop
+            } else if (count > targetRange.max) {
+                log.info(`site: ${this.site}, species:${name}, advice:cull`);
+                await this.createPolicy(name, policyAction.cull); // eslint-disable-line no-await-in-loop
+            } else {
+                log.info(`site: ${this.site}, species:${name}, advice:none`);
+            }
+        }
     }
 
     close () {

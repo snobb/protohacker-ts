@@ -20,15 +20,9 @@ describe('site-visit message', () => {
         const obj = new MsgSiteVisit().fromPayload({ kind: msgType.siteVisit, payload });
         assert.strictEqual(obj.kind, msgType.siteVisit);
         assert.strictEqual(obj.site, 12345);
-        assert.deepStrictEqual(obj.populations, [
-            {
-                name: 'dog',
-                count: 1,
-            },
-            {
-                name: 'rat',
-                count: 5
-            },
-        ]);
+        assert.deepStrictEqual(obj.populations, {
+            'dog': 1,
+            'rat': 5
+        });
     });
 });

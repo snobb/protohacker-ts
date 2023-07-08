@@ -1,12 +1,12 @@
+import { Decodable, Encodable } from './index';
 import { Payload, msgType } from '../types';
-import { Encodable } from './index';
 
 export const policyAction = {
     cull: 0x90,
-    concerve: 0xa0,
+    conserve: 0xa0,
 };
 
-export class MsgCreatePolicy implements Encodable {
+export class MsgCreatePolicy implements Encodable, Decodable {
     kind = msgType.createPolicy;
 
     constructor (public species: string, public action: number) {}
@@ -21,5 +21,20 @@ export class MsgCreatePolicy implements Encodable {
             kind: msgType.createPolicy,
             payload: buf
         };
+    }
+
+    fromPayload (data: Payload): this {
+        if (data.kind !== this.kind) {
+            throw new Error('invalid payload');
+        }
+
+        const len = data.payload.readUInt32BE();
+        this.species = data.payload.subarray(4, 4 + len).toString();
+        this.action = data.payload.readUInt8(4 + len);
+        if (this.action !== policyAction.conserve && this.action !== policyAction.cull) {
+            throw new Error(`invalid action: ${this.action}`);
+        }
+
+        return this;
     }
 }

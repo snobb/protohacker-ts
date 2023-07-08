@@ -26,17 +26,15 @@ describe('target-populations message', () => {
 
         assert.strictEqual(obj.kind, msgType.targetPopulations);
         assert.strictEqual(obj.site, 12345);
-        assert.deepStrictEqual(obj.populations, [
-            {
-                name: 'dog',
+        assert.deepStrictEqual(obj.populations, {
+            'dog': {
                 min: 1,
                 max: 3
             },
-            {
-                name: 'rat',
+            'rat': {
                 min: 0,
                 max: 10
             },
-        ]);
+        });
     });
 });

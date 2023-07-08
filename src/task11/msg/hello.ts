@@ -20,7 +20,7 @@ export class MsgHello implements Encodable, Decodable {
     }
 
     fromPayload (data: Payload): this {
-        if (data.kind !== msgType.hello) {
+        if (data.kind !== this.kind) {
             throw new Error('invalid payload');
         }
 

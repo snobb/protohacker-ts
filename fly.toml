@@ -11,6 +11,8 @@ kill_timeout = "5s"
 [env]
   DEBUG = "1"
   TCP_PORT = "8080"
+  AUTH_ADDRESS = "pestcontrol.protohackers.com"
+  AUTH_PORT = "20547"
 
 [[services]]
   protocol = "tcp"

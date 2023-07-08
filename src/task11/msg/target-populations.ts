@@ -1,16 +1,17 @@
 import { Payload, msgType } from '../types';
 import { Decodable } from './index';
 
-export type Species = {
-    name: string;
+export type SpeciesRange = {
     min: number;
     max: number;
 }
 
+export type TargetSpecies = Record<string, SpeciesRange>
+
 export class MsgTargetPopulations implements Decodable {
     kind = msgType.targetPopulations;
     site = -1;
-    populations: Species[] = [];
+    populations: TargetSpecies = {};
 
     fromPayload (data: Payload): this {
         if (data.kind !== msgType.targetPopulations) {
@@ -36,7 +37,7 @@ export class MsgTargetPopulations implements Decodable {
             const max = data.payload.readUInt32BE(offset);
             offset += 4;
 
-            this.populations.push({ name, min, max });
+            this.populations[name] = { min, max };
         }
 
         return this;

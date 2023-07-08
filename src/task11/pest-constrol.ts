@@ -1,37 +1,22 @@
 import {
-    MsgCreatePolicy,
-    MsgDeletePolicy,
-    MsgDialAuth,
     MsgError,
-    MsgHello,
-    MsgOk,
-    MsgPolicyResult,
-    MsgTargetPopulations,
-    newError
+    MsgHello, MsgSiteVisit,
+    newError,
 } from './msg';
-
 import { Payload, msgType } from './types';
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
+import { Authority } from './authority';
+import { log } from '../lib/log';
 
 export class PestControl extends Transform {
     private handshake = false;
 
     constructor (options?: TransformOptions) {
         super({ ...options, readableObjectMode: true, writableObjectMode: true });
-
-        this.push({
-            kind: msgType.hello,
-            payload: Buffer.from([
-                0x00, 0x00, 0x00, 0x0b, // protocol: (length 11)
-                0x70, 0x65, 0x73, 0x74, //  "pest
-                0x63, 0x6f, 0x6e, 0x74, //   cont
-                0x72, 0x6f, 0x6c, //         rol"
-                0x00, 0x00, 0x00, 0x01 //  version: 1
-            ])
-        });
+        this.push(new MsgHello().toPayload());
     }
 
-    _transform (data: Payload, _: BufferEncoding, done: TransformCallback) {
+    async _transform (data: Payload, _: BufferEncoding, done: TransformCallback) {
         if (data.kind === msgType.error) {
             this.push(data); // pass the error through
             return done();
@@ -46,15 +31,36 @@ export class PestControl extends Transform {
 
             try {
                 new MsgHello().fromPayload(data);
+                this.handshake = true;
+
             } catch (err) {
                 this.push(newError(<Error>err));
                 this.emit('error', new Error('handshake error'));
             }
 
-            this.handshake = true;
-        }
+        } else if (data.kind === msgType.siteVisit) {
+            let auth: Authority | undefined;
 
-        if (data.kind === msgType.siteVisit) {
+            try {
+                const observed = new MsgSiteVisit().fromPayload(data);
+                log.info('pestcontrol: observed populations', JSON.stringify(observed.populations));
+
+                log.info('handling site:', observed.site);
+                auth = new Authority(observed.site);
+                const target = await auth.getTargetPopulations();
+                log.info('pestcontrol: target populations', JSON.stringify(target.populations));
+
+                await auth.advisePolicies(observed.populations, target.populations);
+
+            } catch (err) {
+                this.push(newError(<Error>err));
+                this.emit('error', new Error('handshake error'));
+            } finally {
+                if (auth) {
+                    auth.destroy();
+                }
+            }
+
         } else {
             this.push(newError(`unexpected message ${data.kind}`));
             this.emit('error', new Error(`unexpected message ${data.kind}`));
@@ -62,4 +68,5 @@ export class PestControl extends Transform {
 
         done();
     }
+
 }
