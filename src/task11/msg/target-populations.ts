@@ -40,6 +40,10 @@ export class MsgTargetPopulations implements Decodable {
             this.populations[name] = { min, max };
         }
 
+        if (data.payload.length > offset) {
+            throw new Error('Too much payload');
+        }
+
         return this;
     }
 }

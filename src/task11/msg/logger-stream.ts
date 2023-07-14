@@ -1,4 +1,3 @@
-import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 import {
     MsgCreatePolicy,
     MsgDeletePolicy,
@@ -11,6 +10,7 @@ import {
     msgType,
     policyAction,
 } from '.';
+import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 import { log } from '../../lib/log';
 
 export class LoggerStream extends Transform {

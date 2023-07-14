@@ -22,6 +22,11 @@ export class MsgDialAuth implements Encodable, Decodable {
         }
 
         this.site = data.payload.readUInt32BE();
+
+        if (data.payload.length !== 4) {
+            throw new Error('Too much payload');
+        }
+
         return this;
     }
 }

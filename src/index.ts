@@ -203,7 +203,13 @@ export function task11 () {
     return tcpServer(tcpPort, (conn: Socket) => {
         const connId = `${conn.remoteAddress}:${conn.remotePort}`;
 
+        conn.setTimeout(30000, () => conn.emit('error', new Error('timeout')));
+
         conn
+            .on('error', (err) => {
+                console.log('connection error:', err.message);
+                conn.end();
+            })
             .pipe(new FrameReaderStream())
             .pipe(new LoggerStream(connId, '>>>'))
             .pipe(new PestControl())

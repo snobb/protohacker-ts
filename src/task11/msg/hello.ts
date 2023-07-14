@@ -25,12 +25,21 @@ export class MsgHello implements Encodable, Decodable {
         }
 
         const len = data.payload.readUInt32BE();
-        const proto = data.payload.subarray(4, 4 + len).toString();
+        let offset = 4;
+        const proto = data.payload.subarray(offset, offset + len).toString();
+        offset += len;
+
         if (proto !== this.proto) {
             throw new Error('invalid hello message - proto');
         }
 
         const version = data.payload.readUInt32BE(4 + len);
+        offset += 4;
+
+        if (data.payload.length > offset) {
+            throw new Error('Too much payload');
+        }
+
         if (version !== this.version) {
             throw new Error('invalid hello message - version');
         }

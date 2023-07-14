@@ -11,6 +11,11 @@ export class MsgPolicyResult implements Decodable {
         }
 
         this.policy = data.payload.readUInt32BE();
+
+        if (data.payload.length !== 4) {
+            throw new Error('Too much payload');
+        }
+
         return this;
     }
 }

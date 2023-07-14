@@ -3,8 +3,15 @@ import { Payload, msgType } from '.';
 
 export class MsgError implements Encodable, Decodable {
     kind = msgType.error;
+    message: string;
 
-    constructor (public message: string) {}
+    constructor (err: string | Error) {
+        if (err instanceof Error) {
+            this.message = err.message;
+        } else {
+            this.message = err;
+        }
+    }
 
     toPayload (): Payload {
         const buf = Buffer.alloc(this.message.length + 4);
@@ -24,6 +31,11 @@ export class MsgError implements Encodable, Decodable {
 
         const len = data.payload.readUInt32BE();
         this.message = data.payload.subarray(4, 4 + len).toString();
+
+        if (data.payload.length !== 4 + len) {
+            throw new Error('Too much payload');
+        }
+
         return this;
     }
 }

@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for protohacker-ts on 2023-06-26T13:31:13+01:00
+# fly.toml app configuration file generated for protohacker-ts on 2023-08-11T20:50:39+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -8,11 +8,13 @@ primary_region = "lhr"
 kill_signal = "SIGINT"
 kill_timeout = "5s"
 
+[build]
+
 [env]
-  DEBUG = "1"
-  TCP_PORT = "8080"
   AUTH_ADDRESS = "pestcontrol.protohackers.com"
   AUTH_PORT = "20547"
+  DEBUG = "1"
+  TCP_PORT = "8080"
 
 [[services]]
   protocol = "tcp"
@@ -27,4 +29,3 @@ kill_timeout = "5s"
   [[services.tcp_checks]]
     interval = "15s"
     timeout = "2s"
-    restart_limit = 0

@@ -10,7 +10,7 @@ export class MsgOk implements Decodable {
         }
 
         if (data.payload.length !== 0) {
-            throw new Error('invalid payload - must be empty');
+            throw new Error('Too much payload');
         }
 
         return this;

@@ -1,5 +1,3 @@
-import { MsgError } from './error';
-
 export { FrameReaderStream } from './frame-reader-stream';
 export { FrameWriterStream } from './frame-writer-stream';
 export { LoggerStream } from './logger-stream';
@@ -38,9 +36,4 @@ export interface Encodable {
 
 export interface Decodable {
     fromPayload(data: Payload): this
-}
-
-export function newError (err: Error | string) {
-    const msg = (err instanceof Error) ? err.message : err;
-    return new MsgError(msg);
 }

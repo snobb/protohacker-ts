@@ -23,4 +23,13 @@ describe('error message', () => {
         const err = new MsgError('bad');
         assert.deepEqual(err.toPayload(), { kind: msgType.error, payload });
     });
+
+    it('should throw on too big size of the message', () => {
+        const payload = Buffer.from([
+            0x00, 0xff, 0x00, 0x03, //   message: (length TOO BIG)
+            0x62, 0x61, 0x64, //         "bad",
+        ]);
+
+        assert.throws(() => new MsgError('new').fromPayload({ kind: msgType.error, payload }));
+    });
 });
