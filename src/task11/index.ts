@@ -1,3 +1,7 @@
-export { FrameReaderStream } from './frame-reader-stream';
-export { FrameWriterStream } from './frame-writer-stream';
-export { LoggerStream } from './msg/logger-stream';
+export {
+    FrameReaderStream,
+    FrameWriterStream,
+    LoggerStream
+} from './msg';
+
+export { PestControl } from './pest-control';

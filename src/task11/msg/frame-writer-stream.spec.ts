@@ -1,6 +1,6 @@
 import * as assert from 'node:assert';
+import { Payload, msgType } from '.';
 import { FrameWriterStream } from './frame-writer-stream';
-import { Payload } from './types';
 
 describe('frame-writer-stream', () => {
     let stream: FrameWriterStream;
@@ -22,7 +22,7 @@ describe('frame-writer-stream', () => {
         });
 
         stream.end(<Payload>{
-            kind: 0x57,
+            kind: msgType.policyResult,
             payload: Buffer.from([0x00, 0x00, 0x00, 0x7b])
         });
     });

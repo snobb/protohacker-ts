@@ -1,5 +1,5 @@
 import { Decodable, Encodable } from './index';
-import { Payload, msgType } from '../types';
+import { Payload, msgType } from '.';
 
 export class MsgDialAuth implements Encodable, Decodable {
     kind = msgType.dialAuth;

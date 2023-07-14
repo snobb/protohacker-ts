@@ -1,6 +1,6 @@
 import * as assert from 'node:assert';
 import { MsgDeletePolicy } from './delete-policy';
-import { msgType } from '../types';
+import { msgType } from '.';
 
 describe('delete-policy message', () => {
     it('should parse a message', () => {

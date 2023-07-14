@@ -1,9 +1,10 @@
 import {
     MsgError,
     MsgHello, MsgSiteVisit,
-    newError,
+    Payload,
+    msgType,
+    newError
 } from './msg';
-import { Payload, msgType } from './types';
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 import { Authority } from './authority';
 import { log } from '../lib/log';

@@ -1,6 +1,6 @@
 import * as assert from 'node:assert';
 import { MsgError } from './error';
-import { msgType } from '../types';
+import { msgType } from '.';
 
 describe('error message', () => {
     it('should parse a message', () => {

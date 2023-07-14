@@ -1,6 +1,6 @@
 import * as assert from 'node:assert';
 import { MsgDialAuth } from './dial-auth';
-import { msgType } from '../types';
+import { msgType } from '.';
 
 describe('dial-auth message', () => {
     it('should parse a message', () => {

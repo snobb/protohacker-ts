@@ -1,5 +1,5 @@
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
-import { Payload } from './types';
+import { Payload } from '.';
 
 /* eslint-disable no-console */
 

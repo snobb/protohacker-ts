@@ -1,6 +1,6 @@
 import * as assert from 'node:assert';
+import { Payload, msgType } from '.';
 import { FrameReaderStream } from './frame-reader-stream';
-import { Payload } from './types';
 
 describe('frame-reader-stream', () => {
     let stream: FrameReaderStream;
@@ -11,7 +11,7 @@ describe('frame-reader-stream', () => {
 
     it('should send payload down on a valid frame', (done) => {
         stream.on('data', (obj: Payload) => {
-            assert.strictEqual(0x51, obj.kind);
+            assert.strictEqual(msgType.error, obj.kind);
             assert.deepEqual(Buffer.from([
                 0x00, 0x00, 0x00, 0x03,
                 0x62, 0x61, 0x64,
@@ -30,7 +30,7 @@ describe('frame-reader-stream', () => {
 
     it('should send payload of a different down on a valid frame', (done) => {
         stream.on('data', (obj: Payload) => {
-            assert.strictEqual(0x57, obj.kind);
+            assert.strictEqual(msgType.policyResult, obj.kind);
             assert.deepEqual(Buffer.from([
                 0x00, 0x00, 0x00, 0x7b,
             ]), obj.payload);
@@ -49,7 +49,7 @@ describe('frame-reader-stream', () => {
         let semaphore = 2;
 
         stream.on('data', (obj: Payload) => {
-            assert.strictEqual(0x57, obj.kind);
+            assert.strictEqual(msgType.policyResult, obj.kind);
             assert.deepEqual(Buffer.from([
                 0x00, 0x00, 0x00, 0x7b,
             ]), obj.payload);
@@ -79,7 +79,7 @@ describe('frame-reader-stream', () => {
         let semaphore = 2;
 
         stream.on('data', (obj: Payload) => {
-            assert.strictEqual(0x57, obj.kind);
+            assert.strictEqual(msgType.policyResult, obj.kind);
             assert.deepEqual(Buffer.from([
                 0x00, 0x00, 0x00, 0x7b,
             ]), obj.payload);
@@ -106,7 +106,7 @@ describe('frame-reader-stream', () => {
         let semaphore = 3;
 
         stream.on('data', (obj: Payload) => {
-            assert.strictEqual(0x57, obj.kind);
+            assert.strictEqual(msgType.policyResult, obj.kind);
             assert.deepEqual(Buffer.from([
                 0x00, 0x00, 0x00, 0x7b,
             ]), obj.payload);
@@ -138,7 +138,7 @@ describe('frame-reader-stream', () => {
 
     it('should send an error on wrong checksum', (done) => {
         stream.on('data', (obj: Payload) => {
-            assert.strictEqual(0x51, obj.kind); // ErrorKind
+            assert.strictEqual(msgType.error, obj.kind);
             done();
         });
 

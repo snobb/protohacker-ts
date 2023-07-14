@@ -1,12 +1,11 @@
 import { AppStream, InsecureDecoderStream } from './task08';
-import { FrameReaderStream, FrameWriterStream, LoggerStream } from './task11';
+import { FrameReaderStream, FrameWriterStream, LoggerStream, PestControl } from './task11';
 import { LRCP, LineReverseStream, Session } from './task07';
 import { BogusCoinStream } from './task05/bogus-coin';
 import { Chat } from './task03/chat';
 import { FixedChunkStream } from './lib/fixed-chunk-stream';
 import { JobCentreStream } from './task09/job-centre';
 import { LineStream } from './lib/line-stream';
-import { PestControl } from './task11/pest-constrol';
 import { Price } from './task02a/price';
 import { PriceTransform } from './task02b/price';
 import { PrimeStream } from './task01b/prime';

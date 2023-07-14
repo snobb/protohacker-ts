@@ -1,6 +1,6 @@
 import * as assert from 'node:assert';
 import { MsgSiteVisit } from './site-visit';
-import { msgType } from '../types';
+import { msgType } from '.';
 
 describe('site-visit message', () => {
     it('should parse a message', () => {

@@ -1,6 +1,6 @@
 import * as assert from 'node:assert';
 import { MsgTargetPopulations } from './target-populations';
-import { msgType } from '../types';
+import { msgType } from '.';
 
 describe('target-populations message', () => {
     it('should parse a message', () => {

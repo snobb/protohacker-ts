@@ -1,5 +1,5 @@
 import { Decodable, Encodable } from './index';
-import { Payload, msgType } from '../types';
+import { Payload, msgType } from '.';
 
 export const policyAction = {
     cull: 0x90,

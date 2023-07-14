@@ -1,4 +1,4 @@
-import { Payload, msgType } from '../types';
+import { Payload, msgType } from '.';
 import { Decodable } from './index';
 
 export type SpeciesRange = {

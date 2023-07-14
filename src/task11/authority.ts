@@ -1,4 +1,6 @@
 import {
+    FrameReaderStream,
+    FrameWriterStream,
     LoggerStream,
     MsgCreatePolicy,
     MsgDeletePolicy,
@@ -8,14 +10,13 @@ import {
     MsgPolicyResult,
     MsgTargetPopulations,
     ObservedSpecies,
+    Payload,
     TargetSpecies,
+    msgType,
     newError,
     policyAction
 } from './msg';
-import { Payload, msgType } from './types';
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
-import { FrameReaderStream } from './frame-reader-stream';
-import { FrameWriterStream } from './frame-writer-stream';
 import { Socket } from 'node:net';
 import { log } from '../lib/log';
 
@@ -192,13 +193,13 @@ export class Authority extends Transform {
             const count = observed[name] || 0;
 
             if (count < targetRange.min) {
-                log.info(`site: ${this.site}, species:${name}, advice:conserve`);
+                log.info(`advisePolicy: site: ${this.site}, species:${name}, advice:conserve`);
                 await this.createPolicy(name, policyAction.conserve); // eslint-disable-line no-await-in-loop
             } else if (count > targetRange.max) {
-                log.info(`site: ${this.site}, species:${name}, advice:cull`);
+                log.info(`advisePolicy: site: ${this.site}, species:${name}, advice:cull`);
                 await this.createPolicy(name, policyAction.cull); // eslint-disable-line no-await-in-loop
             } else {
-                log.info(`site: ${this.site}, species:${name}, advice:none`);
+                log.info(`advisePolicy: site: ${this.site}, species:${name}, advice:none`);
             }
         }
     }

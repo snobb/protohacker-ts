@@ -1,5 +1,6 @@
 import * as assert from 'node:assert';
 import { MsgHello } from './hello';
+import { msgType } from '.';
 
 describe('hello message', () => {
     it('should parse a message', () => {
@@ -11,8 +12,8 @@ describe('hello message', () => {
             0x00, 0x00, 0x00, 0x01, //  version: 1
         ]);
 
-        const hello = new MsgHello().fromPayload({ kind: 0x50, payload });
-        assert.strictEqual(hello.kind, 0x50);
+        const hello = new MsgHello().fromPayload({ kind: msgType.hello, payload });
+        assert.strictEqual(hello.kind, msgType.hello);
         assert.strictEqual(hello.proto, 'pestcontrol');
     });
 
@@ -26,6 +27,6 @@ describe('hello message', () => {
         ]);
 
         const hello = new MsgHello();
-        assert.deepEqual(hello.toPayload(), { kind: 0x50, payload });
+        assert.deepEqual(hello.toPayload(), { kind: msgType.hello, payload });
     });
 });

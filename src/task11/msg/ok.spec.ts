@@ -1,6 +1,6 @@
 import * as assert from 'node:assert';
 import { MsgOk } from './ok';
-import { msgType } from '../types';
+import { msgType } from '.';
 
 describe('ok message', () => {
     it('should encode a message', () => {

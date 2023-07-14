@@ -1,18 +1,17 @@
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
-import { Payload } from '../types';
+import {
+    MsgCreatePolicy,
+    MsgDeletePolicy,
+    MsgDialAuth,
+    MsgError,
+    MsgPolicyResult,
+    MsgSiteVisit,
+    MsgTargetPopulations,
+    Payload,
+    msgType,
+    policyAction,
+} from '.';
 import { log } from '../../lib/log';
-
-const kindStr = {
-    [0x50.toString()]: 'hello',
-    [0x51.toString()]: 'error',
-    [0x52.toString()]: 'ok',
-    [0x53.toString()]: 'dialAuth',
-    [0x54.toString()]: 'targetPopulations',
-    [0x55.toString()]: 'createPolicy',
-    [0x56.toString()]: 'deletePolicy',
-    [0x57.toString()]: 'policyResult',
-    [0x58.toString()]: 'siteVisit'
-};
 
 export class LoggerStream extends Transform {
     constructor (private clientId: string, private pfx: string, opts?: TransformOptions) {
@@ -20,17 +19,58 @@ export class LoggerStream extends Transform {
     }
 
     _transform (data: Payload, _: BufferEncoding, done: TransformCallback) {
-        const payloadStr = data.payload
-            ? data.payload
-                .toString()
-                .replace(/[^\x20-\x7E]+/g, '')
-                .substr(0, 30)
-            : 'none';
-        const sfx = (data.payload && data.payload.length > 10) ? '...' : '';
-
-        log.info(this.clientId, this.pfx,
-            `kind:${kindStr[data.kind.toString()]}, payload:${payloadStr}${sfx}`);
+        log.info(this.clientId, this.pfx, this.getMessage(data));
         this.push(data);
         done();
+    }
+
+    getMessage (data: Payload) {
+        let msg: string;
+        if (data.kind === msgType.hello) {
+            msg = 'kind:hello';
+
+        } else if (data.kind === msgType.error) {
+            const mm = new MsgError('').fromPayload(data);
+            msg = `kind:error, error:${mm.message}`;
+
+        } else if (data.kind === msgType.ok) {
+            msg = 'kind:ok';
+
+        } else if (data.kind === msgType.dialAuth) {
+            const mm = new MsgDialAuth(0).fromPayload(data);
+            msg = `kind:dialAuth, site:${mm.site}`;
+
+        } else if (data.kind === msgType.targetPopulations) {
+            const mm = new MsgTargetPopulations().fromPayload(data);
+            msg = `kind:targetPopulations, site:${mm.site}, populations:${JSON.stringify(mm.populations)}`;
+
+        } else if (data.kind === msgType.createPolicy) {
+            const mm = new MsgCreatePolicy('', 0).fromPayload(data);
+            let action = 'invalid';
+            if (mm.action === policyAction.conserve) {
+                action = 'conserve';
+            } else if (mm.action === policyAction.cull) {
+                action = 'cull';
+            }
+
+            msg = `kind:createPolicy, species:${mm.species}, action:${action}`;
+
+        } else if (data.kind === msgType.deletePolicy) {
+            const mm = new MsgDeletePolicy(0).fromPayload(data);
+            msg = `kind:deletePolicy, policy:${mm.policy}`;
+
+        } else if (data.kind === msgType.policyResult) {
+            const mm = new MsgPolicyResult().fromPayload(data);
+            msg = `kind:policyResult, policy:${mm.policy}`;
+
+        } else if (data.kind === msgType.siteVisit) {
+            const mm = new MsgSiteVisit().fromPayload(data);
+            msg = `kind:siteVisit, site:${mm.site}, populations:${JSON.stringify(mm.populations)}`;
+
+        } else {
+            msg = `Invalid message type: ${data.kind}`;
+        }
+
+        return msg;
     }
 }

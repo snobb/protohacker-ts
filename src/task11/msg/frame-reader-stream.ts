@@ -1,4 +1,4 @@
-import { HEADER_SIZE, msgType } from './types';
+import { HEADER_SIZE, msgType } from '.';
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 
 /* eslint-disable no-console */
