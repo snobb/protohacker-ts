@@ -33,12 +33,12 @@ node_modules: package.json
 .PHONY: test
 ifdef FILE
 test: node_modules build
-	./node_modules/.bin/ts-mocha --full-trace -b ${FILE}
+	./node_modules/.bin/mocha --require @swc-node/register --full-trace -b ${FILE}
 else
 test: node_modules build
 	./node_modules/.bin/c8 \
 		--reporter=none \
-		./node_modules/.bin/ts-mocha --full-trace -b --recursive ${TESTS}
+		./node_modules/.bin/mocha --require @swc-node/register --full-trace -b --recursive --exit ${TESTS}
 	./node_modules/.bin/c8 report \
 		--all \
 		--exclude 'coverage/' \
