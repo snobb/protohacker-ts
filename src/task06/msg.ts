@@ -41,9 +41,9 @@ export type MsgPlate = {
 }
 
 export function readPlateMessage (msg: Buffer) {
-    const len = msg.readUint8();
+    const len = msg.readUInt8();
     const plate = msg.subarray(1, 1 + len).toString();
-    const timestamp = msg.readUint32BE(len + 1);
+    const timestamp = msg.readUInt32BE(len + 1);
 
     return { plate, timestamp };
 }
@@ -57,21 +57,21 @@ export type MsgIAMCamera = {
 
 export function readCameraMessage (msg: Buffer) {
     return {
-        road: msg.readUint16BE(),
-        mile: msg.readUint16BE(2),
-        limit: msg.readUint16BE(4),
+        road: msg.readUInt16BE(),
+        mile: msg.readUInt16BE(2),
+        limit: msg.readUInt16BE(4),
     };
 }
 
 // === Dispatcher =======================================================
 export function readDispatcherMessage (msg: Buffer) {
-    const len = msg.readUint8();
+    const len = msg.readUInt8();
 
     const roads: number[] = [];
     let offset = 1;
 
     for (let i = 0; i < len; i += 1) {
-        roads.push(msg.readUint16BE(offset));
+        roads.push(msg.readUInt16BE(offset));
         offset += 2;
     }
 

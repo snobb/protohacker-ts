@@ -87,7 +87,7 @@ export class Price {
     parseMessage (buf: Buffer): Msg {
         return {
             // 0x49 (I) or 0x51 (Q)
-            type: String.fromCharCode(buf.readUint8(0)),
+            type: String.fromCharCode(buf.readUInt8(0)),
             payload: {
                 time: buf.readInt32BE(1),
                 data: buf.readInt32BE(5),

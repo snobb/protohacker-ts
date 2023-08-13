@@ -27,7 +27,7 @@ export class SpeedTransform extends Transform {
     }
 
     _transform (msg: Buffer, _: BufferEncoding, done: TransformCallback) {
-        const kind = msg.readUint8();
+        const kind = msg.readUInt8();
 
         // handle inbound data
         try {
@@ -74,7 +74,7 @@ export class SpeedTransform extends Transform {
             throw new Error('Heartbeat is already set');
         }
 
-        const interval = buf.readUint32BE() * 100;
+        const interval = buf.readUInt32BE() * 100;
 
         if (interval === 0) {
             return;
