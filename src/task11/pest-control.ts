@@ -9,7 +9,7 @@ import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 import { Authority } from './authority';
 import { log } from '../lib/log';
 
-// authority store site(number) -> Authority
+// authority store: site(number) -> Authority
 const auths = new Map<number, Authority>();
 
 function getAuthority (site: number) {
@@ -22,6 +22,9 @@ function getAuthority (site: number) {
     return auth;
 }
 
+/**
+ * The main pest control server stream
+ */
 export class PestControl extends Transform {
     private handshake = false;
 

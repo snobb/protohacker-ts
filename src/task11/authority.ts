@@ -18,13 +18,18 @@ import {
 } from './msg';
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 import { Socket } from 'node:net';
+import { asyncForEach } from '../lib/tools';
 import { log } from '../lib/log';
 
-type State = 'new'| 'handshake'| 'dialed' | 'closed';
+type State = 'new' | 'handshake' | 'dialed' | 'closed';
 type Policies = Record<string, number>; // species -> policy
 
 const waitTimeout = 120 * 1000; // 1 minute
 
+/**
+ * Authority connection - created per site
+ * Once initialised, the site CANNOT and MUST NOT be changed
+ */
 export class Authority extends Transform {
     private address: string;
     private port: number;
@@ -116,7 +121,7 @@ export class Authority extends Transform {
             }
 
         } else if (data.kind === msgType.policyResult) {
-            // policy has been created.
+            // policy create response
             try {
                 const res = new MsgPolicyResult().fromPayload(data);
                 this.emit('createResult', res);
@@ -126,7 +131,7 @@ export class Authority extends Transform {
             }
 
         } else if (data.kind === msgType.ok) {
-            // policy has been deleted.
+            // policy deleted response
             try {
                 const res = new MsgOk().fromPayload(data);
                 this.emit('deleteResult', res);
@@ -165,7 +170,9 @@ export class Authority extends Transform {
         });
     }
 
-    // create a policy and wait for the result.
+    /**
+     * create a policy and wait for the result.
+     */
     createPolicy (species: string, action: number) {
         this.push(new MsgCreatePolicy(species, action).toPayload());
 
@@ -183,7 +190,9 @@ export class Authority extends Transform {
         });
     }
 
-    // delete a policy and wait for the result.
+    /**
+     * delete a policy and wait for the result.
+     */
     deletePolicy (policy: number) {
         this.push(new MsgDeletePolicy(policy).toPayload());
 
@@ -201,28 +210,38 @@ export class Authority extends Transform {
         });
     }
 
-    async advisePolicies (observed: ObservedSpecies, target: TargetSpecies) {
-        for (const species of Object.keys(target)) {
+    /**
+     * compare observed and target populations and issue policies per species.
+     */
+    advisePolicies (observed: ObservedSpecies, target: TargetSpecies) {
+        return asyncForEach(Object.keys(target), async (species: string, next: ()=> void) => {
             const count = observed[species] || 0;
             const targetRange = target[species];
 
             if (this.policies[species]) {
                 // delete the policy anyway if it exists.
-                await this.deletePolicy(this.policies[species]); // eslint-disable-line no-await-in-loop
+                await this.deletePolicy(this.policies[species]);
             }
 
             if (count < targetRange.min) {
                 log.info(`advisePolicy: site: ${this.site}, species:${species}, advice:conserve`);
-                await this.createPolicy(species, policyAction.conserve); // eslint-disable-line no-await-in-loop
+                await this.createPolicy(species, policyAction.conserve);
+
             } else if (count > targetRange.max) {
                 log.info(`advisePolicy: site: ${this.site}, species:${species}, advice:cull`);
-                await this.createPolicy(species, policyAction.cull); // eslint-disable-line no-await-in-loop
+                await this.createPolicy(species, policyAction.cull);
+
             } else {
                 log.info(`advisePolicy: site: ${this.site}, species:${species}, advice:none`);
             }
-        }
+
+            return next();
+        });
     }
 
+    /**
+     * close the authority socket
+     */
     close () {
         this.sock.destroy();
         this.state = 'closed';
