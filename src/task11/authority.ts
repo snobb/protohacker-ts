@@ -69,7 +69,7 @@ export class Authority extends Transform {
         this.sock.on('timeout', reconnect);
 
         this.on('error', (err: Error) => {
-            log.info(`error authority: ${err}`);
+            log.error(`error authority: ${err}`);
             this.push(new MsgError(err).toPayload());
         });
     }
@@ -101,7 +101,7 @@ export class Authority extends Transform {
                 this.emit('handshake');
 
             } catch (err) {
-                return this.emit('error', err);
+                return this.emit('handshake error', err);
             }
 
         } else if (this.state === 'handshake') {
@@ -117,7 +117,7 @@ export class Authority extends Transform {
                 this.state = 'dialed';
 
             } catch (err) {
-                return this.emit('error', err);
+                return this.emit('targetPopulations error', err);
             }
 
         } else if (data.kind === msgType.policyResult) {
@@ -127,7 +127,7 @@ export class Authority extends Transform {
                 this.emit('createResult', res);
 
             } catch (err) {
-                return this.emit('error', err);
+                return this.emit('create result error', err);
             }
 
         } else if (data.kind === msgType.ok) {
@@ -137,7 +137,7 @@ export class Authority extends Transform {
                 this.emit('deleteResult', res);
 
             } catch (err) {
-                return this.emit('error', err);
+                return this.emit('delete result error', err);
             }
 
         } else {

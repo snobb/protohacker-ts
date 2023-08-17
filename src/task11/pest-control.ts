@@ -12,6 +12,9 @@ import { log } from '../lib/log';
 // authority store: site(number) -> Authority
 const auths = new Map<number, Authority>();
 
+/**
+ * get site authority from global cache
+ */
 function getAuthority (site: number) {
     let auth = auths.get(site);
     if (!auth) {
@@ -33,7 +36,7 @@ export class PestControl extends Transform {
         this.push(new MsgHello().toPayload());
 
         this.on('error', (err: Error) => {
-            log.info(`error: ${err}`);
+            log.error(`error: ${err}`);
             this.push(new MsgError(err).toPayload());
         });
     }
@@ -58,7 +61,7 @@ export class PestControl extends Transform {
                 this.emit('error', err);
             }
 
-        } else if (data.kind === msgType.siteVisit) {
+        } else {
             try {
                 const observed = new MsgSiteVisit().fromPayload(data);
                 log.info(`pestcontrol: site:${observed.site}, observed populations`,
@@ -67,6 +70,7 @@ export class PestControl extends Transform {
                 log.info('handling site:', observed.site);
                 const auth = getAuthority(observed.site);
                 const target = await auth.getTargetPopulations();
+
                 log.info(`pestcontrol: site:${observed.site}, target populations`,
                     JSON.stringify(target.populations));
 
@@ -75,9 +79,6 @@ export class PestControl extends Transform {
             } catch (err) {
                 this.emit('error', err);
             }
-
-        } else {
-            this.emit('error', new Error(`unexpected message ${data.kind}`));
         }
 
         done();
