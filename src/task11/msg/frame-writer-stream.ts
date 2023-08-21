@@ -34,6 +34,6 @@ export class FrameWriterStream extends Transform {
             sum += bt;
         }
 
-        return 256 - (sum % 256);
+        return (256 - (sum % 256)) % 256;
     }
 }

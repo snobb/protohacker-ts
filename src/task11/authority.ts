@@ -21,10 +21,9 @@ import { Socket } from 'node:net';
 import { asyncForEach } from '../lib/tools';
 import { log } from '../lib/log';
 
-type State = 'new' | 'handshake' | 'dialed' | 'closed';
 type Policies = Record<string, number>; // species -> policy
 
-const waitTimeout = 120 * 1000; // 1 minute
+const waitTimeout = 120 * 1000; // 2 minutes
 
 /**
  * Authority connection - created per site
@@ -34,7 +33,7 @@ export class Authority extends Transform {
     private address: string;
     private port: number;
     private sock: Socket;
-    private state: State = 'new';
+    private expect: number = msgType.hello;
     private populations?: MsgTargetPopulations;
     private policies: Policies = {};
 
@@ -48,6 +47,7 @@ export class Authority extends Transform {
 
         this.sock = new Socket();
         this.connect();
+
         this.sock
             .on('error', (err) => {
                 this.push(new MsgError(err).toPayload());
@@ -61,7 +61,7 @@ export class Authority extends Transform {
 
         const reconnect = () => {
             log.info(`authority: re-connecting to ${connId}`);
-            this.state = 'new';
+            this.expect = msgType.hello;
             this.connect();
         };
 
@@ -85,11 +85,11 @@ export class Authority extends Transform {
             return done();
         }
 
-        if (this.state === 'closed') {
+        if (this.sock.closed) {
             return this.emit('error', new Error('Authority server is closed'));
         }
 
-        if (this.state === 'new') {
+        if (this.expect === msgType.hello) {
             if (data.kind !== msgType.hello) {
                 return this.emit('error', new Error('Rude protocol detected - no hello'));
             }
@@ -97,14 +97,14 @@ export class Authority extends Transform {
             try {
                 new MsgHello().fromPayload(data); // validate incoming message
                 this.push(new MsgDialAuth(this.site).toPayload());
-                this.state = 'handshake';
+                this.expect = msgType.targetPopulations;
                 this.emit('handshake');
 
             } catch (err) {
                 return this.emit('handshake error', err);
             }
 
-        } else if (this.state === 'handshake') {
+        } else if (this.expect === msgType.targetPopulations) {
             if (data.kind !== msgType.targetPopulations) {
                 return this.emit('error', new Error(`dafaq did I just see? ${data.kind}`));
             }
@@ -112,12 +112,14 @@ export class Authority extends Transform {
             // handshake complete - dial for the given site.
             try {
                 const pops = new MsgTargetPopulations().fromPayload(data);
-                this.emit('dialed');
                 this.emit('targetPopulations', pops);
-                this.state = 'dialed';
+                this.expect = msgType.undef;
 
             } catch (err) {
                 return this.emit('targetPopulations error', err);
+
+            } finally {
+                this.sock.pause(); // pausing and wait for policy create/delete calls
             }
 
         } else if (data.kind === msgType.policyResult) {
@@ -175,38 +177,46 @@ export class Authority extends Transform {
      */
     createPolicy (species: string, action: number) {
         this.push(new MsgCreatePolicy(species, action).toPayload());
+        this.sock.resume();
 
         return new Promise<number>((resolve, reject) => {
-            const off = setTimeout(() => reject(new Error('create policy timeout')),
-                waitTimeout);
+            const cb = (res: MsgPolicyResult) => {
+                clearTimeout(off); // eslint-disable-line no-use-before-define
+                this.sock.pause();
+                this.policies[species] = res.policy;
+                return resolve(res.policy);
+            };
+
+            const off = setTimeout(() => {
+                reject(new Error('create policy timeout'));
+                this.removeListener('createResult', cb);
+            }, waitTimeout);
 
             log.info(`createPolicy: site:${this.site}, species:${species}, action:${action}`);
-            this.once('createResult', (res: MsgPolicyResult) => {
-                clearTimeout(off);
-                this.policies[species] = res.policy;
-                log.info(`createPolicy: site:${this.site}, species:${species}, action:${action}, policy:${res.policy}`);
-                return resolve(res.policy);
-            });
+            this.once('createResult', cb);
         });
     }
 
     /**
      * delete a policy and wait for the result.
      */
-    deletePolicy (policy: number) {
+    deletePolicy (species: string, policy: number) {
         this.push(new MsgDeletePolicy(policy).toPayload());
+        this.sock.resume();
 
         return new Promise<void>((resolve, reject) => {
+            const cb = () => {
+                clearTimeout(off); // eslint-disable-line no-use-before-define
+                this.sock.pause();
+                delete this.policies[species];
+                return resolve();
+            };
+
             const off = setTimeout(() => reject(new Error('delete policy timeout')),
                 waitTimeout);
 
             log.info(`deletePolicy: site:${this.site}, policyNumber:${policy}`);
-            this.once('deleteResult', () => {
-                clearTimeout(off);
-                delete this.policies[policy];
-                log.info(`deletePolicy: site:${this.site}, policyNumber:${policy}, ok`);
-                return resolve();
-            });
+            this.once('deleteResult', cb);
         });
     }
 
@@ -220,7 +230,7 @@ export class Authority extends Transform {
 
             if (this.policies[species]) {
                 // delete the policy anyway if it exists.
-                await this.deletePolicy(this.policies[species]);
+                await this.deletePolicy(species, this.policies[species]);
             }
 
             if (count < targetRange.min) {
@@ -244,6 +254,5 @@ export class Authority extends Transform {
      */
     close () {
         this.sock.destroy();
-        this.state = 'closed';
     }
 }

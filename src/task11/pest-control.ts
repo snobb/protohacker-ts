@@ -29,7 +29,7 @@ function getAuthority (site: number) {
  * The main pest control server stream
  */
 export class PestControl extends Transform {
-    private handshake = false;
+    private expect: number = msgType.hello;
 
     constructor (options?: TransformOptions) {
         super({ ...options, readableObjectMode: true, writableObjectMode: true });
@@ -47,7 +47,7 @@ export class PestControl extends Transform {
             return done();
         }
 
-        if (!this.handshake) {
+        if (this.expect === msgType.hello) {
             if (data.kind !== msgType.hello) {
                 this.emit('error', 'rude protocol - no hello');
                 return;
@@ -55,13 +55,13 @@ export class PestControl extends Transform {
 
             try {
                 new MsgHello().fromPayload(data);
-                this.handshake = true;
+                this.expect = msgType.siteVisit;
 
             } catch (err) {
                 this.emit('error', err);
             }
 
-        } else {
+        } else if (this.expect === msgType.siteVisit) {
             try {
                 const observed = new MsgSiteVisit().fromPayload(data);
                 log.info(`pestcontrol: site:${observed.site}, observed populations`,
@@ -79,6 +79,9 @@ export class PestControl extends Transform {
             } catch (err) {
                 this.emit('error', err);
             }
+
+        } else {
+            this.emit('error', new Error(`unexpected message type ${data.kind}`));
         }
 
         done();

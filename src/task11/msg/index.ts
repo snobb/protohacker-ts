@@ -27,7 +27,8 @@ export const enum msgType {
     createPolicy = 0x55,
     deletePolicy = 0x56,
     policyResult = 0x57,
-    siteVisit = 0x58
+    siteVisit = 0x58,
+    undef = -1
 }
 
 export interface Encodable {
