@@ -22,6 +22,7 @@ import { asyncForEach } from '../lib/tools';
 import { log } from '../lib/log';
 
 type Policies = Record<string, number>; // species -> policy
+type QueueAction = ()=> Promise<void>;
 
 const waitTimeout = 120 * 1000; // 2 minutes
 
@@ -36,6 +37,7 @@ export class Authority extends Transform {
     private expect: number = msgType.hello;
     private populations?: MsgTargetPopulations;
     private policies: Policies = {};
+    private actionQueue: QueueAction[] = [];
 
     constructor (private site: number, options?: TransformOptions) {
         super({ ...options, readableObjectMode: true, writableObjectMode: true });
@@ -176,24 +178,12 @@ export class Authority extends Transform {
      * create a policy and wait for the result.
      */
     createPolicy (species: string, action: number) {
-        this.push(new MsgCreatePolicy(species, action).toPayload());
-        this.sock.resume();
+        return new Promise((resolve, reject) => {
+            this.actionQueue.push(() => this.createSinglePolicy(species, action)
+                .then(resolve)
+                .catch(reject));
 
-        return new Promise<number>((resolve, reject) => {
-            const cb = (res: MsgPolicyResult) => {
-                clearTimeout(off); // eslint-disable-line no-use-before-define
-                this.sock.pause();
-                this.policies[species] = res.policy;
-                return resolve(res.policy);
-            };
-
-            const off = setTimeout(() => {
-                reject(new Error('create policy timeout'));
-                this.removeListener('createResult', cb);
-            }, waitTimeout);
-
-            log.info(`createPolicy: site:${this.site}, species:${species}, action:${action}`);
-            this.once('createResult', cb);
+            return this.processQueue();
         });
     }
 
@@ -201,18 +191,79 @@ export class Authority extends Transform {
      * delete a policy and wait for the result.
      */
     deletePolicy (species: string, policy: number) {
+        return new Promise((resolve, reject) => {
+            this.actionQueue.push(() => this.deleteSinglePolicy(species, policy)
+                .then(resolve)
+                .catch(reject));
+
+            return this.processQueue();
+        });
+    }
+
+    /**
+     * processQueue - in order to avoid races, the the policy create/delete actions must be
+     * processed serially. A queue is used to process the actions in the same order as they
+     * arrive.
+     */
+    async processQueue (): Promise<void> {
+        if (this.actionQueue.length === 0) {
+            return;
+        }
+
+        const action = this.actionQueue.shift();
+        if (action) {
+            await action();
+        }
+
+        return this.processQueue();
+    }
+
+    /**
+     * create a single polciy policy and wait for the result.
+     */
+    createSinglePolicy (species: string, action: number) {
+        this.push(new MsgCreatePolicy(species, action).toPayload());
+        this.sock.resume();
+
+        let off: NodeJS.Timeout;
+
+        return new Promise<number>((resolve, reject) => {
+            const cb = (res: MsgPolicyResult) => {
+                clearTimeout(off);
+                this.sock.pause();
+                this.policies[species] = res.policy;
+                return resolve(res.policy);
+            };
+
+            off = setTimeout(() => {
+                reject(new Error('create policy timeout'));
+                this.removeListener('createResult', cb);
+            }, waitTimeout);
+
+            log.info(`createPolicy: site:${this.site}, species:${species}, action:${action}`);
+
+            this.once('createResult', cb);
+        });
+    }
+
+    /**
+     * delete a policy and wait for the result.
+     */
+    deleteSinglePolicy (species: string, policy: number) {
         this.push(new MsgDeletePolicy(policy).toPayload());
         this.sock.resume();
 
+        let off: NodeJS.Timeout;
+
         return new Promise<void>((resolve, reject) => {
             const cb = () => {
-                clearTimeout(off); // eslint-disable-line no-use-before-define
+                clearTimeout(off);
                 this.sock.pause();
                 delete this.policies[species];
                 return resolve();
             };
 
-            const off = setTimeout(() => reject(new Error('delete policy timeout')),
+            off = setTimeout(() => reject(new Error('delete policy timeout')),
                 waitTimeout);
 
             log.info(`deletePolicy: site:${this.site}, policyNumber:${policy}`);
