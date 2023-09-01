@@ -19,7 +19,7 @@ export class LoggerStream extends Transform {
     }
 
     _transform (data: Payload, _: BufferEncoding, done: TransformCallback) {
-        log.info(this.clientId, this.pfx, this.getMessage(data));
+        log.debug(this.clientId, this.pfx, this.getMessage(data));
         this.push(data);
         done();
     }

@@ -14,7 +14,7 @@ export class LoggerStream extends Transform {
             ? `${chunk.subarray(0, maxLen).toString().trimEnd()}...`
             : chunk.toString().trimEnd();
 
-        log.info(this.clientId, this.pfx, chunkStr);
+        log.debug(this.clientId, this.pfx, chunkStr);
         this.push(chunk);
 
         done();

@@ -241,7 +241,6 @@ export class Authority extends Transform {
             }, waitTimeout);
 
             log.info(`createPolicy: site:${this.site}, species:${species}, action:${action}`);
-
             this.once('createResult', cb);
         });
     }
@@ -266,7 +265,7 @@ export class Authority extends Transform {
             off = setTimeout(() => reject(new Error('delete policy timeout')),
                 waitTimeout);
 
-            log.info(`deletePolicy: site:${this.site}, policyNumber:${policy}`);
+            log.info(`deletePolicy: site:${this.site}, species:${species}, policyNumber:${policy}`);
             this.once('deleteResult', cb);
         });
     }
@@ -285,15 +284,15 @@ export class Authority extends Transform {
             }
 
             if (count < targetRange.min) {
-                log.info(`advisePolicy: site: ${this.site}, species:${species}, advice:conserve`);
+                log.info(`advisePolicy: site:${this.site}, species:${species}, advice:conserve`);
                 await this.createPolicy(species, policyAction.conserve);
 
             } else if (count > targetRange.max) {
-                log.info(`advisePolicy: site: ${this.site}, species:${species}, advice:cull`);
+                log.info(`advisePolicy: site:${this.site}, species:${species}, advice:cull`);
                 await this.createPolicy(species, policyAction.cull);
 
             } else {
-                log.info(`advisePolicy: site: ${this.site}, species:${species}, advice:none`);
+                log.info(`advisePolicy: site:${this.site}, species:${species}, advice:none`);
             }
 
             return next();
