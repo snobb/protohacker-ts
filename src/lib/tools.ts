@@ -10,9 +10,10 @@ export function readLine (input: NodeJS.ReadableStream, output?: NodeJS.Writable
 
 export type Next<T> = (item: T, next: ()=> void)=> void;
 
-export function asyncForEach<T> (items: T[], next: Next<T>) {
+export function asyncForEach<T> (items: T[], done: ()=> void, next: Next<T>) {
     return (async function loop (i: number) {
         if (!items[i]) {
+            done();
             return;
         }
 
