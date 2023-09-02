@@ -12,7 +12,7 @@ describe('tools tests', () => {
             const data = [1, 2, 3, 4, 5, 6, 7, 8];
             const res: number[] = [];
 
-            await asyncForEach(data, async (item: number, next: ()=> void) => {
+            await asyncForEach(data, () => undefined, async (item: number, next: ()=> void) => {
                 res.push(<number>(await asyncSum(item, item)));
                 return next();
             });

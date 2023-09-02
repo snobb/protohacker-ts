@@ -21,7 +21,11 @@ import { Socket } from 'node:net';
 import { asyncForEach } from '../lib/tools';
 import { log } from '../lib/log';
 
-type Policies = Record<string, number>; // species -> policy
+type PolicyRecord = {
+    policy: number,
+    action?: number,
+};
+type Policies = Record<string, PolicyRecord>; // species -> policy
 type QueueAction = ()=> Promise<void>;
 
 const waitTimeout = 120 * 1000; // 2 minutes
@@ -38,6 +42,7 @@ export class Authority extends Transform {
     private populations?: MsgTargetPopulations;
     private policies: Policies = {};
     private actionQueue: QueueAction[] = [];
+    public locked = false;
 
     constructor (private site: number, options?: TransformOptions) {
         super({ ...options, readableObjectMode: true, writableObjectMode: true });
@@ -231,7 +236,7 @@ export class Authority extends Transform {
             const cb = (res: MsgPolicyResult) => {
                 clearTimeout(off);
                 this.sock.pause();
-                this.policies[species] = res.policy;
+                this.policies[species] = { policy: res.policy, action };
                 return resolve(res.policy);
             };
 
@@ -255,10 +260,11 @@ export class Authority extends Transform {
         let off: NodeJS.Timeout;
 
         return new Promise<void>((resolve, reject) => {
+            delete this.policies[species];
+
             const cb = () => {
                 clearTimeout(off);
                 this.sock.pause();
-                delete this.policies[species];
                 return resolve();
             };
 
@@ -274,25 +280,43 @@ export class Authority extends Transform {
      * compare observed and target populations and issue policies per species.
      */
     advisePolicies (observed: ObservedSpecies, target: TargetSpecies) {
-        return asyncForEach(Object.keys(target), async (species: string, next: ()=> void) => {
+        this.locked = true;
+        const done = () => {
+            this.locked = false;
+            this.emit('unlock', this);
+        };
+
+        return asyncForEach(Object.keys(target), done, async (species: string, next: ()=> void) => {
             const count = observed[species] || 0;
             const targetRange = target[species];
 
-            if (this.policies[species]) {
-                // delete the policy anyway if it exists.
-                await this.deletePolicy(species, this.policies[species]);
-            }
+            const rec = this.policies[species];
 
             if (count < targetRange.min) {
-                log.info(`advisePolicy: site:${this.site}, species:${species}, advice:conserve`);
-                await this.createPolicy(species, policyAction.conserve);
+                if (!rec) {
+                    log.info(`advisePolicy: site:${this.site}, species:${species}, advice:conserve`);
+                    await this.createPolicy(species, policyAction.conserve);
+                } else if (rec.action !== policyAction.conserve) {
+                    log.info(`advisePolicy: site:${this.site}, species:${species}, advice:conserve`);
+                    await this.deletePolicy(species, rec.policy);
+                    await this.createPolicy(species, policyAction.conserve);
+                }
 
             } else if (count > targetRange.max) {
-                log.info(`advisePolicy: site:${this.site}, species:${species}, advice:cull`);
-                await this.createPolicy(species, policyAction.cull);
+                if (!rec) {
+                    log.info(`advisePolicy: site:${this.site}, species:${species}, advice:cull`);
+                    await this.createPolicy(species, policyAction.cull);
+                } else if (rec.action !== policyAction.cull) {
+                    log.info(`advisePolicy: site:${this.site}, species:${species}, advice:cull`);
+                    await this.deletePolicy(species, rec.policy);
+                    await this.createPolicy(species, policyAction.cull);
+                }
 
             } else {
                 log.info(`advisePolicy: site:${this.site}, species:${species}, advice:none`);
+                if (rec) {
+                    await this.deletePolicy(species, rec.policy);
+                }
             }
 
             return next();

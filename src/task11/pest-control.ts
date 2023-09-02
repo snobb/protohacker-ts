@@ -15,14 +15,23 @@ const auths = new Map<number, Authority>();
 /**
  * get site authority from global cache
  */
-function getAuthority (site: number) {
-    let auth = auths.get(site);
-    if (!auth) {
-        auth = new Authority(site);
-        auths.set(site, auth);
-    }
+function getAuthority (site: number): Promise<Authority> {
+    // In case 2 SiteVisit messages are comming at about the same time, there is a change that 2
+    // different policies will be issues per species per site, which is not allowed.
+    // So there needs to be a serial processing per site to avoid such races.
+    return new Promise((resolve) => {
+        let auth = auths.get(site);
+        if (!auth) {
+            auth = new Authority(site);
+            auths.set(site, auth);
+        }
 
-    return auth;
+        if (auth.locked) {
+            auth.once('unlock', resolve);
+        } else {
+            return resolve(auth);
+        }
+    });
 }
 
 /**
@@ -68,7 +77,7 @@ export class PestControl extends Transform {
                     JSON.stringify(observed.populations));
 
                 log.info('handling site:', observed.site);
-                const auth = getAuthority(observed.site);
+                const auth = await getAuthority(observed.site);
                 const target = await auth.getTargetPopulations();
 
                 log.info(`pestcontrol: site:${observed.site}, target populations`,
