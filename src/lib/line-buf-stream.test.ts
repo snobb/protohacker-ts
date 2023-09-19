@@ -1,8 +1,9 @@
 import * as assert from 'node:assert';
+import { beforeEach, describe, it } from 'node:test';
 import { LineBufStream } from './line-buf-stream';
 
 describe('streams', () => {
-    context('LineBufStream', () => {
+    describe('LineBufStream', () => {
         let stream: LineBufStream;
 
         beforeEach(() => {

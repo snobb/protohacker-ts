@@ -1,10 +1,11 @@
 import * as assert from 'node:assert';
+import { before, beforeEach, describe, it } from 'node:test';
 import { Store } from './store';
 
 describe('code-store tests', () => {
     let store: Store;
 
-    context('get/put tests', () => {
+    describe('get/put tests', () => {
         beforeEach(() => {
             store = new Store();
         });
@@ -38,7 +39,7 @@ describe('code-store tests', () => {
         });
     });
 
-    context('list tests', () => {
+    describe('list tests', () => {
         before(() => {
             store.put('/foo/foo', Buffer.from('foo'));
             store.put('/foo/bar', Buffer.from('bar'));

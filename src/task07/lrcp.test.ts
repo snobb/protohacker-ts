@@ -1,14 +1,17 @@
 import * as assert from 'node:assert';
+import { after, before, describe, it } from 'node:test';
 import { LRCP } from './lrcp';
 
 describe('LRCP', () => {
-    context('getMessage', () => {
+    describe('getMessage', () => {
         let lrcp: LRCP;
         before(() => {
             lrcp = new LRCP();
         });
 
-        context('sanity checks', () => {
+        after(() => lrcp.close());
+
+        describe('sanity checks', () => {
             it('should throw if message is empty', () => {
                 assert.throws(() => lrcp.getMessage(''));
             });
@@ -30,7 +33,7 @@ describe('LRCP', () => {
             });
         });
 
-        context('2 tokens', () => {
+        describe('2 tokens', () => {
             it('should parse a CONNECT message correctly', () => {
                 const msg = lrcp.getMessage('/connect/123/');
 
@@ -58,7 +61,7 @@ describe('LRCP', () => {
 
         });
 
-        context('3 tokens', () => {
+        describe('3 tokens', () => {
             it('should parse a ACK message correctly', () => {
                 const msg = lrcp.getMessage('/ack/123/12345/');
 
@@ -73,7 +76,7 @@ describe('LRCP', () => {
             });
         });
 
-        context('4 tokens', () => {
+        describe('4 tokens', () => {
             it('should parse a DATA message correctly', () => {
                 const msg = lrcp.getMessage('/data/123/12345/foobar/');
 

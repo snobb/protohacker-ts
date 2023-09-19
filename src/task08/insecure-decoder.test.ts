@@ -1,4 +1,5 @@
 import * as assert from 'node:assert';
+import { beforeEach, describe, it } from 'node:test';
 import { InsecureDecoderStream } from './insecure-decoder';
 
 /* eslint-disable no-console */
@@ -10,8 +11,8 @@ describe('insecure-decoder', () => {
         dec = new InsecureDecoderStream();
     });
 
-    context('decode', () => {
-        it('should decode stream with only xor(1) cipher', (done) => {
+    describe('decode', () => {
+        it('should decode stream with only xor(1) cipher', (_, done) => {
             dec.on('data', (chunk) => {
                 assert.equal('hello', chunk.toString());
                 done();
@@ -23,7 +24,7 @@ describe('insecure-decoder', () => {
             ]));
         });
 
-        it('should decode stream with xor(1) and reversebits cipher', (done) => {
+        it('should decode stream with xor(1) and reversebits cipher', (_, done) => {
             dec.on('data', (chunk) => {
                 assert.equal('hello', chunk.toString());
                 done();
@@ -36,7 +37,7 @@ describe('insecure-decoder', () => {
             ]));
         });
 
-        it('should decode stream with only xorpos cipher', (done) => {
+        it('should decode stream with only xorpos cipher', (_, done) => {
             dec.on('data', (chunk) => {
                 assert.equal('hello', chunk.toString());
                 done();
@@ -48,7 +49,7 @@ describe('insecure-decoder', () => {
             ]));
         });
 
-        it('should decode stream with only add(1) cipher', (done) => {
+        it('should decode stream with only add(1) cipher', (_, done) => {
             dec.on('data', (chunk) => {
                 assert.equal('hello', chunk.toString());
                 done();
@@ -60,7 +61,7 @@ describe('insecure-decoder', () => {
             ]));
         });
 
-        it('should decode stream with only addpos cipher', (done) => {
+        it('should decode stream with only addpos cipher', (_, done) => {
             dec.on('data', (chunk) => {
                 assert.equal('hello', chunk.toString());
                 done();
@@ -72,7 +73,7 @@ describe('insecure-decoder', () => {
             ]));
         });
 
-        it('should decode stream with 2 addpos cipher', (done) => {
+        it('should decode stream with 2 addpos cipher', (_, done) => {
             dec.on('data', (chunk) => {
                 assert.equal('hello', chunk.toString());
                 done();

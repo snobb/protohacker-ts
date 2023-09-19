@@ -7,7 +7,7 @@ all: help
 ## help:		show this help
 .PHONY: help
 help:
-	@sed -n 's/^##//p' Makefile
+	@sed -n 's/^##//p' makefile
 
 ## run:		run the app
 .PHONY: run
@@ -29,25 +29,14 @@ node_modules: package.json
 	touch $@
 
 ## test:		run tests
-## 		set FILE to limit to specific spec
 .PHONY: test
-ifdef FILE
 test: node_modules build
-	./node_modules/.bin/mocha --require @swc-node/register --full-trace -b ${FILE}
-else
-test: node_modules build
-	./node_modules/.bin/c8 \
-		--reporter=none \
-		./node_modules/.bin/mocha --require @swc-node/register --full-trace -b --recursive --exit ${TESTS}
-	./node_modules/.bin/c8 report \
-		--all \
-		--exclude 'coverage/' \
-		--exclude 'src/types.*' \
-		--exclude 'src/**/*.spec.ts' \
-		--exclude-after-remap \
-		--reporter=html \
-		--reporter=text
-endif
+	node --test --experimental-test-coverage --require @swc-node/register ./src/**/*.test.ts ./src/**/**/*.test.ts
+
+## test-watch:	run tests and watch for changes
+.PHONY: test-watch
+test-watch : node_modules build
+	node --test --require @swc-node/register --watch ./src
 
 ## test-debug:	run tests in debugger (opens chrome)
 .PHONY: test-debug

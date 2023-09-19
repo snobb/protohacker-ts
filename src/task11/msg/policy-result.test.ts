@@ -1,4 +1,5 @@
 import * as assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { MsgPolicyResult } from './policy-result';
 import { msgType } from '.';
 

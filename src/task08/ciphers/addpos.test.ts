@@ -1,8 +1,9 @@
 import * as assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { AddPos } from './addpos';
 
 describe('addpos', () => {
-    context('do', () => {
+    describe('do', () => {
         it('should add to a byte', () => {
             const add = new AddPos();
             assert.equal(5, add.do(0, 5));
@@ -29,7 +30,7 @@ describe('addpos', () => {
         });
     });
 
-    context('undo', () => {
+    describe('undo', () => {
         it('should add to a byte', () => {
             const add = new AddPos();
             assert.equal(0, add.undo(5, 5));

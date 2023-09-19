@@ -1,8 +1,9 @@
 import * as assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { Xor } from './xor';
 
 describe('xor', () => {
-    context('do-undo', () => {
+    describe('do-undo', () => {
         it('should xor to a full byte', () => {
             const xor = new Xor(255);
             assert.equal(255, xor.do(0));

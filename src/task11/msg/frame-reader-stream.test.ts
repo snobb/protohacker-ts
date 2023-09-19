@@ -1,5 +1,6 @@
 import * as assert from 'node:assert';
 import { Payload, msgType } from '.';
+import { beforeEach, describe, it } from 'node:test';
 import { FrameReaderStream } from './frame-reader-stream';
 
 describe('frame-reader-stream', () => {
@@ -9,7 +10,7 @@ describe('frame-reader-stream', () => {
         stream = new FrameReaderStream();
     });
 
-    it('should send payload down on a valid frame', (done) => {
+    it('should send payload down on a valid frame', (_, done) => {
         stream.on('data', (obj: Payload) => {
             assert.strictEqual(msgType.error, obj.kind);
             assert.deepEqual(Buffer.from([
@@ -28,7 +29,7 @@ describe('frame-reader-stream', () => {
         ]));
     });
 
-    it('should send payload of a different down on a valid frame', (done) => {
+    it('should send payload of a different down on a valid frame', (_, done) => {
         stream.on('data', (obj: Payload) => {
             assert.strictEqual(msgType.policyResult, obj.kind);
             assert.deepEqual(Buffer.from([
@@ -45,7 +46,7 @@ describe('frame-reader-stream', () => {
         ]));
     });
 
-    it('should send 2 payloads of two valid frame', (done) => {
+    it('should send 2 payloads of two valid frame', (_, done) => {
         let semaphore = 2;
 
         stream.on('data', (obj: Payload) => {
@@ -75,7 +76,7 @@ describe('frame-reader-stream', () => {
         ]));
     });
 
-    it('should send 2 payloads in one chunk successfully', (done) => {
+    it('should send 2 payloads in one chunk successfully', (_, done) => {
         let semaphore = 2;
 
         stream.on('data', (obj: Payload) => {
@@ -102,7 +103,7 @@ describe('frame-reader-stream', () => {
         ]));
     });
 
-    it('should send 2 payloads in one chunk successfully (hello/site-visit)', (done) => {
+    it('should send 2 payloads in one chunk successfully (hello/site-visit)', (_, done) => {
         let semaphore = 2;
         const expect = [
             {
@@ -169,7 +170,7 @@ describe('frame-reader-stream', () => {
         ]));
     });
 
-    it('should send 3 messages in two unbalanced chunks successfully', (done) => {
+    it('should send 3 messages in two unbalanced chunks successfully', (_, done) => {
         let semaphore = 3;
 
         stream.on('data', (obj: Payload) => {
@@ -203,7 +204,7 @@ describe('frame-reader-stream', () => {
         ]));
     });
 
-    it('should send an error on wrong checksum', (done) => {
+    it('should send an error on wrong checksum', (_, done) => {
         stream.on('data', (obj: Payload) => {
             assert.strictEqual(msgType.error, obj.kind);
             done();

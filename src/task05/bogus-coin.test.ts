@@ -1,4 +1,5 @@
 import * as assert from 'node:assert';
+import { beforeEach, describe, it } from 'node:test';
 import { BogusCoinStream } from './bogus-coin';
 
 describe('BogusCoinTransform', () => {
@@ -9,7 +10,7 @@ describe('BogusCoinTransform', () => {
         stream = new BogusCoinStream();
     });
 
-    it('should return unmodified strings if there is no address', (done) => {
+    it('should return unmodified strings if there is no address', (_, done) => {
         const data = 'hello world foobar\n';
         stream.end(data);
         stream.on('data', (buf) => {
@@ -18,7 +19,7 @@ describe('BogusCoinTransform', () => {
         });
     });
 
-    it('should rewrite address if only address is provided', (done) => {
+    it('should rewrite address if only address is provided', (_, done) => {
         const data = '7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX\n';
         stream.end(data);
         stream.on('data', (buf) => {
@@ -27,7 +28,7 @@ describe('BogusCoinTransform', () => {
         });
     });
 
-    it('should rewrite address if address is at the end of the line', (done) => {
+    it('should rewrite address if address is at the end of the line', (_, done) => {
         const data = 'hello foobar 7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX\n';
         stream.end(data);
         stream.on('data', (buf) => {
@@ -36,7 +37,7 @@ describe('BogusCoinTransform', () => {
         });
     });
 
-    it('should rewrite address if address is at the beginning of the line', (done) => {
+    it('should rewrite address if address is at the beginning of the line', (_, done) => {
         const data = '7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX hello foobar\n';
         stream.end(data);
         stream.on('data', (buf) => {
@@ -45,7 +46,7 @@ describe('BogusCoinTransform', () => {
         });
     });
 
-    it('should rewrite address if address is at the middle of the line', (done) => {
+    it('should rewrite address if address is at the middle of the line', (_, done) => {
         const data = 'foo bar baz 7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX hello foobar\n';
         stream.end(data);
         stream.on('data', (buf) => {
@@ -54,7 +55,7 @@ describe('BogusCoinTransform', () => {
         });
     });
 
-    it('should rewrite multiple instances of the address', (done) => {
+    it('should rewrite multiple instances of the address', (_, done) => {
         const data = 'foo bar baz 7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX 7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX hello foobar\n';
         stream.end(data);
         stream.on('data', (buf) => {

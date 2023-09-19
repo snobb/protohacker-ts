@@ -1,5 +1,6 @@
 import * as assert from 'node:assert';
 import { MsgCreatePolicy, policyAction } from './create-policy';
+import { describe, it } from 'node:test';
 import { msgType } from '.';
 
 describe('create-policy message', () => {

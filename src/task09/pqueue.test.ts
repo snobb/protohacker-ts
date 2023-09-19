@@ -1,4 +1,5 @@
 import * as assert from 'node:assert';
+import { beforeEach, describe, it } from 'node:test';
 import { PQueue } from './pqueue';
 
 /* eslint-disable no-console */
@@ -10,7 +11,7 @@ describe('pqueue', () => {
         pq = new PQueue();
     });
 
-    context('enque/deque', () => {
+    describe('enque/deque', () => {
         it('should add jobs in random order and deque in order', () => {
             const input = [1, 7, 15, 3, 87, 101];
             const exp = [...input]
@@ -38,7 +39,7 @@ describe('pqueue', () => {
         });
     });
 
-    context('delete', () => {
+    describe('delete', () => {
         it('should delete a job with given ID from the queue', () => {
             const input = [1, 7, 15, 3, 87, 101];
             const exp = [...input]

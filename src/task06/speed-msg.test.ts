@@ -1,16 +1,17 @@
 import * as assert from 'node:assert';
+import { beforeEach, describe, it } from 'node:test';
 import { SpeedMessageTransform } from './speed-msg';
 import { TypeError } from './msg';
 
 describe('streams', () => {
-    context('SpeedMessageTransform', () => {
+    describe('SpeedMessageTransform', () => {
         let stream: SpeedMessageTransform;
 
         beforeEach(() => {
             stream = new SpeedMessageTransform();
         });
 
-        it('should produce 1 valid WantHeartbeat message', (done) => {
+        it('should produce 1 valid WantHeartbeat message', (_, done) => {
             const expSizes = [5];
 
             // Hexadecimal:    Decoded:
@@ -32,7 +33,7 @@ describe('streams', () => {
             });
         });
 
-        it('should produce 1 valid Plate message', (done) => {
+        it('should produce 1 valid Plate message', (_, done) => {
             const expSizes = [10];
 
             // Hexadecimal:    Decoded:
@@ -54,7 +55,7 @@ describe('streams', () => {
             });
         });
 
-        it('should produce 1 valid IAMCamera message', (done) => {
+        it('should produce 1 valid IAMCamera message', (_, done) => {
             const expSizes = [7];
 
             // 80              IAmCamera{
@@ -78,7 +79,7 @@ describe('streams', () => {
             });
         });
 
-        it('should produce 1 valid IAMDispatcher message', (done) => {
+        it('should produce 1 valid IAMDispatcher message', (_, done) => {
             const expSizes = [8];
 
             // 81              IAmDispatcher{
@@ -105,7 +106,7 @@ describe('streams', () => {
             });
         });
 
-        it('should produce 2 valid messages', (done) => {
+        it('should produce 2 valid messages', (_, done) => {
             const expSizes = [10, 5];
 
             // Hexadecimal:                Decoded:
@@ -134,7 +135,7 @@ describe('streams', () => {
             });
         });
 
-        it('should produce 2 valid messages spread across several buffers', (done) => {
+        it('should produce 2 valid messages spread across several buffers', (_, done) => {
             const expSizes = [10, 5];
 
             // Hexadecimal:                Decoded:
@@ -169,7 +170,7 @@ describe('streams', () => {
             });
         });
 
-        it('should produce 3 valid messages spread across several buffers', (done) => {
+        it('should produce 3 valid messages spread across several buffers', (_, done) => {
             const expSizes = [10, 5, 7];
 
             // Hexadecimal:                Decoded:
@@ -222,7 +223,7 @@ describe('streams', () => {
             });
         });
 
-        it('should produce 2 valid messages by spoonfeeding byte by byte', (done) => {
+        it('should produce 2 valid messages by spoonfeeding byte by byte', (_, done) => {
             const expSizes = [10, 5];
 
             // Hexadecimal:                Decoded:
@@ -254,7 +255,7 @@ describe('streams', () => {
             });
         });
 
-        it('should error message on invalid message', (done) => {
+        it('should error message on invalid message', (_, done) => {
 
             stream.end(Buffer.of(42));
 

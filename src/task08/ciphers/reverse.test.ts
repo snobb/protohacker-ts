@@ -1,8 +1,9 @@
 import * as assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { Reverse } from './reverse';
 
 describe('reverse', () => {
-    context('do', () => {
+    describe('do', () => {
         it('should reverse 0 to zero', () => {
             const rev = new Reverse();
             assert.equal(0, rev.do(0));

@@ -1,5 +1,6 @@
 import * as assert from 'node:assert';
 import { Payload, msgType } from '.';
+import { beforeEach, describe, it } from 'node:test';
 import { FrameWriterStream } from './frame-writer-stream';
 
 describe('frame-writer-stream', () => {
@@ -9,7 +10,7 @@ describe('frame-writer-stream', () => {
         stream = new FrameWriterStream();
     });
 
-    it('should encode a single message correctly', (done) => {
+    it('should encode a single message correctly', (_, done) => {
         stream.on('data', (chunk) => {
             const expect = Buffer.from([
                 0x57, // PolicyResult{

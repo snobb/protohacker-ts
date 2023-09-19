@@ -1,4 +1,5 @@
 import * as assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { MsgTargetPopulations } from './target-populations';
 import { msgType } from '.';
 
