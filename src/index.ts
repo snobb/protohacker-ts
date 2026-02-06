@@ -25,32 +25,28 @@ const tcpPort = parseInt(process.env.TCP_PORT || '8080', 10);
 const address = process.env.SOCKET_ADDRESS || '127.0.0.1';
 
 // 00. Smoke Test - https://protohackers.com/problem/0
-export function task00 () {
+export function task00() {
     return tcpServer(tcpPort, (conn: Socket) => {
         conn.pipe(conn);
     });
 }
 
 // 01. Prime Time - https://protohackers.com/problem/1
-export function task01a () {
+export function task01a() {
     return tcpServer(tcpPort, (conn: Socket) => {
         prime(conn);
     });
 }
 
 // 01. Prime Time - https://protohackers.com/problem/1
-export function task01b () {
+export function task01b() {
     return tcpServer(tcpPort, (conn: Socket) => {
-        conn
-            .pipe(new LineStream())
-            .pipe(new PrimeStream())
-            .pipe(conn)
-            .on('error', console.error);
+        conn.pipe(new LineStream()).pipe(new PrimeStream()).pipe(conn).on('error', console.error);
     });
 }
 
 // 02. Means to an End - https://protohackers.com/problem/2
-export function task02a () {
+export function task02a() {
     return tcpServer(tcpPort, async (conn: Socket) => {
         const price = new Price();
         await price.handle(conn);
@@ -59,21 +55,19 @@ export function task02a () {
 }
 
 // 02. Means to an End (stream based) - https://protohackers.com/problem/2
-export function task02b () {
+export function task02b() {
     return tcpServer(tcpPort, (conn: Socket) => {
         // stream based implementation.
         const price = new PriceTransform();
-        const fixedChunkStream = new FixedChunkStream({ size: PriceTransform.msgSize });
-        conn
-            .pipe(fixedChunkStream)
-            .pipe(price)
-            .pipe(conn)
-            .on('error', console.error);
+        const fixedChunkStream = new FixedChunkStream({
+            size: PriceTransform.msgSize,
+        });
+        conn.pipe(fixedChunkStream).pipe(price).pipe(conn).on('error', console.error);
     });
 }
 
 // 03. Budget Chat - https://protohackers.com/problem/3
-export function task03 () {
+export function task03() {
     const chat = new Chat();
     return tcpServer(tcpPort, (conn: Socket) => {
         chat.handle(conn);
@@ -81,7 +75,7 @@ export function task03 () {
 }
 
 // 04. Unusual database - https://protohackers.com/problem/4
-export function task04 () {
+export function task04() {
     // comment out the tcp part of the fly.toml and add UDP section like below to make it work.
     //
     // [[services]]
@@ -96,7 +90,7 @@ export function task04 () {
 }
 
 // 05. Mob in the Middle - https://protohackers.com/problem/5
-export function task05 () {
+export function task05() {
     return tcpServer(tcpPort, (conn: Socket) => {
         // backend connection
         const be = new Socket();
@@ -108,8 +102,7 @@ export function task05 () {
         const proxyAddress = process.env.PROXY_ADDRESS || 'localhost';
         be.connect(proxyPort, proxyAddress);
 
-        conn
-            .pipe(new LineStream())
+        conn.pipe(new LineStream())
             .pipe(new BogusCoinStream())
             .pipe(be)
             .pipe(new LineStream())
@@ -120,13 +113,13 @@ export function task05 () {
 }
 
 // 06. Speed daemon - https://protohackers.com/problem/6
-export function task06 () {
+export function task06() {
     const speed = new SpeedDaemon();
     return tcpServer(tcpPort, (conn: Socket) => speed.handle(conn));
 }
 
 // 07. Line Reversal  - https://protohackers.com/problem/7
-export function task07 () {
+export function task07() {
     // comment out the tcp part of the fly.toml and add UDP section like below to make it work.
     // [env]
     //   SOCKET_ADDRESS = "fly-global-services"
@@ -143,18 +136,14 @@ export function task07 () {
     const lrcp = new LRCP();
 
     lrcp.on('session', (session: Session) => {
-        session
-            .pipe(new LineStream())
-            .pipe(new LineReverseStream())
-            .pipe(session);
+        session.pipe(new LineStream()).pipe(new LineReverseStream()).pipe(session);
     });
 
-    return udpServer({ address, port: udpPort }, lrcp.handle.bind(lrcp))
-        .on('close', () => lrcp.close());
+    return udpServer({ address, port: udpPort }, lrcp.handle.bind(lrcp)).on('close', () => lrcp.close());
 }
 
 // 08. Insecure Sockets Layer - https://protohackers.com/problem/8
-export function task08 () {
+export function task08() {
     return tcpServer(tcpPort, (conn: Socket) => {
         const decoder = new InsecureDecoderStream();
 
@@ -162,8 +151,7 @@ export function task08 () {
             console.log(`[${conn.remoteAddress}:${conn.remotePort}]:`, ...msg);
         };
 
-        conn
-            .pipe(decoder)
+        conn.pipe(decoder)
             .on('error', (err: Error) => {
                 log(`Decoder error: ${err.message}`);
                 conn.destroy();
@@ -181,35 +169,31 @@ export function task08 () {
 }
 
 // 09. Job Centre - https://protohackers.com/problem/9
-export function task09 () {
+export function task09() {
     return tcpServer(tcpPort, (conn: Socket) => {
         const jobcentre = new JobCentreStream(conn);
 
-        conn
-            .pipe(new LineStream())
-            .pipe(jobcentre)
-            .pipe(conn);
+        conn.pipe(new LineStream()).pipe(jobcentre).pipe(conn);
     });
 }
 
 // 10. Voracious Code Storage - https://protohackers.com/problem/10
-export function task10 () {
+export function task10() {
     const vcs = new VCS();
     return tcpServer(tcpPort, (conn: Socket) => vcs.handleConnection(conn));
 }
 
 // 11. Pest Control - https://protohackers.com/problem/11
-export function task11 () {
+export function task11() {
     return tcpServer(tcpPort, (conn: Socket) => {
         const connId = `${conn.remoteAddress}:${conn.remotePort}`;
 
         conn.setTimeout(30000, () => conn.emit('error', new Error('timeout')));
 
-        conn
-            .on('error', (err) => {
-                console.log('connection error:', err.message);
-                conn.end();
-            })
+        conn.on('error', (err) => {
+            console.log('connection error:', err.message);
+            conn.end();
+        })
             .pipe(new FrameReaderStream())
             .pipe(new LoggerStream(connId, '>>>'))
             .pipe(new PestControl())

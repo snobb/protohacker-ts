@@ -7,13 +7,13 @@ export class FixedChunkStream extends Transform {
     private shards: Buffer[] = [];
     chunkSize: number;
 
-    constructor (options: TransformOptions & { size: number }) {
+    constructor(options: TransformOptions & { size: number }) {
         super(options);
         this.need = options.size;
         this.chunkSize = options.size;
     }
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         let lo = 0;
         let hi: number;
 
@@ -46,7 +46,7 @@ export class FixedChunkStream extends Transform {
         done();
     }
 
-    _flush (done: TransformCallback) {
+    _flush(done: TransformCallback) {
         if (this.shards.length > 0) {
             const buf = Buffer.concat(this.shards);
             this.push(buf);
@@ -56,7 +56,7 @@ export class FixedChunkStream extends Transform {
     }
 }
 
-export async function *fixedChunks (input: NodeJS.ReadableStream, size: number) {
+export async function* fixedChunks(input: NodeJS.ReadableStream, size: number) {
     let need = size;
     let shards: Buffer[] = [];
 

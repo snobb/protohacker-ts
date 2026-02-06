@@ -3,9 +3,9 @@ export { BindOptions, RemoteInfo, Socket } from 'node:dgram';
 
 /* eslint-disable no-console */
 
-export type DgramHandler = (msg: Buffer, info: RemoteInfo, socket: Socket)=> void
+export type DgramHandler = (msg: Buffer, info: RemoteInfo, socket: Socket) => void;
 
-export function udpServer (opts: BindOptions, handle: DgramHandler) {
+export function udpServer(opts: BindOptions, handle: DgramHandler) {
     const server: Socket = createSocket('udp4')
         .on('connect', () => {
             const addr = server.address();

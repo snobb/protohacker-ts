@@ -16,11 +16,11 @@ export class FrameReaderStream extends Transform {
     private state: State = 'Header';
     private updated = false;
 
-    constructor (options?: TransformOptions) {
+    constructor(options?: TransformOptions) {
         super({ ...options, readableObjectMode: true });
     }
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         this.chunks.push(chunk);
         this.size += chunk.length;
 
@@ -38,13 +38,13 @@ export class FrameReaderStream extends Transform {
         loop();
     }
 
-    readHeader (header: Buffer) {
+    readHeader(header: Buffer) {
         const type = header.readUInt8();
         const size = header.readUInt32BE(1);
         return [type, size];
     }
 
-    validateChecksum (payload: Buffer, checksum: number) {
+    validateChecksum(payload: Buffer, checksum: number) {
         let sum = this.kind;
         const sz = payload.length + 6; // payload + kind(1) + size(4) + checksum(1);
 
@@ -60,7 +60,7 @@ export class FrameReaderStream extends Transform {
         return sum % 256 === 0;
     }
 
-    handleFrame (frame: Buffer) {
+    handleFrame(frame: Buffer) {
         const payload = frame.subarray(0, frame.length - 1); // not counting the checksum byte
         const checksum = frame.readUInt8(payload.length);
 
@@ -70,11 +70,11 @@ export class FrameReaderStream extends Transform {
 
         return this.push({
             kind: this.kind,
-            payload
+            payload,
         });
     }
 
-    notify () {
+    notify() {
         this.updated = false;
 
         if (this.size >= this.need && this.state === 'Header') {
@@ -125,7 +125,7 @@ export class FrameReaderStream extends Transform {
         }
     }
 
-    reset () {
+    reset() {
         this.chunks = [];
         this.size = 0;
         this.state = 'Header';

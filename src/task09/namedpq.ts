@@ -4,7 +4,7 @@ export { Job } from './pqueue';
 export class NamedPQueue {
     private store = new Map<string, PQueue>();
 
-    enque (job: Job) {
+    enque(job: Job) {
         let que = this.store.get(job.queue);
         if (!que) {
             que = new PQueue();
@@ -14,7 +14,7 @@ export class NamedPQueue {
         que.enque(job);
     }
 
-    deque (queues: string[]) {
+    deque(queues: string[]) {
         const que = this.maxQueue(queues);
         if (!que) {
             return;
@@ -23,7 +23,7 @@ export class NamedPQueue {
         return que.deque();
     }
 
-    delete (id: number) {
+    delete(id: number) {
         let ok = false;
         for (const que of this.store.values()) {
             ok = que.delete(id) || ok;
@@ -32,7 +32,7 @@ export class NamedPQueue {
         return ok;
     }
 
-    private maxQueue (queues: string[]) {
+    private maxQueue(queues: string[]) {
         let maxPri = -1;
         let maxQue;
 

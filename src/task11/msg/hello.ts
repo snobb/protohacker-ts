@@ -6,7 +6,7 @@ export class MsgHello implements Encodable, Decodable {
     version = 1;
     proto = 'pestcontrol';
 
-    toPayload (): Payload {
+    toPayload(): Payload {
         const size = 4 + this.proto.length + 4;
         const buf = Buffer.alloc(size);
         let offset = buf.writeUInt32BE(this.proto.length);
@@ -15,11 +15,11 @@ export class MsgHello implements Encodable, Decodable {
 
         return {
             kind: this.kind,
-            payload: buf
+            payload: buf,
         };
     }
 
-    fromPayload (data: Payload): this {
+    fromPayload(data: Payload): this {
         if (data.kind !== this.kind) {
             throw new Error('invalid payload');
         }

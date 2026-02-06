@@ -1,26 +1,24 @@
 import { Transform, TransformCallback } from 'node:stream';
-import {
-    TypeIAMCamera,
-    TypeIAMDispatcher,
-    TypePlate,
-    TypeWantHeartbeat,
-    formatError,
-} from './msg';
+import { TypeIAMCamera, TypeIAMDispatcher, TypePlate, TypeWantHeartbeat, formatError } from './msg';
 
 export class SpeedMessageTransform extends Transform {
     private need = -1;
     private shards: Buffer[] = [];
     private currentType = -1;
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         let lo = 0;
         let hi: number;
 
         for (hi = 0; hi < chunk.length; hi += 1, this.need -= 1) {
             if (this.currentType === -1) {
                 this.currentType = chunk[hi];
-                if (this.currentType !== TypeWantHeartbeat && this.currentType !== TypePlate &&
-                    this.currentType !== TypeIAMCamera && this.currentType !== TypeIAMDispatcher) {
+                if (
+                    this.currentType !== TypeWantHeartbeat &&
+                    this.currentType !== TypePlate &&
+                    this.currentType !== TypeIAMCamera &&
+                    this.currentType !== TypeIAMDispatcher
+                ) {
                     this.push(formatError(`Invalid message type: ${this.currentType}`));
                     return;
                 }
@@ -41,7 +39,7 @@ export class SpeedMessageTransform extends Transform {
                 if (this.currentType === TypePlate) {
                     this.need = 1 + chunk[hi] + 4; // len + string + uint32
                 } else if (this.currentType === TypeIAMDispatcher) {
-                    this.need = 1 + (chunk[hi] * 2); // len + uint16[len]
+                    this.need = 1 + chunk[hi] * 2; // len + uint16[len]
                 }
 
                 continue;
@@ -80,7 +78,7 @@ export class SpeedMessageTransform extends Transform {
         done();
     }
 
-    _flush (done: TransformCallback) {
+    _flush(done: TransformCallback) {
         if (this.shards.length > 0) {
             const buf = Buffer.concat(this.shards);
             this.push(buf);

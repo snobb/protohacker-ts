@@ -9,9 +9,12 @@ export const policyAction = {
 export class MsgCreatePolicy implements Encodable, Decodable {
     kind = msgType.createPolicy;
 
-    constructor (public species: string, public action: number) {}
+    constructor(
+        public species: string,
+        public action: number,
+    ) {}
 
-    toPayload (): Payload {
+    toPayload(): Payload {
         const buf = Buffer.alloc(this.species.length + 4 + 1);
         let offset = buf.writeUInt32BE(this.species.length);
         offset += Buffer.from(this.species).copy(buf, offset);
@@ -19,11 +22,11 @@ export class MsgCreatePolicy implements Encodable, Decodable {
 
         return {
             kind: msgType.createPolicy,
-            payload: buf
+            payload: buf,
         };
     }
 
-    fromPayload (data: Payload): this {
+    fromPayload(data: Payload): this {
         if (data.kind !== this.kind) {
             throw new Error('invalid payload');
         }

@@ -20,47 +20,50 @@ import { SpeedDaemon } from './speed-daemon';
 export class SpeedTransform extends Transform {
     private camera?: MsgIAMCamera;
     private roads?: number[];
-    private heartbeat?: NodeJS.Timer;
+    private heartbeat?: NodeJS.Timeout;
 
-    constructor (private global: SpeedDaemon, private conn: Socket, opts?: TransformOptions) {
+    constructor(
+        private global: SpeedDaemon,
+        private conn: Socket,
+        opts?: TransformOptions,
+    ) {
         super({ ...opts });
     }
 
-    _transform (msg: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(msg: Buffer, _: BufferEncoding, done: TransformCallback) {
         const kind = msg.readUInt8();
 
         // handle inbound data
         try {
             switch (kind) {
-            case TypePlate:
-                console.log('handling Plate message');
-                this.handlePlate(msg.subarray(1));
-                break;
+                case TypePlate:
+                    console.log('handling Plate message');
+                    this.handlePlate(msg.subarray(1));
+                    break;
 
-            case TypeWantHeartbeat:
-                console.log('handling wantHeartbeat message');
-                this.handleHeartbeat(msg.subarray(1));
-                break;
+                case TypeWantHeartbeat:
+                    console.log('handling wantHeartbeat message');
+                    this.handleHeartbeat(msg.subarray(1));
+                    break;
 
-            case TypeIAMCamera:
-                console.log('handling IAMCamera message');
-                this.handleCamera(msg.subarray(1));
-                break;
+                case TypeIAMCamera:
+                    console.log('handling IAMCamera message');
+                    this.handleCamera(msg.subarray(1));
+                    break;
 
-            case TypeIAMDispatcher:
-                console.log('handling IAMDispatcher message');
-                this.handleDispatcher(msg.subarray(1));
-                break;
+                case TypeIAMDispatcher:
+                    console.log('handling IAMDispatcher message');
+                    this.handleDispatcher(msg.subarray(1));
+                    break;
 
-            case TypeError:
-                console.log('passing error message');
-                this.push(msg);
-                break;
+                case TypeError:
+                    console.log('passing error message');
+                    this.push(msg);
+                    break;
 
-            default:
-                this.push(formatError(`invalid message type: ${kind}`));
+                default:
+                    this.push(formatError(`invalid message type: ${kind}`));
             }
-
         } catch (err) {
             console.error('speed-transform error:', err);
             this.push(formatError((<Error>err).message));
@@ -69,7 +72,7 @@ export class SpeedTransform extends Transform {
         }
     }
 
-    handleHeartbeat (buf: Buffer) {
+    handleHeartbeat(buf: Buffer) {
         if (this.heartbeat) {
             throw new Error('Heartbeat is already set');
         }
@@ -85,14 +88,14 @@ export class SpeedTransform extends Transform {
         }, interval);
     }
 
-    shutdown () {
+    shutdown() {
         console.log('shutting down...');
         if (this.heartbeat) {
             clearInterval(this.heartbeat);
         }
     }
 
-    handlePlate (buf: Buffer) {
+    handlePlate(buf: Buffer) {
         const msg = readPlateMessage(buf);
 
         if (!this.camera) {
@@ -106,18 +109,17 @@ export class SpeedTransform extends Transform {
         this.global.sendTickets(this.camera.road);
     }
 
-    handleCamera (buf: Buffer) {
+    handleCamera(buf: Buffer) {
         if (this.camera) {
             throw new Error('Has already been identified as camera - duplicate message.');
         }
 
         const msg = readCameraMessage(buf);
         this.camera = msg;
-        console.log('registering camera at road %s [mile: %s, limit: %s]',
-            msg.road, msg.mile, msg.limit);
+        console.log('registering camera at road %s [mile: %s, limit: %s]', msg.road, msg.mile, msg.limit);
     }
 
-    handleDispatcher (buf: Buffer) {
+    handleDispatcher(buf: Buffer) {
         if (this.camera) {
             throw new Error('Has already been identified as camera - no dispatcher.');
         }

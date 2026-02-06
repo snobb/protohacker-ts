@@ -1,12 +1,20 @@
 import * as assert from 'node:assert';
 import { AppStream } from './app';
 
-describe('app-transform', () => {
-    let app: AppStream;
+describe("app-transform", () => {
+  let app: AppStream;
 
-    beforeEach(() => {
-        app = new AppStream();
+  beforeEach(() => {
+    app = new AppStream();
+  });
+
+  it("should return the biggest value in the list", (_, done) => {
+    app.end("1x of foo,15x of bar,7x of baz\n");
+    app.on("data", (buf) => {
+      assert.equal(buf.toString(), "15x of bar\n");
+      done();
     });
+  });
 
     it('should return the biggest value in the list', (done) => {
         app.end('1x of foo,15x of bar,7x of baz\n');
@@ -15,6 +23,7 @@ describe('app-transform', () => {
             done();
         });
     });
+  });
 
     it('should return the biggest value in the list and ignore invalid lines', (done) => {
         app.end('1x of foo,barbaz,15x of bar,7x of baz,foobar\n');
@@ -39,4 +48,5 @@ describe('app-transform', () => {
             }
         });
     });
+  });
 });

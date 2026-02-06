@@ -14,7 +14,7 @@ import {
     Payload,
     TargetSpecies,
     msgType,
-    policyAction
+    policyAction,
 } from './msg';
 import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 import { Socket } from 'node:net';
@@ -22,7 +22,7 @@ import { asyncForEach } from '../lib/tools';
 import { log } from '../lib/log';
 
 type Policies = Record<string, number>; // species -> policy
-type QueueAction = ()=> Promise<void>;
+type QueueAction = () => Promise<void>;
 
 const waitTimeout = 120 * 1000; // 2 minutes
 
@@ -39,7 +39,10 @@ export class Authority extends Transform {
     private policies: Policies = {};
     private actionQueue: QueueAction[] = [];
 
-    constructor (private site: number, options?: TransformOptions) {
+    constructor(
+        private site: number,
+        options?: TransformOptions,
+    ) {
         super({ ...options, readableObjectMode: true, writableObjectMode: true });
         this.port = parseInt(process.env.AUTH_PORT || '20547', 10);
         this.address = process.env.AUTH_ADDRESS || 'localhost';
@@ -57,6 +60,9 @@ export class Authority extends Transform {
             .pipe(new FrameReaderStream())
             .pipe(new LoggerStream(connId, 'auth->'))
             .pipe(this)
+            .on('error', (err) => {
+                this.push(new MsgError(err).toPayload());
+            })
             .pipe(new LoggerStream(connId, 'auth<-'))
             .pipe(new FrameWriterStream())
             .pipe(this.sock);
@@ -76,12 +82,12 @@ export class Authority extends Transform {
         });
     }
 
-    connect () {
+    connect() {
         this.sock.connect(this.port, this.address);
         this.push(new MsgHello().toPayload());
     }
 
-    _transform (data: Payload, _: BufferEncoding, done: TransformCallback) {
+    _transform(data: Payload, _: BufferEncoding, done: TransformCallback) {
         if (data.kind === msgType.error) {
             this.push(data); // pass the error through
             return done();
@@ -101,11 +107,9 @@ export class Authority extends Transform {
                 this.push(new MsgDialAuth(this.site).toPayload());
                 this.expect = msgType.targetPopulations;
                 this.emit('handshake');
-
             } catch (err) {
                 return this.emit('handshake error', err);
             }
-
         } else if (this.expect === msgType.targetPopulations) {
             if (data.kind !== msgType.targetPopulations) {
                 return this.emit('error', new Error(`dafaq did I just see? ${data.kind}`));
@@ -116,34 +120,27 @@ export class Authority extends Transform {
                 const pops = new MsgTargetPopulations().fromPayload(data);
                 this.emit('targetPopulations', pops);
                 this.expect = msgType.undef;
-
             } catch (err) {
                 return this.emit('targetPopulations error', err);
-
             } finally {
                 this.sock.pause(); // pausing and wait for policy create/delete calls
             }
-
         } else if (data.kind === msgType.policyResult) {
             // policy create response
             try {
                 const res = new MsgPolicyResult().fromPayload(data);
                 this.emit('createResult', res);
-
             } catch (err) {
                 return this.emit('create result error', err);
             }
-
         } else if (data.kind === msgType.ok) {
             // policy deleted response
             try {
                 const res = new MsgOk().fromPayload(data);
                 this.emit('deleteResult', res);
-
             } catch (err) {
                 return this.emit('delete result error', err);
             }
-
         } else {
             return this.emit('error', new Error(`invalid message type: ${data.kind}`));
         }
@@ -157,14 +154,13 @@ export class Authority extends Transform {
      * - dial to authority
      * - get and return target populations data.
      */
-    getTargetPopulations () {
+    getTargetPopulations() {
         return new Promise<MsgTargetPopulations>((resolve, reject) => {
             if (this.populations) {
                 return resolve(this.populations);
             }
 
-            const off = setTimeout(() => reject(new Error('target populations timeout')),
-                waitTimeout);
+            const off = setTimeout(() => reject(new Error('target populations timeout')), waitTimeout);
 
             this.once('targetPopulations', (pops: MsgTargetPopulations) => {
                 clearTimeout(off);
@@ -177,11 +173,9 @@ export class Authority extends Transform {
     /**
      * create a policy and wait for the result.
      */
-    createPolicy (species: string, action: number) {
+    createPolicy(species: string, action: number) {
         return new Promise((resolve, reject) => {
-            this.actionQueue.push(() => this.createSinglePolicy(species, action)
-                .then(resolve)
-                .catch(reject));
+            this.actionQueue.push(() => this.createSinglePolicy(species, action).then(resolve).catch(reject));
 
             return this.processQueue();
         });
@@ -190,11 +184,9 @@ export class Authority extends Transform {
     /**
      * delete a policy and wait for the result.
      */
-    deletePolicy (species: string, policy: number) {
+    deletePolicy(species: string, policy: number) {
         return new Promise((resolve, reject) => {
-            this.actionQueue.push(() => this.deleteSinglePolicy(species, policy)
-                .then(resolve)
-                .catch(reject));
+            this.actionQueue.push(() => this.deleteSinglePolicy(species, policy).then(resolve).catch(reject));
 
             return this.processQueue();
         });
@@ -205,7 +197,7 @@ export class Authority extends Transform {
      * processed serially. A queue is used to process the actions in the same order as they
      * arrive.
      */
-    async processQueue (): Promise<void> {
+    async processQueue(): Promise<void> {
         if (this.actionQueue.length === 0) {
             return;
         }
@@ -221,7 +213,7 @@ export class Authority extends Transform {
     /**
      * create a single polciy policy and wait for the result.
      */
-    createSinglePolicy (species: string, action: number) {
+    createSinglePolicy(species: string, action: number) {
         this.push(new MsgCreatePolicy(species, action).toPayload());
         this.sock.resume();
 
@@ -241,14 +233,14 @@ export class Authority extends Transform {
             }, waitTimeout);
 
             log.info(`createPolicy: site:${this.site}, species:${species}, action:${action}`);
-            this.once('createResult', cb);
+            this.once('createResult-', cb);
         });
     }
 
     /**
      * delete a policy and wait for the result.
      */
-    deleteSinglePolicy (species: string, policy: number) {
+    deleteSinglePolicy(species: string, policy: number) {
         this.push(new MsgDeletePolicy(policy).toPayload());
         this.sock.resume();
 
@@ -262,8 +254,7 @@ export class Authority extends Transform {
                 return resolve();
             };
 
-            off = setTimeout(() => reject(new Error('delete policy timeout')),
-                waitTimeout);
+            off = setTimeout(() => reject(new Error('delete policy timeout')), waitTimeout);
 
             log.info(`deletePolicy: site:${this.site}, species:${species}, policyNumber:${policy}`);
             this.once('deleteResult', cb);
@@ -273,8 +264,8 @@ export class Authority extends Transform {
     /**
      * compare observed and target populations and issue policies per species.
      */
-    advisePolicies (observed: ObservedSpecies, target: TargetSpecies) {
-        return asyncForEach(Object.keys(target), async (species: string, next: ()=> void) => {
+    advisePolicies(observed: ObservedSpecies, target: TargetSpecies) {
+        return asyncForEach(Object.keys(target), async (species: string, next: () => void) => {
             const count = observed[species] || 0;
             const targetRange = target[species];
 
@@ -286,11 +277,9 @@ export class Authority extends Transform {
             if (count < targetRange.min) {
                 log.info(`advisePolicy: site:${this.site}, species:${species}, advice:conserve`);
                 await this.createPolicy(species, policyAction.conserve);
-
             } else if (count > targetRange.max) {
                 log.info(`advisePolicy: site:${this.site}, species:${species}, advice:cull`);
                 await this.createPolicy(species, policyAction.cull);
-
             } else {
                 log.info(`advisePolicy: site:${this.site}, species:${species}, advice:none`);
             }
@@ -302,7 +291,7 @@ export class Authority extends Transform {
     /**
      * close the authority socket
      */
-    close () {
+    close() {
         this.sock.destroy();
     }
 }

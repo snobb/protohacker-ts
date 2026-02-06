@@ -6,11 +6,11 @@ import { Payload } from '.';
 const HEADER_SIZE = 5;
 
 export class FrameWriterStream extends Transform {
-    constructor (options?: TransformOptions) {
+    constructor(options?: TransformOptions) {
         super({ ...options, writableObjectMode: true });
     }
 
-    _transform (chunk: Payload, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Payload, _: BufferEncoding, done: TransformCallback) {
         const size = HEADER_SIZE + chunk.payload.length + 1;
         const buf = Buffer.alloc(size);
         const checksum = this.computeChecksum(chunk, size);
@@ -24,7 +24,7 @@ export class FrameWriterStream extends Transform {
         done();
     }
 
-    computeChecksum (data: Payload, size: number) {
+    computeChecksum(data: Payload, size: number) {
         let sum = data.kind;
         for (let i = 0; i <= 24; i += 8) {
             sum += (size >> i) & 0xff; // eslint-disable-line no-bitwise

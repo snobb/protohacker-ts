@@ -12,16 +12,13 @@ type File = {
 export class Store {
     private store = new Map<string, Buffer[]>();
 
-    get (path: string, rev?: string) {
+    get(path: string, rev?: string) {
         const revs = this.store.get(path);
         if (!revs || revs.length === 0) {
             return;
         }
 
-        const nrev = (rev)
-            ? parseInt(
-                rev[0] === 'r' ? rev.substring(1) : rev, 10)
-            : revs.length;
+        const nrev = rev ? parseInt(rev[0] === 'r' ? rev.substring(1) : rev, 10) : revs.length;
 
         if (isNaN(nrev)) {
             return;
@@ -30,7 +27,7 @@ export class Store {
         return revs[nrev - 1];
     }
 
-    put (path: string, data: Buffer) {
+    put(path: string, data: Buffer) {
         const revs = this.store.get(path) || [];
         if (!this.store.has(path)) {
             this.store.set(path, revs);
@@ -47,7 +44,7 @@ export class Store {
         return revs.length;
     }
 
-    list (path: string) {
+    list(path: string) {
         const dirs = new Map<string, Dir>();
         const files = <File[]>[];
 
@@ -67,28 +64,25 @@ export class Store {
                 const dirName = file.slice(0, idx + 1);
                 dirs.set(dirName, {
                     kind: 'dir',
-                    name: dirName
+                    name: dirName,
                 });
             } else {
                 files.push({
                     kind: 'file',
                     name: file,
-                    length: v.length
+                    length: v.length,
                 });
             }
         }
 
         const dirsArray = Array.from(dirs.values());
         dirsArray.sort();
-        files.sort((a, b) => ((a.name < b.name) ? -1 : Number(a.name > b.name)));
+        files.sort((a, b) => (a.name < b.name ? -1 : Number(a.name > b.name)));
 
-        return [
-            ...dirsArray,
-            ...files
-        ];
+        return [...dirsArray, ...files];
     }
 
-    reset () {
+    reset() {
         this.store.clear();
     }
 }

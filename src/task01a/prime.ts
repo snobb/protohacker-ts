@@ -4,17 +4,17 @@ import { readLine } from '../lib/tools';
 /* eslint-disable no-console */
 
 type request = {
-    method: 'isPrime',
-    number: number
-}
+    method: 'isPrime';
+    number: number;
+};
 
 const cache = new Set<number>();
 
-function validate (req: request) {
+function validate(req: request) {
     return req?.method === 'isPrime' && typeof req?.number === 'number';
 }
 
-function isPrime (num: number) {
+function isPrime(num: number) {
     if (num <= 1 || !Number.isSafeInteger(num)) {
         return false;
     }
@@ -36,7 +36,7 @@ function isPrime (num: number) {
     return true;
 }
 
-export async function prime (conn: Socket) {
+export async function prime(conn: Socket) {
     const send = (obj: unknown) => conn.write(`${JSON.stringify(obj)}\n`);
     const fatal = (obj: unknown) => {
         send(obj);

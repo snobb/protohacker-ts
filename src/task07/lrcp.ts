@@ -5,10 +5,10 @@ import { Session } from './session';
 /* eslint-disable no-console */
 
 export type Message = {
-    type: string,
-    sid: number,
-    pos?: number,
-    data?: Buffer,
+    type: string;
+    sid: number;
+    pos?: number;
+    data?: Buffer;
 };
 
 const minSID = 0;
@@ -17,9 +17,9 @@ const sweeperInterval = 2000; // 2sec
 
 export class LRCP extends EventEmitter {
     private sessions = new Map<number, Session>();
-    private interval: NodeJS.Timer;
+    private interval: NodeJS.Timeout;
 
-    constructor () {
+    constructor() {
         super();
 
         this.interval = setInterval(() => {
@@ -38,11 +38,10 @@ export class LRCP extends EventEmitter {
         }, sweeperInterval);
     }
 
-    handle (buf: Buffer, rinfo: RemoteInfo, sock: Socket) {
+    handle(buf: Buffer, rinfo: RemoteInfo, sock: Socket) {
         let msg: Message;
         try {
             msg = this.getMessage(buf.toString());
-
         } catch (err) {
             console.error(`error: ${(<Error>err).message}`);
             return;
@@ -55,7 +54,6 @@ export class LRCP extends EventEmitter {
             if (msg.type === 'connect') {
                 this.sessions.set(msg.sid, session);
                 this.emit('session', session);
-
             } else {
                 sock.send(`/close/${msg.sid}/`, rinfo.port, rinfo.address);
                 session.close();
@@ -66,11 +64,11 @@ export class LRCP extends EventEmitter {
         session.handle(msg);
     }
 
-    close () {
+    close() {
         clearInterval(this.interval);
     }
 
-    getMessage (raw: string): Message {
+    getMessage(raw: string): Message {
         if (raw[0] !== '/' || raw[raw.length - 1] !== '/') {
             throw new Error(`invalid message: ${raw}`);
         }
@@ -112,9 +110,11 @@ export class LRCP extends EventEmitter {
             }
         }
 
-        return { type,
+        return {
+            type,
             sid: nsid,
             pos: pos ? npos : undefined,
-            data: data.length > 0 ? Buffer.from(data.join('/')) : undefined };
+            data: data.length > 0 ? Buffer.from(data.join('/')) : undefined,
+        };
     }
 }

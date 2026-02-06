@@ -7,20 +7,20 @@ export class Chat {
     private ppls: Record<string, Socket> = {};
     private re = new RegExp(/^[a-zA-Z0-9]*$/);
 
-    send (conn: Socket, msg: string) {
+    send(conn: Socket, msg: string) {
         conn.write(`${msg}\n`);
     }
 
-    fatal (conn: Socket, msg: string) {
+    fatal(conn: Socket, msg: string) {
         conn.write(`${msg}\n`);
         conn.destroy();
     }
 
-    async handle (conn: Socket) {
+    async handle(conn: Socket) {
         const rl = readLine(conn, conn);
         const question = (msg: string) => new Promise((resolve) => rl.question(msg, resolve));
 
-        const name = <string>(await question('Welcome to budgetchat! What shall I call you?\n'));
+        const name = <string>await question('Welcome to budgetchat! What shall I call you?\n');
         if (!this.validate(name)) {
             return this.fatal(conn, 'invalid name');
         }
@@ -35,11 +35,11 @@ export class Chat {
         }
     }
 
-    validate (name: string) {
+    validate(name: string) {
         return name && this.re.test(name);
     }
 
-    register (name: string, conn: Socket) {
+    register(name: string, conn: Socket) {
         if (this.ppls[name]) {
             return this.fatal(conn, `* duplicate name: ${name}`);
         }
@@ -49,12 +49,12 @@ export class Chat {
         this.ppls[name] = conn;
     }
 
-    unregister (name: string, conn: Socket) {
+    unregister(name: string, conn: Socket) {
         this.broadcast(`* ${name} left`, conn);
         delete this.ppls[name];
     }
 
-    broadcast (msg: string, exclude: Socket) {
+    broadcast(msg: string, exclude: Socket) {
         for (const name of Object.keys(this.ppls)) {
             const sock = this.ppls[name];
             if (sock === exclude) {

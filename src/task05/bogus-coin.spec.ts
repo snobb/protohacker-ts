@@ -1,13 +1,22 @@
 import * as assert from 'node:assert';
 import { BogusCoinStream } from './bogus-coin';
 
-describe('BogusCoinTransform', () => {
-    let stream: BogusCoinStream;
-    const evilAddress = '7YWHMfk9JZe0LM0g1ZauHuiSxhI';
+describe("BogusCoinTransform", () => {
+  let stream: BogusCoinStream;
+  const evilAddress = "7YWHMfk9JZe0LM0g1ZauHuiSxhI";
 
-    beforeEach(() => {
-        stream = new BogusCoinStream();
+  beforeEach(() => {
+    stream = new BogusCoinStream();
+  });
+
+  it("should return unmodified strings if there is no address", (_, done) => {
+    const data = "hello world foobar\n";
+    stream.end(data);
+    stream.on("data", (buf) => {
+      assert.equal(buf, data);
+      done();
     });
+  });
 
     it('should return unmodified strings if there is no address', (done) => {
         const data = 'hello world foobar\n';
@@ -17,6 +26,7 @@ describe('BogusCoinTransform', () => {
             done();
         });
     });
+  });
 
     it('should rewrite address if only address is provided', (done) => {
         const data = '7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX\n';
@@ -26,6 +36,7 @@ describe('BogusCoinTransform', () => {
             done();
         });
     });
+  });
 
     it('should rewrite address if address is at the end of the line', (done) => {
         const data = 'hello foobar 7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX\n';
@@ -35,6 +46,7 @@ describe('BogusCoinTransform', () => {
             done();
         });
     });
+  });
 
     it('should rewrite address if address is at the beginning of the line', (done) => {
         const data = '7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX hello foobar\n';
@@ -44,6 +56,7 @@ describe('BogusCoinTransform', () => {
             done();
         });
     });
+  });
 
     it('should rewrite address if address is at the middle of the line', (done) => {
         const data = 'foo bar baz 7iKDZEwPZSqIvDnHvVN2r0hUWXD5rHX hello foobar\n';
@@ -62,4 +75,5 @@ describe('BogusCoinTransform', () => {
             done();
         });
     });
+  });
 });

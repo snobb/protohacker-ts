@@ -10,8 +10,14 @@ describe('price', () => {
             price = new Price();
             data = Buffer.from([
                 0x49, // I
-                0x00, 0x00, 0x30, 0x39, // 12345
-                0x00, 0x00, 0x00, 0x65, // 101
+                0x00,
+                0x00,
+                0x30,
+                0x39, // 12345
+                0x00,
+                0x00,
+                0x00,
+                0x65, // 101
             ]);
         });
 
@@ -21,8 +27,8 @@ describe('price', () => {
                 type: 'I',
                 payload: {
                     time: 12345,
-                    data: 101
-                }
+                    data: 101,
+                },
             });
         });
     });

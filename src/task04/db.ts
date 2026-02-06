@@ -6,12 +6,12 @@ export class UnusualDB {
     private store: Record<string, string> = {};
     static version = 'Odd database v1.0';
 
-    handle (msg: Buffer, rinfo: RemoteInfo, sock: Socket) {
+    handle(msg: Buffer, rinfo: RemoteInfo, sock: Socket) {
         if (msg.length > 1000) {
             return console.error('receive: message is too big: %s', msg);
         }
 
-        function send (message: string) {
+        function send(message: string) {
             const buf = Buffer.from(message);
             if (buf.length > 1000) {
                 return console.error('send: message is too big: %s', msg);
@@ -36,13 +36,13 @@ export class UnusualDB {
         }
     }
 
-    parse (msg: string) {
+    parse(msg: string) {
         const idx = msg.indexOf('=');
-        const hi = (idx !== -1) ? idx : msg.length;
+        const hi = idx !== -1 ? idx : msg.length;
         return {
             key: msg.slice(0, hi),
             value: msg.slice(hi + 1),
-            isInsert: idx !== -1
+            isInsert: idx !== -1,
         };
     }
 }

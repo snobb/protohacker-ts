@@ -14,8 +14,8 @@ export { MsgSiteVisit, ObservedSpecies } from './site-visit';
 export const HEADER_SIZE = 5;
 
 export type Payload = {
-    kind: number,
-    payload: Buffer
+    kind: number;
+    payload: Buffer;
 };
 
 export const enum msgType {
@@ -28,13 +28,13 @@ export const enum msgType {
     deletePolicy = 0x56,
     policyResult = 0x57,
     siteVisit = 0x58,
-    undef = -1
+    undef = -1,
 }
 
 export interface Encodable {
-    toPayload(): Payload
+    toPayload(): Payload;
 }
 
 export interface Decodable {
-    fromPayload(data: Payload): this
+    fromPayload(data: Payload): this;
 }

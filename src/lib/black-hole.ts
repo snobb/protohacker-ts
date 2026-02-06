@@ -5,20 +5,20 @@ import { Writable, WritableOptions } from 'node:stream';
 export class BlackHole extends Writable {
     private size: number;
 
-    constructor (opts: WritableOptions) {
+    constructor(opts: WritableOptions) {
         super(opts);
         this.size = 0;
     }
 
-    _write (chunk: Buffer, _: BufferEncoding, done: ()=> void) {
+    _write(chunk: Buffer, _: BufferEncoding, done: () => void) {
         console.log(chunk.toString());
         this.size += chunk.length;
         done();
     }
 
-    _final () {
-        let size = this.size; let
-            sfx;
+    _final() {
+        let size = this.size;
+        let sfx;
 
         if (size / 1024 >= 1) {
             size /= 1024;

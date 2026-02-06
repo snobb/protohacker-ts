@@ -4,16 +4,16 @@ import { Decodable } from './index';
 export type SpeciesRange = {
     min: number;
     max: number;
-}
+};
 
-export type TargetSpecies = Record<string, SpeciesRange>
+export type TargetSpecies = Record<string, SpeciesRange>;
 
 export class MsgTargetPopulations implements Decodable {
     kind = msgType.targetPopulations;
     site = -1;
     populations: TargetSpecies = {};
 
-    fromPayload (data: Payload): this {
+    fromPayload(data: Payload): this {
         if (data.kind !== msgType.targetPopulations) {
             throw new Error('invalid payload');
         }

@@ -4,19 +4,19 @@ import { Payload, msgType } from '.';
 export class MsgDeletePolicy implements Encodable, Decodable {
     kind = msgType.deletePolicy;
 
-    constructor (public policy: number) {}
+    constructor(public policy: number) {}
 
-    toPayload (): Payload {
+    toPayload(): Payload {
         const buf = Buffer.alloc(4);
         buf.writeUInt32BE(this.policy);
 
         return {
             kind: this.kind,
-            payload: buf
+            payload: buf,
         };
     }
 
-    fromPayload (data: Payload): this {
+    fromPayload(data: Payload): this {
         if (data.kind !== this.kind) {
             throw new Error('invalid payload');
         }
@@ -24,5 +24,4 @@ export class MsgDeletePolicy implements Encodable, Decodable {
         this.policy = data.payload.readUInt32BE();
         return this;
     }
-
 }

@@ -11,7 +11,7 @@ import { log } from '../lib/log';
 const MIN_ASCII_PRINTABLE = 0x20; // the printable range of ASCII is
 const MAX_ASCII_PRINTABLE = 0x7f; // 30-127 + new line and tab characters.
 
-function send (w: Writable, data: string | Buffer) {
+function send(w: Writable, data: string | Buffer) {
     w.write(data);
     w.write('\n');
 }
@@ -19,7 +19,7 @@ function send (w: Writable, data: string | Buffer) {
 export class VCS {
     private store = new Store();
 
-    async handleConnection (conn: Socket) {
+    async handleConnection(conn: Socket) {
         const id = `${conn.remoteAddress}:${conn.remotePort}`;
 
         const inStream = new LoggerStream(id, '<<<');
@@ -27,11 +27,10 @@ export class VCS {
 
         const rs = new ReaderStream(inStream);
 
-        conn
-            .on('error', (err: Error) => {
-                log.info(id, 'ERROR', err.message);
-                conn.destroy();
-            })
+        conn.on('error', (err: Error) => {
+            log.info(id, 'ERROR', err.message);
+            conn.destroy();
+        })
             .on('close', () => {
                 log.info(id, 'CLOSED');
             })
@@ -39,8 +38,8 @@ export class VCS {
 
         outStream.pipe(conn);
 
-        outer: // eslint-disable-line no-labels
-        while (!conn.closed) {
+        // eslint-disable-line no-labels
+        outer: while (!conn.closed) {
             send(outStream, 'READY');
 
             // eslint-disable-next-line no-await-in-loop
@@ -68,7 +67,6 @@ export class VCS {
 
                 send(outStream, `OK ${data.length}`);
                 outStream.write(data);
-
             } else if (cmd === 'PUT') {
                 if (args.length !== 2) {
                     send(outStream, 'ERR usage: PUT file length newline data');
@@ -93,7 +91,6 @@ export class VCS {
 
                 const rev = this.store.put(args[0], data);
                 send(outStream, `OK r${rev}`);
-
             } else if (cmd === 'LIST') {
                 if (args.length !== 1) {
                     send(outStream, 'ERR usage: LIST dir');
@@ -114,21 +111,19 @@ export class VCS {
                         throw new Error('dafaq did I just get?!');
                     }
                 }
-
-            } else if (cmd === 'PURGE-DATA') { // non-standard command to clear the state.
+            } else if (cmd === 'PURGE-DATA') {
+                // non-standard command to clear the state.
                 this.store.reset();
                 send(outStream, 'PURGED');
-
             } else if (cmd === 'HELP') {
                 send(outStream, 'OK usage: HELP|GET|PUT|LIST');
-
             } else {
                 send(outStream, `ERR illegal method: ${cmd}`);
             }
         }
     }
 
-    isValidFileName (name: string) {
+    isValidFileName(name: string) {
         if (!name || name[0] !== '/') {
             return false;
         }
@@ -149,14 +144,24 @@ export class VCS {
         return true;
     }
 
-    isText (ch: string) {
-        return ((ch >= '0' && ch <= '9') ||
-                (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') ||
-                ch === '.' || ch === '/' || ch === '-' || ch === '_');
+    isText(ch: string) {
+        return (
+            (ch >= '0' && ch <= '9') ||
+            (ch >= 'a' && ch <= 'z') ||
+            (ch >= 'A' && ch <= 'Z') ||
+            ch === '.' ||
+            ch === '/' ||
+            ch === '-' ||
+            ch === '_'
+        );
     }
 
-    isPrintable (code: number) {
-        return (code === 0x0a || code === 0x0d || code === 0x09 ||
-        (code >= MIN_ASCII_PRINTABLE && code <= MAX_ASCII_PRINTABLE));
+    isPrintable(code: number) {
+        return (
+            code === 0x0a ||
+            code === 0x0d ||
+            code === 0x09 ||
+            (code >= MIN_ASCII_PRINTABLE && code <= MAX_ASCII_PRINTABLE)
+        );
     }
 }

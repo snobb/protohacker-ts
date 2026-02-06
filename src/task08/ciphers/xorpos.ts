@@ -5,12 +5,12 @@ import { Cipher } from './index';
 // XorPos
 // xorpos: XOR the byte by its position in the stream, starting from 0.
 export class XorPos implements Cipher {
-    do (b: number, pos: number): number {
+    do(b: number, pos: number): number {
         pos %= 256;
         return (b & 0xff) ^ pos;
     }
 
-    undo (b: number, pos: number): number {
+    undo(b: number, pos: number): number {
         return this.do(b, pos);
     }
 }

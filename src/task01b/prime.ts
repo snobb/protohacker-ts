@@ -3,18 +3,18 @@ import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 /* eslint-disable no-console */
 
 type request = {
-    method: 'isPrime',
-    number: number
-}
+    method: 'isPrime';
+    number: number;
+};
 
 export class PrimeStream extends Transform {
     cache: Set<number>;
-    constructor (opts?: TransformOptions) {
+    constructor(opts?: TransformOptions) {
         super({ ...opts });
         this.cache = new Set<number>();
     }
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         let req: request;
 
         try {
@@ -34,11 +34,11 @@ export class PrimeStream extends Transform {
         done();
     }
 
-    validate (req: request) {
+    validate(req: request) {
         return req?.method === 'isPrime' && typeof req?.number === 'number';
     }
 
-    isPrime (num: number) {
+    isPrime(num: number) {
         if (num <= 1 || !Number.isSafeInteger(num)) {
             return false;
         }
@@ -60,7 +60,7 @@ export class PrimeStream extends Transform {
         return true;
     }
 
-    send (obj: unknown) {
+    send(obj: unknown) {
         this.push(`${JSON.stringify(obj)}\n`);
     }
 }

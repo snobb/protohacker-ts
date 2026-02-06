@@ -1,6 +1,6 @@
 import { Readable } from 'node:stream';
 
-type Handler = (buffer: Buffer)=> Buffer | void;
+type Handler = (buffer: Buffer) => Buffer | void;
 
 const emptyBuffer = Buffer.from('');
 
@@ -10,14 +10,14 @@ export class ReaderStream {
     private buffer = Buffer.alloc(0);
     private handlerFn?: Handler = undefined;
 
-    constructor (private stream: Readable) {
+    constructor(private stream: Readable) {
         stream.on('data', (chunk: Buffer) => {
             this.buffer = Buffer.concat([this.buffer, chunk]);
             this.notify();
         });
     }
 
-    readLine (delim = '\n') {
+    readLine(delim = '\n') {
         return new Promise<Buffer>((resolve, reject) => {
             const code = delim.charCodeAt(0);
             const chunks: Buffer[] = [];
@@ -33,7 +33,6 @@ export class ReaderStream {
                     }
 
                     chunks.push(chunk);
-
                 } catch (err) {
                     return reject(err);
                 }
@@ -41,7 +40,7 @@ export class ReaderStream {
         });
     }
 
-    readBytes (n: number) {
+    readBytes(n: number) {
         return new Promise<Buffer>((resolve, reject) => {
             const chunks: Buffer[] = [];
             let size = 0;
@@ -57,7 +56,6 @@ export class ReaderStream {
                         resolve(buffer.subarray(0, n));
                         return buffer.subarray(n);
                     }
-
                 } catch (err) {
                     return reject(err);
                 }
@@ -65,7 +63,7 @@ export class ReaderStream {
         });
     }
 
-    private addHandler (fn: Handler) {
+    private addHandler(fn: Handler) {
         if (this.handlerFn) {
             throw new Error('duplicate handler');
         }
@@ -75,7 +73,7 @@ export class ReaderStream {
         this.stream.resume();
     }
 
-    private notify () {
+    private notify() {
         if (!this.handlerFn) {
             this.stream.pause();
             return;
@@ -86,7 +84,6 @@ export class ReaderStream {
         if (remainder) {
             this.buffer = remainder;
             this.handlerFn = undefined;
-
         } else {
             this.buffer = emptyBuffer;
         }

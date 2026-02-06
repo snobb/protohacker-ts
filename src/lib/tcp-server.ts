@@ -2,7 +2,7 @@ import { Socket, createServer } from 'node:net';
 
 /* eslint-disable no-console */
 
-export function tcpServer (port: number, handle: (conn: Socket)=> void) {
+export function tcpServer(port: number, handle: (conn: Socket) => void) {
     const server = createServer()
         .on('connection', async (conn: Socket) => {
             const rAddr = conn.remoteAddress;

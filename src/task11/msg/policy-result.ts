@@ -5,7 +5,7 @@ export class MsgPolicyResult implements Decodable {
     kind = msgType.policyResult;
     policy = -1;
 
-    fromPayload (data: Payload): this {
+    fromPayload(data: Payload): this {
         if (data.kind !== msgType.policyResult) {
             throw new Error('invalid payload');
         }

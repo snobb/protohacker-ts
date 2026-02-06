@@ -3,12 +3,12 @@ import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 export class LineStream extends Transform {
     private chunks: Buffer[];
 
-    constructor (opts?: TransformOptions) {
+    constructor(opts?: TransformOptions) {
         super({ ...opts });
         this.chunks = [];
     }
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         if (chunk.length === 0) {
             return;
         }

@@ -5,7 +5,7 @@ export class MsgError implements Encodable, Decodable {
     kind = msgType.error;
     message: string;
 
-    constructor (err: string | Error) {
+    constructor(err: string | Error) {
         if (err instanceof Error) {
             this.message = err.message;
         } else {
@@ -13,18 +13,18 @@ export class MsgError implements Encodable, Decodable {
         }
     }
 
-    toPayload (): Payload {
+    toPayload(): Payload {
         const buf = Buffer.alloc(this.message.length + 4);
         const offset = buf.writeUInt32BE(this.message.length);
         Buffer.from(this.message).copy(buf, offset);
 
         return {
             kind: msgType.error,
-            payload: buf
+            payload: buf,
         };
     }
 
-    fromPayload (data: Payload): this {
+    fromPayload(data: Payload): this {
         if (data.kind !== msgType.error) {
             throw new Error('invalid payload');
         }

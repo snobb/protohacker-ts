@@ -10,11 +10,11 @@ export class InsecureDecoderStream extends Transform {
     private initialised = false;
     private chunks: Buffer[] = [];
 
-    constructor (opts?: TransformOptions) {
+    constructor(opts?: TransformOptions) {
         super({ ...opts });
     }
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         if (this.initialised) {
             this.decode(chunk);
         } else {
@@ -24,7 +24,7 @@ export class InsecureDecoderStream extends Transform {
         done();
     }
 
-    initialise (chunk: Buffer) {
+    initialise(chunk: Buffer) {
         if (this.chunks.length > 0) {
             this.chunks.push(chunk);
             chunk = Buffer.concat(this.chunks);
@@ -33,56 +33,56 @@ export class InsecureDecoderStream extends Transform {
 
         for (let i = 0; i < chunk.length; i += 1) {
             switch (chunk[i]) {
-            case 0x00: // end of cipher string
-                this.initialised = true;
-                this.validateCiphers();
+                case 0x00: // end of cipher string
+                    this.initialised = true;
+                    this.validateCiphers();
 
-                // leave only the encoded payload and process it.
-                chunk = chunk.subarray(i + 1);
-                this.decode(chunk);
-                return;
-
-            case 0x01: // reversebits
-                this.ciphers.push(new Reverse());
-                break;
-
-            case 0x02: // xor(N)
-                if (i + 1 === chunk.length) {
-                    // end of buffer in a middle of xor.
-                    this.chunks.push(chunk.subarray(i));
+                    // leave only the encoded payload and process it.
+                    chunk = chunk.subarray(i + 1);
+                    this.decode(chunk);
                     return;
-                }
 
-                i += 1;
-                this.ciphers.push(new Xor(chunk[i]));
-                break;
+                case 0x01: // reversebits
+                    this.ciphers.push(new Reverse());
+                    break;
 
-            case 0x03: // xorpos
-                this.ciphers.push(new XorPos());
-                break;
+                case 0x02: // xor(N)
+                    if (i + 1 === chunk.length) {
+                        // end of buffer in a middle of xor.
+                        this.chunks.push(chunk.subarray(i));
+                        return;
+                    }
 
-            case 0x04: // add(N)
-                if (i + 1 === chunk.length) {
-                    // end of buffer in a middle of xor.
-                    this.chunks.push(chunk.subarray(i));
-                    return;
-                }
+                    i += 1;
+                    this.ciphers.push(new Xor(chunk[i]));
+                    break;
 
-                i += 1;
-                this.ciphers.push(new Add(chunk[i]));
-                break;
+                case 0x03: // xorpos
+                    this.ciphers.push(new XorPos());
+                    break;
 
-            case 0x05: // addpos
-                this.ciphers.push(new AddPos());
-                break;
+                case 0x04: // add(N)
+                    if (i + 1 === chunk.length) {
+                        // end of buffer in a middle of xor.
+                        this.chunks.push(chunk.subarray(i));
+                        return;
+                    }
 
-            default:
-                this.destroy(new Error('invalid cipher'));
+                    i += 1;
+                    this.ciphers.push(new Add(chunk[i]));
+                    break;
+
+                case 0x05: // addpos
+                    this.ciphers.push(new AddPos());
+                    break;
+
+                default:
+                    this.destroy(new Error('invalid cipher'));
             }
         }
     }
 
-    validateCiphers () {
+    validateCiphers() {
         const testStr = 'foobar';
         const res: number[] = [];
         let pos = 0;
@@ -105,7 +105,7 @@ export class InsecureDecoderStream extends Transform {
         }
     }
 
-    encode (chunk: Buffer): Buffer {
+    encode(chunk: Buffer): Buffer {
         const res: number[] = [];
         for (let bb of chunk) {
             for (let i = 0; i < this.ciphers.length; i += 1) {
@@ -119,7 +119,7 @@ export class InsecureDecoderStream extends Transform {
         return Buffer.from(res);
     }
 
-    decode (chunk: Buffer) {
+    decode(chunk: Buffer) {
         const res: number[] = [];
 
         for (let bb of chunk) {

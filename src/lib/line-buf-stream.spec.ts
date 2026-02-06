@@ -14,7 +14,7 @@ describe('streams', () => {
             stream.write('foobar\n');
             stream.end('barbaz\n');
 
-            await (async function loop (i: number) {
+            await (async function loop(i: number) {
                 if (i >= exp.length) {
                     return;
                 }
@@ -27,7 +27,7 @@ describe('streams', () => {
 
         it('should get 2 lines split sent in different timeline', async () => {
             const exp = ['foobar\n', 'barbaz\n'];
-            async function loop (i: number) {
+            async function loop(i: number) {
                 if (i >= exp.length) {
                     return;
                 }

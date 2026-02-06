@@ -5,15 +5,15 @@ import { Cipher } from './index';
 // wraps, so that 255+1=0, 255+2=1, and so on.
 export class Add implements Cipher {
     private n: number;
-    constructor (n: number) {
-        this.n = (n & 0xff);
+    constructor(n: number) {
+        this.n = n & 0xff;
     }
 
-    do (b: number): number {
+    do(b: number): number {
         return (b + this.n) % 256;
     }
 
-    undo (b: number): number {
+    undo(b: number): number {
         return Math.abs(256 + b - this.n) % 256;
     }
 }

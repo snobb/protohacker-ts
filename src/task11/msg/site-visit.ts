@@ -8,7 +8,7 @@ export class MsgSiteVisit implements Decodable {
     site = -1;
     populations: ObservedSpecies = {};
 
-    fromPayload (data: Payload): this {
+    fromPayload(data: Payload): this {
         if (data.kind !== msgType.siteVisit) {
             throw new Error('invalid payload');
         }

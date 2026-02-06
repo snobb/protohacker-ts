@@ -10,18 +10,17 @@ export const TypeHeartbeat = 0x41;
 export const TypeIAMCamera = 0x80;
 export const TypeIAMDispatcher = 0x81;
 
-export function formatString (str: string) {
+export function formatString(str: string) {
     if (str.length > 255) {
         throw new Error('error message is too long');
     }
 
-    const bytes = str.split('')
-        .map((ch) => ch.charCodeAt(0));
+    const bytes = str.split('').map((ch) => ch.charCodeAt(0));
 
     return Buffer.from([bytes.length, ...bytes]);
 }
 
-export function formatError (error: string) {
+export function formatError(error: string) {
     let bytes: Buffer;
 
     console.log(error);
@@ -36,11 +35,11 @@ export function formatError (error: string) {
 
 // === PLATE ============================================================
 export type MsgPlate = {
-    plate: string,
-    timestamp: number,
-}
+    plate: string;
+    timestamp: number;
+};
 
-export function readPlateMessage (msg: Buffer) {
+export function readPlateMessage(msg: Buffer) {
     const len = msg.readUInt8();
     const plate = msg.subarray(1, 1 + len).toString();
     const timestamp = msg.readUInt32BE(len + 1);
@@ -50,12 +49,12 @@ export function readPlateMessage (msg: Buffer) {
 
 // === CAMERA ===========================================================
 export type MsgIAMCamera = {
-    road: number,
-    mile: number
-    limit: number,
-}
+    road: number;
+    mile: number;
+    limit: number;
+};
 
-export function readCameraMessage (msg: Buffer) {
+export function readCameraMessage(msg: Buffer) {
     return {
         road: msg.readUInt16BE(),
         mile: msg.readUInt16BE(2),
@@ -64,7 +63,7 @@ export function readCameraMessage (msg: Buffer) {
 }
 
 // === Dispatcher =======================================================
-export function readDispatcherMessage (msg: Buffer) {
+export function readDispatcherMessage(msg: Buffer) {
     const len = msg.readUInt8();
 
     const roads: number[] = [];
@@ -80,19 +79,19 @@ export function readDispatcherMessage (msg: Buffer) {
 
 // === Ticket ===========================================================
 export type Reading = {
-    mile: number,
-    timestamp: number,
-}
+    mile: number;
+    timestamp: number;
+};
 
 export type Ticket = {
-    plate: string,
-    road: number,
-    reading1: Reading,
-    reading2: Reading,
-    speed: number,
-}
+    plate: string;
+    road: number;
+    reading1: Reading;
+    reading2: Reading;
+    speed: number;
+};
 
-export function writeTicket (conn: NodeJS.WritableStream, ticket: Ticket) {
+export function writeTicket(conn: NodeJS.WritableStream, ticket: Ticket) {
     const strBuf = formatString(ticket.plate);
     const msgBuf = Buffer.alloc(16); // 4*uint16 + 2*uint32
 

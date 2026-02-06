@@ -1,16 +1,16 @@
 export type Job = {
-    id: number
-    queue: string
-    priority: number
-    body: unknown
-}
+    id: number;
+    queue: string;
+    priority: number;
+    body: unknown;
+};
 
 export class PQueue {
     private index: number[] = [];
     private store = new Map<number, Job[]>();
     private size = 0;
 
-    enque (job: Job) {
+    enque(job: Job) {
         const que = this.store.get(job.priority);
         if (!que) {
             // no queue for this priority yet
@@ -25,7 +25,7 @@ export class PQueue {
         this.size += 1;
     }
 
-    deque () {
+    deque() {
         if (this.index.length === 0) {
             return;
         }
@@ -47,7 +47,7 @@ export class PQueue {
         return item;
     }
 
-    delete (id: number) {
+    delete(id: number) {
         for (const [pri, que] of this.store.entries()) {
             for (let i = 0; i < que.length; i += 1) {
                 if (que[i].id === id) {
@@ -70,11 +70,11 @@ export class PQueue {
         return false;
     }
 
-    getSize () {
+    getSize() {
         return this.size;
     }
 
-    getHighestPriority () {
+    getHighestPriority() {
         if (this.index.length === 0) {
             return -1;
         }

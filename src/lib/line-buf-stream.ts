@@ -6,12 +6,12 @@ export class LineBufStream extends Transform {
     private chunks: Buffer[];
     private bufSize = 0;
 
-    constructor (opts?: TransformOptions) {
+    constructor(opts?: TransformOptions) {
         super({ ...opts });
         this.chunks = [];
     }
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         this.chunks.push(chunk);
         this.bufSize += chunk.length;
         this.emit('chunk');
@@ -19,7 +19,7 @@ export class LineBufStream extends Transform {
         done();
     }
 
-    shiftChunk () {
+    shiftChunk() {
         const chunk = this.chunks.shift();
         if (!chunk) {
             return;
@@ -29,12 +29,12 @@ export class LineBufStream extends Transform {
         return chunk;
     }
 
-    unshiftChunk (chunk: Buffer) {
+    unshiftChunk(chunk: Buffer) {
         this.chunks.unshift(chunk);
         this.bufSize += chunk.length;
     }
 
-    readLine (): Promise<Buffer> {
+    readLine(): Promise<Buffer> {
         return new Promise((resolve) => {
             const chunks: Buffer[] = [];
 
@@ -78,7 +78,7 @@ export class LineBufStream extends Transform {
         });
     }
 
-    read (size: number) {
+    read(size: number) {
         return new Promise((resolve) => {
             const handleChunks = () => {
                 if (this.bufSize >= size) {

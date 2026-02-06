@@ -5,11 +5,11 @@ import { Transform, TransformCallback, TransformOptions } from 'node:stream';
 export class AppStream extends Transform {
     private re = /^(\d+)x/;
 
-    constructor (opts?: TransformOptions) {
+    constructor(opts?: TransformOptions) {
         super({ ...opts });
     }
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         const lines = chunk.toString().split(',');
 
         if (chunk.length === 0 || lines.length === 0) {
@@ -33,7 +33,7 @@ export class AppStream extends Transform {
 
         if (maxIdx >= 0) {
             const line = lines[maxIdx];
-            this.push((line[line.length - 1] === '\n') ? line : `${line}\n`);
+            this.push(line[line.length - 1] === '\n' ? line : `${line}\n`);
         }
 
         done();

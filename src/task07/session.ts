@@ -4,11 +4,11 @@ import { Message } from './lrcp';
 
 /* eslint-disable no-console */
 
-export type DuplexCallback = (error?: Error)=> void;
+export type DuplexCallback = (error?: Error) => void;
 type Chunk = {
-    pos: number,
-    data: Buffer,
-}
+    pos: number;
+    data: Buffer;
+};
 
 export class Session extends Duplex {
     static readonly sessionTimeout = 60 * 1000;
@@ -18,7 +18,7 @@ export class Session extends Duplex {
     private _isClosed = false;
     private appBuffer = Buffer.alloc(0);
     private blocked = false;
-    private reTxTimer?: NodeJS.Timer;
+    private reTxTimer?: NodeJS.Timeout;
 
     // receive
     private rcvAcked = 0;
@@ -29,47 +29,51 @@ export class Session extends Duplex {
     private sendAcked = 0; // all the sent data that has been acked.
     private sendChunks: Chunk[] = []; // all the chunks we send
 
-    constructor (private sid: number, private sock: Socket,
-                 private rinfo: RemoteInfo, opts?: DuplexOptions) {
+    constructor(
+        private sid: number,
+        private sock: Socket,
+        private rinfo: RemoteInfo,
+        opts?: DuplexOptions,
+    ) {
         super({ ...opts, writableHighWaterMark: Session.maxPayloadSize * 10 });
         sock.on('close', () => this.close());
     }
 
-    handle (msg: Message) {
+    handle(msg: Message) {
         switch (msg.type) {
-        case 'connect':
-            this.handleConnect(msg);
-            break;
+            case 'connect':
+                this.handleConnect(msg);
+                break;
 
-        case 'close':
-            this.handleClose(msg);
-            break;
+            case 'close':
+                this.handleClose(msg);
+                break;
 
-        case 'ack':
-            this.handleAck(msg);
-            break;
+            case 'ack':
+                this.handleAck(msg);
+                break;
 
-        case 'data':
-            this.handleData(msg);
-            break;
+            case 'data':
+                this.handleData(msg);
+                break;
 
-        default:
-            this.log(`invalid message type: ${msg.type}`);
+            default:
+                this.log(`invalid message type: ${msg.type}`);
         }
     }
 
-    handleConnect (msg: Message) {
+    handleConnect(msg: Message) {
         this.log(`handling ${msg.type} msg`);
         this.sendAck(0);
     }
 
-    handleClose (msg: Message) {
+    handleClose(msg: Message) {
         this.log(`handling ${msg.type} msg`);
         this.sendClose();
         this.close();
     }
 
-    handleAck (msg: Message) {
+    handleAck(msg: Message) {
         this.log(`handling ${msg.type} msg: pos:${msg.pos}`);
         this.notify();
 
@@ -81,13 +85,12 @@ export class Session extends Duplex {
         if (msg.pos > this.sendTotal) {
             this.sendClose();
             this.close();
-
         } else if (msg.pos >= this.sendAcked) {
             this.sendAcked = msg.pos;
         }
     }
 
-    handleData (msg: Message) {
+    handleData(msg: Message) {
         this.log(`handling ${msg.type} msg: pos:${msg.pos} data:${msg.data?.toString()}`);
         this.notify();
 
@@ -100,7 +103,6 @@ export class Session extends Duplex {
             // do not have all the data - send duplicate ack for data we have.
             this.sendAck(this.rcvAcked);
             this.sendAck(this.rcvAcked);
-
         } else if (msg.pos < this.rcvAcked && !this.isClosed()) {
             // resend all unacked buffers.
             const chunks: Buffer[] = [];
@@ -115,7 +117,6 @@ export class Session extends Duplex {
                     const offset = msg.pos - pos;
                     this.debug(`incomplete chunk - ${pos} ${msg.pos} ${data.subarray(offset).toString()}`);
                     chunks.push(data.subarray(offset));
-
                 } else {
                     this.debug(`complete chunk pos:${pos}, data:${data.toString()}`);
                     chunks.push(data);
@@ -125,7 +126,6 @@ export class Session extends Duplex {
             if (chunks.length > 0) {
                 this.sendData(msg.pos, Buffer.concat(chunks));
             }
-
         } else {
             // have all data up to pos + the current buffer
             const buf = this.unescape(msg.data);
@@ -134,14 +134,13 @@ export class Session extends Duplex {
 
             if (this.blocked) {
                 this.appBuffer = Buffer.concat([this.appBuffer, buf]);
-
             } else if (!this.push(buf)) {
                 this.blocked = true;
             }
         }
     }
 
-    _read (size: number) {
+    _read(size: number) {
         while (this.appBuffer.length > 0) {
             if (!this.push(this.appBuffer.subarray(0, size))) {
                 break; // blocked
@@ -153,7 +152,7 @@ export class Session extends Duplex {
         this.blocked = false;
     }
 
-    async _write (chunk: Buffer, _: BufferEncoding, done: DuplexCallback) {
+    async _write(chunk: Buffer, _: BufferEncoding, done: DuplexCallback) {
         await this.sendData(this.sendTotal, chunk);
         this.sendChunks.push({ pos: this.sendTotal, data: chunk }); // save chunk for retransmits.
         this.sendTotal += chunk.length;
@@ -162,14 +161,13 @@ export class Session extends Duplex {
         done();
     }
 
-    startRetransmit () {
+    startRetransmit() {
         if (this.reTxTimer) {
             return;
         }
 
         const resend = async () => {
-            if (this.sendChunks.length === 0 ||
-                    this.sendAcked === this.sendTotal || this.isClosed()) {
+            if (this.sendChunks.length === 0 || this.sendAcked === this.sendTotal || this.isClosed()) {
                 this.reTxTimer = undefined;
                 return;
             }
@@ -183,7 +181,6 @@ export class Session extends Duplex {
 
                 if (pos < this.sendAcked) {
                     chunks.push(data.subarray(this.sendAcked - pos));
-
                 } else {
                     chunks.push(data);
                 }
@@ -199,7 +196,7 @@ export class Session extends Duplex {
         this.reTxTimer = setTimeout(resend, Session.retransmitInterval);
     }
 
-    escape (buf: Buffer) {
+    escape(buf: Buffer) {
         const chunks: Buffer[] = [];
 
         let lo = 0;
@@ -207,7 +204,6 @@ export class Session extends Duplex {
             if (buf[hi] === '\\'.charCodeAt(0)) {
                 chunks.push(buf.subarray(lo, hi), Buffer.from('\\\\'));
                 lo = hi + 1;
-
             } else if (buf[hi] === '/'.charCodeAt(0)) {
                 chunks.push(buf.subarray(lo, hi), Buffer.from('\\/'));
                 lo = hi + 1;
@@ -218,22 +214,19 @@ export class Session extends Duplex {
         return Buffer.concat(chunks);
     }
 
-    unescape (buf: Buffer) {
-        return Buffer.from(buf
-            .toString()
-            .replaceAll('\\/', '/')
-            .replaceAll('\\\\', '\\'));
+    unescape(buf: Buffer) {
+        return Buffer.from(buf.toString().replaceAll('\\/', '/').replaceAll('\\\\', '\\'));
     }
 
-    isClosed () {
+    isClosed() {
         return this._isClosed;
     }
 
-    hasExpired () {
+    hasExpired() {
         return Date.now() - this.rcvLast > Session.sessionTimeout;
     }
 
-    close () {
+    close() {
         this._isClosed = true;
         this.rcvLast = 0;
 
@@ -242,21 +235,21 @@ export class Session extends Duplex {
         }
     }
 
-    notify () {
+    notify() {
         this.rcvLast = Date.now();
     }
 
-    sendClose () {
+    sendClose() {
         this.debug('send close');
         this.sock.send(`/close/${this.sid}/`, this.rinfo.port, this.rinfo.address);
     }
 
-    sendAck (pos: number) {
+    sendAck(pos: number) {
         this.debug(`send ack: pos:${pos}`);
         this.sock.send(`/ack/${this.sid}/${pos}/`, this.rinfo.port, this.rinfo.address);
     }
 
-    sendData (pos: number, data: Buffer): Promise<void> {
+    sendData(pos: number, data: Buffer): Promise<void> {
         return new Promise((resolve) => {
             if (data.length > Session.maxPayloadSize) {
                 const loop = (lo: number, hi: number) => {
@@ -268,12 +261,10 @@ export class Session extends Duplex {
                         return resolve();
                     }
 
-                    setImmediate(() => loop(hi,
-                        Math.min(hi + Session.maxPayloadSize, data.length)));
+                    setImmediate(() => loop(hi, Math.min(hi + Session.maxPayloadSize, data.length)));
                 };
 
                 loop(0, Math.min(Session.maxPayloadSize, data.length));
-
             } else {
                 setImmediate(() => {
                     this.sendDataChunk(pos, data);
@@ -283,17 +274,20 @@ export class Session extends Duplex {
         });
     }
 
-    sendDataChunk (pos: number, data: Buffer) {
+    sendDataChunk(pos: number, data: Buffer) {
         this.debug(`send data: pos:${pos} data:${data.toString()}`);
-        this.sock.send(`/data/${this.sid}/${pos}/${this.escape(data).toString()}/`,
-            this.rinfo.port, this.rinfo.address);
+        this.sock.send(
+            `/data/${this.sid}/${pos}/${this.escape(data).toString()}/`,
+            this.rinfo.port,
+            this.rinfo.address,
+        );
     }
 
-    log (...msg: unknown[]) {
+    log(...msg: unknown[]) {
         console.log(`[sid:${this.sid}]: ${msg[0]}`, ...msg.slice(1));
     }
 
-    debug (...msg: unknown[]) {
+    debug(...msg: unknown[]) {
         if (!process.env.DEBUG) {
             return;
         }

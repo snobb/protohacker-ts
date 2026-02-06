@@ -1,19 +1,14 @@
-import {
-    MsgIAMCamera,
-    Reading,
-    Ticket,
-    writeTicket
-} from './msg';
+import { MsgIAMCamera, Reading, Ticket, writeTicket } from './msg';
 import { Socket } from 'node:net';
 import { SpeedMessageTransform } from './speed-msg';
 import { SpeedTransform } from './speed';
 
 /* eslint-disable no-console */
 
-type TicketDays = Map<string, Set<number>>
-type PlateReading = Map<string, Reading[]> // concat(plate,road) -> [mile, time record].
+type TicketDays = Map<string, Set<number>>;
+type PlateReading = Map<string, Reading[]>; // concat(plate,road) -> [mile, time record].
 type IssuedTickets = Map<number, Ticket[]>; // road -> [Ticket]
-type Dispatchers = Map<number, NodeJS.WritableStream> // road -> connection
+type Dispatchers = Map<number, NodeJS.WritableStream>; // road -> connection
 
 export class SpeedDaemon {
     private plates: PlateReading = new Map(); // concat(plate,road) -> [mile, time record].
@@ -21,22 +16,21 @@ export class SpeedDaemon {
     private dispatchers: Dispatchers = new Map();
     private ticketDays: TicketDays = new Map();
 
-    handle (conn: Socket) {
+    handle(conn: Socket) {
         const speedTransform = new SpeedTransform(this, conn);
 
-        conn
-            .pipe(new SpeedMessageTransform())
+        conn.pipe(new SpeedMessageTransform())
             .pipe(speedTransform)
             .pipe(conn)
             .on('close', () => speedTransform.shutdown())
             .on('error', console.error);
     }
 
-    getKey (plate: string, road: number) {
+    getKey(plate: string, road: number) {
         return `${plate}::${road}`;
     }
 
-    registerPlate (camera: MsgIAMCamera, plate: string, timestamp: number) {
+    registerPlate(camera: MsgIAMCamera, plate: string, timestamp: number) {
         const key = this.getKey(plate, camera.road);
         this.plates.set(key, this.plates.get(key) || []);
         this.plates.get(key)?.push({
@@ -44,15 +38,20 @@ export class SpeedDaemon {
             timestamp,
         });
 
-        console.log('Registering plate %s for road %s: [mile: %s, time: %s]',
-            plate, camera.road, camera.mile, timestamp);
+        console.log(
+            'Registering plate %s for road %s: [mile: %s, time: %s]',
+            plate,
+            camera.road,
+            camera.mile,
+            timestamp,
+        );
     }
 
-    registerDispatcher (road: number, conn: Socket) {
+    registerDispatcher(road: number, conn: Socket) {
         this.dispatchers.set(road, conn);
     }
 
-    issueTickets (plate: string, camera?: MsgIAMCamera) {
+    issueTickets(plate: string, camera?: MsgIAMCamera) {
         if (!camera) {
             throw new Error('camera is not set');
         }
@@ -72,14 +71,12 @@ export class SpeedDaemon {
                 continue;
             }
 
-            const speed = distance / time * 3600;
+            const speed = (distance / time) * 3600;
 
-            console.log('calculated speed: %d, limit: %d',
-                Math.floor(speed), camera.limit);
+            console.log('calculated speed: %d, limit: %d', Math.floor(speed), camera.limit);
 
-            if (speed > (camera.limit + 0.3)) {
-                console.log('speeding detected for %s - speed: %s, limit: %s',
-                    plate, Math.floor(speed), camera.limit);
+            if (speed > camera.limit + 0.3) {
+                console.log('speeding detected for %s - speed: %s, limit: %s', plate, Math.floor(speed), camera.limit);
 
                 this.trackTicket({
                     plate,
@@ -92,7 +89,7 @@ export class SpeedDaemon {
         }
     }
 
-    trackTicket (ticket: Ticket) {
+    trackTicket(ticket: Ticket) {
         const day1 = Math.floor(ticket.reading1.timestamp / 86400);
         const day2 = Math.floor(ticket.reading2.timestamp / 86400);
 
@@ -113,7 +110,7 @@ export class SpeedDaemon {
         this.issuedTickets.get(ticket.road)?.push(ticket);
     }
 
-    sendTickets (road: number) {
+    sendTickets(road: number) {
         let ticket: Ticket | undefined;
         const conn = this.dispatchers.get(road);
         if (!conn) {

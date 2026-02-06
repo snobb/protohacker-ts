@@ -12,18 +12,19 @@ const c_Z = 'Z'.charCodeAt(0);
 const c_space = ' '.charCodeAt(0);
 
 export class BogusCoinStream extends Transform {
-    constructor (opts?: TransformOptions) {
+    constructor(opts?: TransformOptions) {
         super({ ...opts });
     }
 
-    _transform (chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
+    _transform(chunk: Buffer, _: BufferEncoding, done: TransformCallback) {
         const chunks: Buffer[] = [];
 
         let pos = 0;
-        for (let i = pos; i < chunk.length - 1; i += 1) { // ignore new line
+        for (let i = pos; i < chunk.length - 1; i += 1) {
+            // ignore new line
             if ((i === 0 || chunk[i - 1] === c_space) && chunk[i] === c_7) {
                 let next = chunk.indexOf(c_space, i);
-                next = (next === -1) ? chunk.length - 1 : next;
+                next = next === -1 ? chunk.length - 1 : next;
 
                 if (this.isValidAddr(chunk, i, next)) {
                     if (pos < i) {
@@ -47,20 +48,24 @@ export class BogusCoinStream extends Transform {
         done();
     }
 
-    isValidAddr (line: Buffer, lo: number, hi: number) {
+    isValidAddr(line: Buffer, lo: number, hi: number) {
         if (lo >= hi || line[lo] !== c_7) {
             return false;
         }
 
         for (let i = lo + 1; i < hi; i += 1) {
-            if ((line[i] >= c_a && line[i] <= c_z) ||
+            if (
+                (line[i] >= c_a && line[i] <= c_z) ||
                 (line[i] >= c_A && line[i] <= c_Z) ||
-                (line[i] >= c_0 && line[i] <= c_9)) { continue; }
+                (line[i] >= c_0 && line[i] <= c_9)
+            ) {
+                continue;
+            }
 
             return false;
         }
 
         const len = hi - lo;
-        return (len >= 26 && len <= 35);
+        return len >= 26 && len <= 35;
     }
 }
