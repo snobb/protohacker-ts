@@ -1,4 +1,5 @@
 import * as assert from 'node:assert';
+import { describe, test } from 'node:test';
 import { asyncForEach } from './tools';
 
 const asyncSum = (...nums: number[]) =>
@@ -8,13 +9,13 @@ const asyncSum = (...nums: number[]) =>
     });
 
 describe('tools tests', () => {
-    context('asyncForEach function', () => {
-        it('should run async loop serially', async () => {
+    describe('asyncForEach function', () => {
+        test('should run async loop serially', async () => {
             const data = [1, 2, 3, 4, 5, 6, 7, 8];
             const res: number[] = [];
 
             await asyncForEach(data, async (item: number, next: () => void) => {
-                res.push(<number>await asyncSum(item, item));
+                res.push((await asyncSum(item, item)) as number);
                 return next();
             });
 

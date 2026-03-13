@@ -1,9 +1,10 @@
 import * as assert from 'node:assert';
+import { describe, test } from 'node:test';
 import { MsgTargetPopulations } from './target-populations';
 import { msgType } from '.';
 
 describe('target-populations message', () => {
-    it('should parse a message', () => {
+    test('should parse a message', () => {
         const payload = Buffer.from([
             0x00,
             0x00,

@@ -1,9 +1,10 @@
 import * as assert from 'node:assert';
+import { describe, test } from 'node:test';
 import { MsgSiteVisit } from './site-visit';
 import { msgType } from '.';
 
 describe('site-visit message', () => {
-    it('should parse a message', () => {
+    test('should parse a message', () => {
         const payload = Buffer.from([
             0x00,
             0x00,
@@ -51,7 +52,7 @@ describe('site-visit message', () => {
         });
     });
 
-    it('should throw an error on too much payload', () => {
+    test('should throw an error on too much payload', () => {
         const payload = Buffer.from([
             0x00,
             0x00,

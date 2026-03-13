@@ -21,8 +21,7 @@
         "outDir": "./dist",
         "rootDir": "./src",
         "types": [
-            "node",
-            "@types/mocha"
+            "node"
         ]
     },
     "include": [

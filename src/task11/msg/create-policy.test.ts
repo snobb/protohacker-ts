@@ -1,9 +1,10 @@
 import * as assert from 'node:assert';
+import { describe, test } from 'node:test';
 import { MsgCreatePolicy, policyAction } from './create-policy';
 import { msgType } from '.';
 
 describe('create-policy message', () => {
-    it('should parse a message', () => {
+    test('should parse a message', () => {
         const payload = Buffer.from([
             0x00,
             0x00,
@@ -23,7 +24,7 @@ describe('create-policy message', () => {
         assert.strictEqual(hello.action, policyAction.conserve);
     });
 
-    it('should encode a message', () => {
+    test('should encode a message', () => {
         const payload = Buffer.from([
             0x00,
             0x00,

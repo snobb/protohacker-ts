@@ -1,0 +1,1535 @@
+listening on: 8080
+connected from: ::ffff:127.107.55.134:53715
+INFO: pestcontrol: site:3236977229, observed populations {"long-tailed rat":20}
+INFO: handling site: 3236977229
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:3236977229, target populations {"long-tailed rat":{"min":0,"max":10}}
+INFO: advisePolicy: site:3236977229, species:long-tailed rat, advice:cull
+INFO: createPolicy: site:3236977229, species:long-tailed rat, action:144
+disconnected from: ::ffff:127.107.55.134:53715
+connected from: ::ffff:127.107.55.134:35595
+connected from: ::ffff:127.107.55.134:37257
+connected from: ::ffff:127.107.55.134:43689
+connected from: ::ffff:127.107.55.134:56825
+connected from: ::ffff:127.107.55.134:59899
+connected from: ::ffff:127.107.55.134:34509
+INFO: pestcontrol: site:394554793, observed populations {"short-tailed hamster":91,"European long-haired wagtail":2,"common long-haired dog":27,"lesser short-haired mole":172,"giant duck-billed dodo":119,"lesser-spotted long-tailed dog":94,"long-haired platypus":51,"long-haired rat":125,"flightless wagtail":12,"great duck-billed squid":17,"short-haired alligator":35,"flightless squid":59,"short-tailed mosquito":94}
+INFO: handling site: 394554793
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:1199528129, observed populations {"great duck-billed rat":9,"short-haired mole":27,"great duck-billed ostrich":42,"long-haired shark":104,"lesser three-legged mosquito":105,"short-haired elephant":213,"common duck-billed otter":151,"pygmy flightless dog":14}
+INFO: handling site: 1199528129
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:1573631919, observed populations {"long-tailed alligator":38,"short-tailed iguana":50,"European long-haired cat":89,"great duck-billed shark":21,"long-tailed platypus":71,"lesser flightless hippopotamus":15,"long-haired swallow":11,"long-tailed hippopotamus":93,"duck-billed horse":104,"short-haired wagtail":68,"great long-tailed tortoise":32,"African duck-billed hobbit":145,"lesser long-tailed wagtail":57,"African long-tailed mosquito":7,"common long-haired horse":29,"giant long-tailed turtle":42,"short-haired dinosaur":33,"bird-eating mosquito":31}
+INFO: handling site: 1573631919
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:1948981659, observed populations {"long-haired mouse":70,"bird-eating spider":12,"three-legged dog":22,"lesser-spotted flightless dog":111,"giant long-tailed mouse":78,"African bird-eating rhinoceros":78,"pygmy short-haired rhinoceros":1,"short-haired ostrich":118,"bird-eating mole":30,"African long-haired platypus":113,"lesser-spotted bird-eating platypus":50,"great short-haired alligator":80,"European flightless iguana":43,"short-tailed dog":91,"lesser-spotted short-haired dinosaur":23}
+INFO: handling site: 1948981659
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:2363637502, observed populations {"African duck-billed tortoise":7,"pygmy three-legged rhinoceros":129,"lesser short-tailed swallow":23,"pygmy duck-billed octopus":218,"long-tailed dog":110,"duck-billed iguana":121,"great three-legged otter":12,"giant long-tailed spider":1,"African bird-eating dodo":6,"bird-eating swallow":288,"duck-billed duck":56,"lesser bird-eating hamster":0,"three-legged mosquito":68,"common flightless dinosaur":77}
+INFO: handling site: 2363637502
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:2793565526, observed populations {"pygmy long-tailed dodo":84,"European short-tailed rhinoceros":91,"bird-eating rat":192,"long-tailed swallow":149,"short-tailed horse":20,"European long-tailed elephant":162,"flightless iguana":116,"flightless tortoise":18,"lesser-spotted flightless hamster":22}
+INFO: handling site: 2793565526
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:394554793, target populations {"short-tailed hamster":{"min":13,"max":56},"European long-haired wagtail":{"min":63,"max":125},"common long-haired dog":{"min":9,"max":33},"lesser short-haired mole":{"min":28,"max":104},"giant duck-billed dodo":{"min":49,"max":117},"lesser-spotted long-tailed dog":{"min":95,"max":149},"long-haired platypus":{"min":86,"max":152},"long-haired rat":{"min":76,"max":144},"long-tailed rat":{"min":13,"max":77},"flightless wagtail":{"min":21,"max":79},"great duck-billed squid":{"min":56,"max":153},"short-haired alligator":{"min":69,"max":116}}
+INFO: advisePolicy: site:394554793, species:short-tailed hamster, advice:cull
+INFO: createPolicy: site:394554793, species:short-tailed hamster, action:144
+INFO: pestcontrol: site:1573631919, target populations {"long-haired mole":{"min":32,"max":126},"long-tailed alligator":{"min":19,"max":105},"short-tailed iguana":{"min":61,"max":93},"European long-haired cat":{"min":75,"max":145},"lesser-spotted long-haired ostrich":{"min":52,"max":94},"great duck-billed shark":{"min":0,"max":41},"long-tailed platypus":{"min":14,"max":36},"lesser flightless hippopotamus":{"min":53,"max":125},"long-haired otter":{"min":13,"max":17},"long-haired swallow":{"min":74,"max":97},"long-tailed hippopotamus":{"min":89,"max":126},"lesser duck-billed mole":{"min":56,"max":117},"bird-eating ostrich":{"min":64,"max":90},"duck-billed horse":{"min":99,"max":119},"short-haired wagtail":{"min":6,"max":81},"European three-legged octopus":{"min":31,"max":118},"great long-tailed tortoise":{"min":6,"max":94},"African duck-billed hobbit":{"min":53,"max":81},"lesser long-tailed wagtail":{"min":88,"max":180},"African long-tailed mosquito":{"min":33,"max":90}}
+INFO: advisePolicy: site:1573631919, species:long-haired mole, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-haired mole, action:160
+INFO: pestcontrol: site:1199528129, target populations {"great duck-billed rat":{"min":62,"max":153},"short-haired shark":{"min":49,"max":72},"short-haired mole":{"min":21,"max":53},"great duck-billed ostrich":{"min":53,"max":135},"long-haired shark":{"min":95,"max":193},"lesser three-legged mosquito":{"min":37,"max":83},"lesser three-legged shark":{"min":27,"max":106},"giant short-haired duck":{"min":47,"max":58},"short-haired elephant":{"min":76,"max":165},"common duck-billed otter":{"min":46,"max":107},"pygmy flightless dog":{"min":84,"max":158}}
+INFO: advisePolicy: site:1199528129, species:great duck-billed rat, advice:conserve
+INFO: createPolicy: site:1199528129, species:great duck-billed rat, action:160
+INFO: pestcontrol: site:1948981659, target populations {"long-haired mouse":{"min":15,"max":100},"bird-eating spider":{"min":32,"max":98},"three-legged dog":{"min":12,"max":35},"lesser-spotted flightless dog":{"min":95,"max":148},"long-tailed hobbit":{"min":32,"max":76},"giant long-tailed mouse":{"min":9,"max":101},"African bird-eating rhinoceros":{"min":22,"max":41},"long-tailed elephant":{"min":32,"max":45},"pygmy short-haired rhinoceros":{"min":6,"max":6},"short-haired ostrich":{"min":63,"max":83},"bird-eating mole":{"min":14,"max":45},"long-tailed cat":{"min":52,"max":114},"African long-haired platypus":{"min":83,"max":123},"lesser-spotted bird-eating platypus":{"min":66,"max":147}}
+INFO: advisePolicy: site:1948981659, species:long-haired mouse, advice:none
+INFO: advisePolicy: site:1948981659, species:bird-eating spider, advice:conserve
+INFO: createPolicy: site:1948981659, species:bird-eating spider, action:160
+INFO: advisePolicy: site:394554793, species:European long-haired wagtail, advice:conserve
+INFO: createPolicy: site:394554793, species:European long-haired wagtail, action:160
+INFO: advisePolicy: site:1573631919, species:long-tailed alligator, advice:none
+INFO: advisePolicy: site:1573631919, species:short-tailed iguana, advice:conserve
+INFO: createPolicy: site:1573631919, species:short-tailed iguana, action:160
+INFO: advisePolicy: site:1199528129, species:short-haired shark, advice:conserve
+INFO: createPolicy: site:1199528129, species:short-haired shark, action:160
+INFO: advisePolicy: site:1948981659, species:three-legged dog, advice:none
+INFO: advisePolicy: site:1948981659, species:lesser-spotted flightless dog, advice:none
+INFO: advisePolicy: site:1948981659, species:long-tailed hobbit, advice:conserve
+INFO: createPolicy: site:1948981659, species:long-tailed hobbit, action:160
+INFO: pestcontrol: site:2363637502, target populations {"lesser flightless octopus":{"min":66,"max":152},"African duck-billed tortoise":{"min":11,"max":11},"pygmy three-legged rhinoceros":{"min":41,"max":73},"lesser short-tailed swallow":{"min":22,"max":31},"pygmy duck-billed octopus":{"min":93,"max":157},"long-tailed dog":{"min":50,"max":143},"long-tailed cat":{"min":12,"max":87},"duck-billed iguana":{"min":85,"max":123},"great three-legged otter":{"min":11,"max":12},"giant long-tailed spider":{"min":15,"max":65},"lesser long-tailed tortoise":{"min":88,"max":98},"African bird-eating dodo":{"min":16,"max":76},"bird-eating swallow":{"min":77,"max":168}}
+INFO: advisePolicy: site:2363637502, species:lesser flightless octopus, advice:conserve
+INFO: createPolicy: site:2363637502, species:lesser flightless octopus, action:160
+INFO: pestcontrol: site:2793565526, target populations {"pygmy long-tailed dodo":{"min":84,"max":87},"flightless swallow":{"min":16,"max":38},"short-haired dinosaur":{"min":19,"max":101},"European short-tailed rhinoceros":{"min":57,"max":65},"bird-eating rat":{"min":56,"max":110},"long-tailed swallow":{"min":48,"max":92},"short-tailed wagtail":{"min":47,"max":122},"short-tailed horse":{"min":14,"max":45},"great long-haired hamster":{"min":52,"max":137},"European long-tailed elephant":{"min":78,"max":166},"lesser-spotted three-legged dodo":{"min":6,"max":48},"short-tailed platypus":{"min":70,"max":130},"flightless iguana":{"min":43,"max":129}}
+INFO: advisePolicy: site:2793565526, species:pygmy long-tailed dodo, advice:none
+INFO: advisePolicy: site:2793565526, species:flightless swallow, advice:conserve
+INFO: createPolicy: site:2793565526, species:flightless swallow, action:160
+INFO: advisePolicy: site:394554793, species:common long-haired dog, advice:none
+INFO: advisePolicy: site:394554793, species:lesser short-haired mole, advice:cull
+INFO: createPolicy: site:394554793, species:lesser short-haired mole, action:144
+INFO: advisePolicy: site:1573631919, species:European long-haired cat, advice:none
+INFO: advisePolicy: site:1573631919, species:lesser-spotted long-haired ostrich, advice:conserve
+INFO: createPolicy: site:1573631919, species:lesser-spotted long-haired ostrich, action:160
+INFO: advisePolicy: site:1199528129, species:short-haired mole, advice:none
+INFO: advisePolicy: site:1199528129, species:great duck-billed ostrich, advice:conserve
+INFO: createPolicy: site:1199528129, species:great duck-billed ostrich, action:160
+INFO: advisePolicy: site:1948981659, species:giant long-tailed mouse, advice:none
+INFO: advisePolicy: site:1948981659, species:African bird-eating rhinoceros, advice:cull
+INFO: createPolicy: site:1948981659, species:African bird-eating rhinoceros, action:144
+INFO: advisePolicy: site:2363637502, species:African duck-billed tortoise, advice:conserve
+INFO: createPolicy: site:2363637502, species:African duck-billed tortoise, action:160
+INFO: advisePolicy: site:2793565526, species:short-haired dinosaur, advice:conserve
+INFO: createPolicy: site:2793565526, species:short-haired dinosaur, action:160
+INFO: advisePolicy: site:394554793, species:giant duck-billed dodo, advice:cull
+INFO: createPolicy: site:394554793, species:giant duck-billed dodo, action:144
+INFO: advisePolicy: site:1573631919, species:great duck-billed shark, advice:none
+INFO: advisePolicy: site:1573631919, species:long-tailed platypus, advice:cull
+INFO: createPolicy: site:1573631919, species:long-tailed platypus, action:144
+INFO: advisePolicy: site:1199528129, species:long-haired shark, advice:none
+INFO: advisePolicy: site:1199528129, species:lesser three-legged mosquito, advice:cull
+INFO: createPolicy: site:1199528129, species:lesser three-legged mosquito, action:144
+INFO: advisePolicy: site:1948981659, species:long-tailed elephant, advice:conserve
+INFO: createPolicy: site:1948981659, species:long-tailed elephant, action:160
+INFO: advisePolicy: site:2363637502, species:pygmy three-legged rhinoceros, advice:cull
+INFO: createPolicy: site:2363637502, species:pygmy three-legged rhinoceros, action:144
+INFO: advisePolicy: site:2793565526, species:European short-tailed rhinoceros, advice:cull
+INFO: createPolicy: site:2793565526, species:European short-tailed rhinoceros, action:144
+INFO: advisePolicy: site:1573631919, species:lesser flightless hippopotamus, advice:conserve
+INFO: createPolicy: site:1573631919, species:lesser flightless hippopotamus, action:160
+INFO: advisePolicy: site:394554793, species:lesser-spotted long-tailed dog, advice:conserve
+INFO: createPolicy: site:394554793, species:lesser-spotted long-tailed dog, action:160
+INFO: advisePolicy: site:1199528129, species:lesser three-legged shark, advice:conserve
+INFO: createPolicy: site:1199528129, species:lesser three-legged shark, action:160
+INFO: advisePolicy: site:1573631919, species:long-haired otter, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-haired otter, action:160
+INFO: advisePolicy: site:1948981659, species:pygmy short-haired rhinoceros, advice:conserve
+INFO: createPolicy: site:1948981659, species:pygmy short-haired rhinoceros, action:160
+INFO: advisePolicy: site:2363637502, species:lesser short-tailed swallow, advice:none
+INFO: advisePolicy: site:2363637502, species:pygmy duck-billed octopus, advice:cull
+INFO: createPolicy: site:2363637502, species:pygmy duck-billed octopus, action:144
+INFO: advisePolicy: site:2793565526, species:bird-eating rat, advice:cull
+INFO: createPolicy: site:2793565526, species:bird-eating rat, action:144
+INFO: advisePolicy: site:394554793, species:long-haired platypus, advice:conserve
+INFO: createPolicy: site:394554793, species:long-haired platypus, action:160
+INFO: advisePolicy: site:1573631919, species:long-haired swallow, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-haired swallow, action:160
+INFO: advisePolicy: site:1199528129, species:giant short-haired duck, advice:conserve
+INFO: createPolicy: site:1199528129, species:giant short-haired duck, action:160
+INFO: advisePolicy: site:1948981659, species:short-haired ostrich, advice:cull
+INFO: createPolicy: site:1948981659, species:short-haired ostrich, action:144
+INFO: advisePolicy: site:1573631919, species:long-tailed hippopotamus, advice:none
+INFO: advisePolicy: site:1573631919, species:lesser duck-billed mole, advice:conserve
+INFO: createPolicy: site:1573631919, species:lesser duck-billed mole, action:160
+INFO: advisePolicy: site:2363637502, species:long-tailed dog, advice:none
+INFO: advisePolicy: site:2363637502, species:long-tailed cat, advice:conserve
+INFO: createPolicy: site:2363637502, species:long-tailed cat, action:160
+INFO: advisePolicy: site:2793565526, species:long-tailed swallow, advice:cull
+INFO: createPolicy: site:2793565526, species:long-tailed swallow, action:144
+INFO: advisePolicy: site:394554793, species:long-haired rat, advice:none
+INFO: advisePolicy: site:394554793, species:long-tailed rat, advice:conserve
+INFO: createPolicy: site:394554793, species:long-tailed rat, action:160
+INFO: advisePolicy: site:1199528129, species:short-haired elephant, advice:cull
+INFO: createPolicy: site:1199528129, species:short-haired elephant, action:144
+INFO: advisePolicy: site:1948981659, species:bird-eating mole, advice:none
+INFO: advisePolicy: site:1948981659, species:long-tailed cat, advice:conserve
+INFO: createPolicy: site:1948981659, species:long-tailed cat, action:160
+INFO: advisePolicy: site:1573631919, species:bird-eating ostrich, advice:conserve
+INFO: createPolicy: site:1573631919, species:bird-eating ostrich, action:160
+INFO: advisePolicy: site:394554793, species:flightless wagtail, advice:conserve
+INFO: createPolicy: site:394554793, species:flightless wagtail, action:160
+INFO: advisePolicy: site:2363637502, species:duck-billed iguana, advice:none
+INFO: advisePolicy: site:2363637502, species:great three-legged otter, advice:none
+INFO: advisePolicy: site:2363637502, species:giant long-tailed spider, advice:conserve
+INFO: createPolicy: site:2363637502, species:giant long-tailed spider, action:160
+INFO: advisePolicy: site:2793565526, species:short-tailed wagtail, advice:conserve
+INFO: createPolicy: site:2793565526, species:short-tailed wagtail, action:160
+INFO: advisePolicy: site:1199528129, species:common duck-billed otter, advice:cull
+INFO: createPolicy: site:1199528129, species:common duck-billed otter, action:144
+INFO: advisePolicy: site:1948981659, species:African long-haired platypus, advice:none
+INFO: advisePolicy: site:1948981659, species:lesser-spotted bird-eating platypus, advice:conserve
+INFO: createPolicy: site:1948981659, species:lesser-spotted bird-eating platypus, action:160
+INFO: advisePolicy: site:1573631919, species:duck-billed horse, advice:none
+INFO: advisePolicy: site:1573631919, species:short-haired wagtail, advice:none
+INFO: advisePolicy: site:1573631919, species:European three-legged octopus, advice:conserve
+INFO: createPolicy: site:1573631919, species:European three-legged octopus, action:160
+INFO: advisePolicy: site:394554793, species:great duck-billed squid, advice:conserve
+INFO: createPolicy: site:394554793, species:great duck-billed squid, action:160
+INFO: advisePolicy: site:2363637502, species:lesser long-tailed tortoise, advice:conserve
+INFO: createPolicy: site:2363637502, species:lesser long-tailed tortoise, action:160
+INFO: advisePolicy: site:1199528129, species:pygmy flightless dog, advice:conserve
+INFO: createPolicy: site:1199528129, species:pygmy flightless dog, action:160
+INFO: advisePolicy: site:2793565526, species:short-tailed horse, advice:none
+INFO: advisePolicy: site:2793565526, species:great long-haired hamster, advice:conserve
+INFO: createPolicy: site:2793565526, species:great long-haired hamster, action:160
+INFO: advisePolicy: site:1573631919, species:great long-tailed tortoise, advice:none
+INFO: advisePolicy: site:1573631919, species:African duck-billed hobbit, advice:cull
+INFO: createPolicy: site:1573631919, species:African duck-billed hobbit, action:144
+INFO: advisePolicy: site:394554793, species:short-haired alligator, advice:conserve
+INFO: createPolicy: site:394554793, species:short-haired alligator, action:160
+INFO: advisePolicy: site:2363637502, species:African bird-eating dodo, advice:conserve
+INFO: createPolicy: site:2363637502, species:African bird-eating dodo, action:160
+INFO: advisePolicy: site:1573631919, species:lesser long-tailed wagtail, advice:conserve
+INFO: createPolicy: site:1573631919, species:lesser long-tailed wagtail, action:160
+INFO: advisePolicy: site:2793565526, species:European long-tailed elephant, advice:none
+INFO: advisePolicy: site:2793565526, species:lesser-spotted three-legged dodo, advice:conserve
+INFO: createPolicy: site:2793565526, species:lesser-spotted three-legged dodo, action:160
+INFO: advisePolicy: site:2363637502, species:bird-eating swallow, advice:cull
+INFO: createPolicy: site:2363637502, species:bird-eating swallow, action:144
+INFO: advisePolicy: site:1573631919, species:African long-tailed mosquito, advice:conserve
+INFO: createPolicy: site:1573631919, species:African long-tailed mosquito, action:160
+INFO: advisePolicy: site:2793565526, species:short-tailed platypus, advice:conserve
+INFO: createPolicy: site:2793565526, species:short-tailed platypus, action:160
+INFO: advisePolicy: site:2793565526, species:flightless iguana, advice:none
+INFO: pestcontrol: site:2363637502, observed populations {"African duck-billed tortoise":18,"lesser short-tailed swallow":31,"pygmy duck-billed octopus":138,"long-tailed dog":107,"long-tailed cat":73,"duck-billed iguana":115,"great three-legged otter":1,"lesser long-tailed tortoise":96,"bird-eating swallow":178,"common duck-billed iguana":88,"duck-billed tortoise":50}
+INFO: handling site: 2363637502
+INFO: pestcontrol: site:2363637502, target populations {"lesser flightless octopus":{"min":66,"max":152},"African duck-billed tortoise":{"min":11,"max":11},"pygmy three-legged rhinoceros":{"min":41,"max":73},"lesser short-tailed swallow":{"min":22,"max":31},"pygmy duck-billed octopus":{"min":93,"max":157},"long-tailed dog":{"min":50,"max":143},"long-tailed cat":{"min":12,"max":87},"duck-billed iguana":{"min":85,"max":123},"great three-legged otter":{"min":11,"max":12},"giant long-tailed spider":{"min":15,"max":65},"lesser long-tailed tortoise":{"min":88,"max":98},"African bird-eating dodo":{"min":16,"max":76},"bird-eating swallow":{"min":77,"max":168}}
+INFO: advisePolicy: site:2363637502, species:African duck-billed tortoise, advice:cull
+INFO: deletePolicy: site:2363637502, species:African duck-billed tortoise, policyNumber:1
+INFO: pestcontrol: site:1199528129, observed populations {"great duck-billed rat":124,"short-haired mole":65,"great duck-billed ostrich":32,"long-haired shark":189,"lesser three-legged mosquito":154,"giant short-haired duck":47,"short-haired elephant":162,"common duck-billed otter":190,"pygmy flightless dog":238,"short-haired swallow":30}
+INFO: handling site: 1199528129
+INFO: pestcontrol: site:1199528129, target populations {"great duck-billed rat":{"min":62,"max":153},"short-haired shark":{"min":49,"max":72},"short-haired mole":{"min":21,"max":53},"great duck-billed ostrich":{"min":53,"max":135},"long-haired shark":{"min":95,"max":193},"lesser three-legged mosquito":{"min":37,"max":83},"lesser three-legged shark":{"min":27,"max":106},"giant short-haired duck":{"min":47,"max":58},"short-haired elephant":{"min":76,"max":165},"common duck-billed otter":{"min":46,"max":107},"pygmy flightless dog":{"min":84,"max":158}}
+INFO: advisePolicy: site:1199528129, species:great duck-billed rat, advice:none
+INFO: deletePolicy: site:1199528129, species:great duck-billed rat, policyNumber:0
+INFO: pestcontrol: site:1573631919, observed populations {"long-tailed alligator":70,"European long-haired cat":115,"great duck-billed shark":0,"long-tailed platypus":60,"long-haired otter":32,"long-haired swallow":96,"lesser duck-billed mole":115,"duck-billed horse":107,"short-haired wagtail":104,"African duck-billed hobbit":70,"lesser long-tailed wagtail":20,"African long-tailed mosquito":125,"lesser short-tailed iguana":65,"short-haired otter":19}
+INFO: handling site: 1573631919
+INFO: pestcontrol: site:1573631919, target populations {"long-haired mole":{"min":32,"max":126},"long-tailed alligator":{"min":19,"max":105},"short-tailed iguana":{"min":61,"max":93},"European long-haired cat":{"min":75,"max":145},"lesser-spotted long-haired ostrich":{"min":52,"max":94},"great duck-billed shark":{"min":0,"max":41},"long-tailed platypus":{"min":14,"max":36},"lesser flightless hippopotamus":{"min":53,"max":125},"long-haired otter":{"min":13,"max":17},"long-haired swallow":{"min":74,"max":97},"long-tailed hippopotamus":{"min":89,"max":126},"lesser duck-billed mole":{"min":56,"max":117},"bird-eating ostrich":{"min":64,"max":90},"duck-billed horse":{"min":99,"max":119},"short-haired wagtail":{"min":6,"max":81},"European three-legged octopus":{"min":31,"max":118},"great long-tailed tortoise":{"min":6,"max":94},"African duck-billed hobbit":{"min":53,"max":81},"lesser long-tailed wagtail":{"min":88,"max":180},"African long-tailed mosquito":{"min":33,"max":90}}
+INFO: advisePolicy: site:1573631919, species:long-tailed alligator, advice:none
+INFO: advisePolicy: site:1573631919, species:European long-haired cat, advice:none
+INFO: advisePolicy: site:1573631919, species:great duck-billed shark, advice:none
+INFO: advisePolicy: site:1573631919, species:long-haired otter, advice:cull
+INFO: deletePolicy: site:1573631919, species:long-haired otter, policyNumber:5
+INFO: pestcontrol: site:1948981659, observed populations {"long-haired mouse":3,"bird-eating spider":5,"giant long-tailed mouse":38,"African bird-eating rhinoceros":12,"long-tailed elephant":35,"pygmy short-haired rhinoceros":4,"short-haired ostrich":4,"bird-eating mole":57,"long-tailed cat":43,"African long-haired platypus":136,"lesser-spotted bird-eating platypus":133,"great flightless duck":10}
+INFO: handling site: 1948981659
+INFO: pestcontrol: site:1948981659, target populations {"long-haired mouse":{"min":15,"max":100},"bird-eating spider":{"min":32,"max":98},"three-legged dog":{"min":12,"max":35},"lesser-spotted flightless dog":{"min":95,"max":148},"long-tailed hobbit":{"min":32,"max":76},"giant long-tailed mouse":{"min":9,"max":101},"African bird-eating rhinoceros":{"min":22,"max":41},"long-tailed elephant":{"min":32,"max":45},"pygmy short-haired rhinoceros":{"min":6,"max":6},"short-haired ostrich":{"min":63,"max":83},"bird-eating mole":{"min":14,"max":45},"long-tailed cat":{"min":52,"max":114},"African long-haired platypus":{"min":83,"max":123},"lesser-spotted bird-eating platypus":{"min":66,"max":147}}
+INFO: advisePolicy: site:1948981659, species:long-haired mouse, advice:conserve
+INFO: createPolicy: site:1948981659, species:long-haired mouse, action:160
+INFO: pestcontrol: site:394554793, observed populations {"short-tailed hamster":2,"European long-haired wagtail":250,"common long-haired dog":27,"lesser short-haired mole":12,"giant duck-billed dodo":4,"lesser-spotted long-tailed dog":20,"long-haired platypus":243,"long-tailed rat":102,"flightless wagtail":117,"great duck-billed squid":201,"short-haired alligator":102,"lesser flightless cat":62,"short-tailed alligator":77}
+INFO: handling site: 394554793
+INFO: pestcontrol: site:394554793, target populations {"short-tailed hamster":{"min":13,"max":56},"European long-haired wagtail":{"min":63,"max":125},"common long-haired dog":{"min":9,"max":33},"lesser short-haired mole":{"min":28,"max":104},"giant duck-billed dodo":{"min":49,"max":117},"lesser-spotted long-tailed dog":{"min":95,"max":149},"long-haired platypus":{"min":86,"max":152},"long-haired rat":{"min":76,"max":144},"long-tailed rat":{"min":13,"max":77},"flightless wagtail":{"min":21,"max":79},"great duck-billed squid":{"min":56,"max":153},"short-haired alligator":{"min":69,"max":116}}
+INFO: advisePolicy: site:394554793, species:short-tailed hamster, advice:conserve
+INFO: deletePolicy: site:394554793, species:short-tailed hamster, policyNumber:0
+INFO: pestcontrol: site:2793565526, observed populations {"flightless swallow":36,"short-haired dinosaur":7,"European short-tailed rhinoceros":21,"bird-eating rat":109,"short-tailed horse":30,"great long-haired hamster":62,"short-tailed platypus":129,"flightless iguana":75,"common bird-eating rabbit":79}
+INFO: handling site: 2793565526
+INFO: pestcontrol: site:2793565526, target populations {"pygmy long-tailed dodo":{"min":84,"max":87},"flightless swallow":{"min":16,"max":38},"short-haired dinosaur":{"min":19,"max":101},"European short-tailed rhinoceros":{"min":57,"max":65},"bird-eating rat":{"min":56,"max":110},"long-tailed swallow":{"min":48,"max":92},"short-tailed wagtail":{"min":47,"max":122},"short-tailed horse":{"min":14,"max":45},"great long-haired hamster":{"min":52,"max":137},"European long-tailed elephant":{"min":78,"max":166},"lesser-spotted three-legged dodo":{"min":6,"max":48},"short-tailed platypus":{"min":70,"max":130},"flightless iguana":{"min":43,"max":129}}
+INFO: advisePolicy: site:2793565526, species:pygmy long-tailed dodo, advice:conserve
+INFO: createPolicy: site:2793565526, species:pygmy long-tailed dodo, action:160
+INFO: createPolicy: site:1573631919, species:long-haired otter, action:144
+INFO: createPolicy: site:2363637502, species:African duck-billed tortoise, action:144
+INFO: advisePolicy: site:1199528129, species:short-haired mole, advice:cull
+INFO: createPolicy: site:1199528129, species:short-haired mole, action:144
+INFO: advisePolicy: site:1948981659, species:three-legged dog, advice:conserve
+INFO: createPolicy: site:1948981659, species:three-legged dog, action:160
+INFO: createPolicy: site:394554793, species:short-tailed hamster, action:160
+INFO: advisePolicy: site:2793565526, species:flightless swallow, advice:none
+INFO: deletePolicy: site:2793565526, species:flightless swallow, policyNumber:0
+INFO: advisePolicy: site:1573631919, species:long-haired swallow, advice:none
+INFO: deletePolicy: site:1573631919, species:long-haired swallow, policyNumber:6
+INFO: advisePolicy: site:2363637502, species:pygmy three-legged rhinoceros, advice:conserve
+INFO: deletePolicy: site:2363637502, species:pygmy three-legged rhinoceros, policyNumber:2
+INFO: advisePolicy: site:394554793, species:European long-haired wagtail, advice:cull
+INFO: deletePolicy: site:394554793, species:European long-haired wagtail, policyNumber:1
+INFO: advisePolicy: site:1199528129, species:long-haired shark, advice:none
+INFO: advisePolicy: site:1199528129, species:giant short-haired duck, advice:none
+INFO: deletePolicy: site:1199528129, species:giant short-haired duck, policyNumber:5
+INFO: advisePolicy: site:1948981659, species:lesser-spotted flightless dog, advice:conserve
+INFO: createPolicy: site:1948981659, species:lesser-spotted flightless dog, action:160
+INFO: advisePolicy: site:2793565526, species:European short-tailed rhinoceros, advice:conserve
+INFO: deletePolicy: site:2793565526, species:European short-tailed rhinoceros, policyNumber:2
+INFO: advisePolicy: site:1573631919, species:long-tailed hippopotamus, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-tailed hippopotamus, action:160
+INFO: createPolicy: site:2363637502, species:pygmy three-legged rhinoceros, action:160
+INFO: createPolicy: site:394554793, species:European long-haired wagtail, action:144
+INFO: advisePolicy: site:1199528129, species:short-haired elephant, advice:none
+INFO: deletePolicy: site:1199528129, species:short-haired elephant, policyNumber:6
+INFO: advisePolicy: site:1948981659, species:giant long-tailed mouse, advice:none
+INFO: advisePolicy: site:1948981659, species:African bird-eating rhinoceros, advice:conserve
+INFO: deletePolicy: site:1948981659, species:African bird-eating rhinoceros, policyNumber:2
+INFO: createPolicy: site:2793565526, species:European short-tailed rhinoceros, action:160
+INFO: advisePolicy: site:1573631919, species:lesser duck-billed mole, advice:none
+INFO: deletePolicy: site:1573631919, species:lesser duck-billed mole, policyNumber:7
+INFO: advisePolicy: site:2363637502, species:lesser short-tailed swallow, advice:none
+INFO: advisePolicy: site:2363637502, species:pygmy duck-billed octopus, advice:none
+INFO: deletePolicy: site:2363637502, species:pygmy duck-billed octopus, policyNumber:3
+INFO: advisePolicy: site:394554793, species:common long-haired dog, advice:none
+INFO: advisePolicy: site:394554793, species:lesser short-haired mole, advice:conserve
+INFO: deletePolicy: site:394554793, species:lesser short-haired mole, policyNumber:2
+INFO: advisePolicy: site:1199528129, species:pygmy flightless dog, advice:cull
+INFO: deletePolicy: site:1199528129, species:pygmy flightless dog, policyNumber:8
+INFO: createPolicy: site:1948981659, species:African bird-eating rhinoceros, action:160
+INFO: advisePolicy: site:2793565526, species:bird-eating rat, advice:none
+INFO: deletePolicy: site:2793565526, species:bird-eating rat, policyNumber:3
+INFO: advisePolicy: site:1573631919, species:duck-billed horse, advice:none
+INFO: advisePolicy: site:1573631919, species:short-haired wagtail, advice:cull
+INFO: createPolicy: site:1573631919, species:short-haired wagtail, action:144
+INFO: advisePolicy: site:2363637502, species:long-tailed dog, advice:none
+INFO: advisePolicy: site:2363637502, species:long-tailed cat, advice:none
+INFO: deletePolicy: site:2363637502, species:long-tailed cat, policyNumber:4
+INFO: advisePolicy: site:1573631919, species:great long-tailed tortoise, advice:conserve
+INFO: createPolicy: site:1573631919, species:great long-tailed tortoise, action:160
+INFO: createPolicy: site:394554793, species:lesser short-haired mole, action:160
+INFO: createPolicy: site:1199528129, species:pygmy flightless dog, action:144
+INFO: advisePolicy: site:1948981659, species:long-tailed elephant, advice:none
+INFO: deletePolicy: site:1948981659, species:long-tailed elephant, policyNumber:3
+INFO: advisePolicy: site:2793565526, species:long-tailed swallow, advice:conserve
+INFO: deletePolicy: site:2793565526, species:long-tailed swallow, policyNumber:4
+INFO: advisePolicy: site:2363637502, species:duck-billed iguana, advice:none
+INFO: advisePolicy: site:2363637502, species:great three-legged otter, advice:conserve
+INFO: createPolicy: site:2363637502, species:great three-legged otter, action:160
+INFO: advisePolicy: site:1573631919, species:African duck-billed hobbit, advice:none
+INFO: deletePolicy: site:1573631919, species:African duck-billed hobbit, policyNumber:10
+INFO: advisePolicy: site:394554793, species:giant duck-billed dodo, advice:conserve
+INFO: deletePolicy: site:394554793, species:giant duck-billed dodo, policyNumber:3
+INFO: advisePolicy: site:1573631919, species:African long-tailed mosquito, advice:cull
+INFO: deletePolicy: site:1573631919, species:African long-tailed mosquito, policyNumber:12
+INFO: advisePolicy: site:1948981659, species:short-haired ostrich, advice:conserve
+INFO: deletePolicy: site:1948981659, species:short-haired ostrich, policyNumber:5
+INFO: createPolicy: site:394554793, species:giant duck-billed dodo, action:160
+INFO: advisePolicy: site:2363637502, species:lesser long-tailed tortoise, advice:none
+INFO: deletePolicy: site:2363637502, species:lesser long-tailed tortoise, policyNumber:6
+INFO: createPolicy: site:2793565526, species:long-tailed swallow, action:160
+INFO: createPolicy: site:1948981659, species:short-haired ostrich, action:160
+INFO: advisePolicy: site:394554793, species:long-haired platypus, advice:cull
+INFO: deletePolicy: site:394554793, species:long-haired platypus, policyNumber:5
+INFO: advisePolicy: site:2793565526, species:short-tailed horse, advice:none
+INFO: advisePolicy: site:2793565526, species:great long-haired hamster, advice:none
+INFO: deletePolicy: site:2793565526, species:great long-haired hamster, policyNumber:6
+INFO: advisePolicy: site:1948981659, species:bird-eating mole, advice:cull
+INFO: createPolicy: site:1948981659, species:bird-eating mole, action:144
+INFO: createPolicy: site:394554793, species:long-haired platypus, action:144
+INFO: advisePolicy: site:2793565526, species:European long-tailed elephant, advice:conserve
+INFO: createPolicy: site:2793565526, species:European long-tailed elephant, action:160
+INFO: advisePolicy: site:394554793, species:long-haired rat, advice:conserve
+INFO: createPolicy: site:394554793, species:long-haired rat, action:160
+INFO: advisePolicy: site:1948981659, species:African long-haired platypus, advice:cull
+INFO: createPolicy: site:1948981659, species:African long-haired platypus, action:144
+INFO: advisePolicy: site:2793565526, species:short-tailed platypus, advice:none
+INFO: deletePolicy: site:2793565526, species:short-tailed platypus, policyNumber:8
+INFO: advisePolicy: site:394554793, species:long-tailed rat, advice:cull
+INFO: deletePolicy: site:394554793, species:long-tailed rat, policyNumber:6
+INFO: advisePolicy: site:1948981659, species:lesser-spotted bird-eating platypus, advice:none
+INFO: deletePolicy: site:1948981659, species:lesser-spotted bird-eating platypus, policyNumber:7
+INFO: advisePolicy: site:2793565526, species:flightless iguana, advice:none
+INFO: createPolicy: site:394554793, species:long-tailed rat, action:144
+INFO: advisePolicy: site:394554793, species:flightless wagtail, advice:cull
+INFO: deletePolicy: site:394554793, species:flightless wagtail, policyNumber:7
+INFO: createPolicy: site:394554793, species:flightless wagtail, action:144
+INFO: advisePolicy: site:394554793, species:great duck-billed squid, advice:cull
+INFO: deletePolicy: site:394554793, species:great duck-billed squid, policyNumber:8
+INFO: createPolicy: site:394554793, species:great duck-billed squid, action:144
+INFO: advisePolicy: site:394554793, species:short-haired alligator, advice:none
+INFO: deletePolicy: site:394554793, species:short-haired alligator, policyNumber:9
+INFO: createPolicy: site:1573631919, species:African long-tailed mosquito, action:144
+INFO: pestcontrol: site:2793565526, observed populations {"pygmy long-tailed dodo":87,"flightless swallow":16,"short-haired dinosaur":45,"European short-tailed rhinoceros":26,"long-tailed swallow":76,"great long-haired hamster":77,"European long-tailed elephant":102,"lesser-spotted three-legged dodo":16,"flightless iguana":115,"common flightless alligator":67,"duck-billed squid":53,"long-haired squid":2}
+INFO: handling site: 2793565526
+INFO: pestcontrol: site:2793565526, target populations {"pygmy long-tailed dodo":{"min":84,"max":87},"flightless swallow":{"min":16,"max":38},"short-haired dinosaur":{"min":19,"max":101},"European short-tailed rhinoceros":{"min":57,"max":65},"bird-eating rat":{"min":56,"max":110},"long-tailed swallow":{"min":48,"max":92},"short-tailed wagtail":{"min":47,"max":122},"short-tailed horse":{"min":14,"max":45},"great long-haired hamster":{"min":52,"max":137},"European long-tailed elephant":{"min":78,"max":166},"lesser-spotted three-legged dodo":{"min":6,"max":48},"short-tailed platypus":{"min":70,"max":130},"flightless iguana":{"min":43,"max":129}}
+INFO: advisePolicy: site:2793565526, species:pygmy long-tailed dodo, advice:none
+INFO: deletePolicy: site:2793565526, species:pygmy long-tailed dodo, policyNumber:9
+INFO: pestcontrol: site:394554793, observed populations {"short-tailed hamster":96,"European long-haired wagtail":36,"lesser short-haired mole":34,"giant duck-billed dodo":84,"lesser-spotted long-tailed dog":125,"long-haired platypus":42,"long-haired rat":117,"flightless wagtail":38,"great duck-billed squid":257,"short-haired alligator":25,"African long-haired rabbit":23}
+INFO: handling site: 394554793
+INFO: pestcontrol: site:394554793, target populations {"short-tailed hamster":{"min":13,"max":56},"European long-haired wagtail":{"min":63,"max":125},"common long-haired dog":{"min":9,"max":33},"lesser short-haired mole":{"min":28,"max":104},"giant duck-billed dodo":{"min":49,"max":117},"lesser-spotted long-tailed dog":{"min":95,"max":149},"long-haired platypus":{"min":86,"max":152},"long-haired rat":{"min":76,"max":144},"long-tailed rat":{"min":13,"max":77},"flightless wagtail":{"min":21,"max":79},"great duck-billed squid":{"min":56,"max":153},"short-haired alligator":{"min":69,"max":116}}
+INFO: advisePolicy: site:394554793, species:short-tailed hamster, advice:cull
+INFO: deletePolicy: site:394554793, species:short-tailed hamster, policyNumber:10
+INFO: pestcontrol: site:1573631919, observed populations {"long-haired mole":3,"European long-haired cat":247,"lesser-spotted long-haired ostrich":131,"great duck-billed shark":0,"long-tailed platypus":13,"long-haired otter":30,"long-tailed hippopotamus":91,"lesser duck-billed mole":171,"bird-eating ostrich":18,"duck-billed horse":164,"short-haired wagtail":73,"European three-legged octopus":7,"great long-tailed tortoise":171,"African duck-billed hobbit":9,"lesser long-tailed wagtail":219,"African long-tailed mosquito":15}
+INFO: handling site: 1573631919
+INFO: pestcontrol: site:1573631919, target populations {"long-haired mole":{"min":32,"max":126},"long-tailed alligator":{"min":19,"max":105},"short-tailed iguana":{"min":61,"max":93},"European long-haired cat":{"min":75,"max":145},"lesser-spotted long-haired ostrich":{"min":52,"max":94},"great duck-billed shark":{"min":0,"max":41},"long-tailed platypus":{"min":14,"max":36},"lesser flightless hippopotamus":{"min":53,"max":125},"long-haired otter":{"min":13,"max":17},"long-haired swallow":{"min":74,"max":97},"long-tailed hippopotamus":{"min":89,"max":126},"lesser duck-billed mole":{"min":56,"max":117},"bird-eating ostrich":{"min":64,"max":90},"duck-billed horse":{"min":99,"max":119},"short-haired wagtail":{"min":6,"max":81},"European three-legged octopus":{"min":31,"max":118},"great long-tailed tortoise":{"min":6,"max":94},"African duck-billed hobbit":{"min":53,"max":81},"lesser long-tailed wagtail":{"min":88,"max":180},"African long-tailed mosquito":{"min":33,"max":90}}
+INFO: advisePolicy: site:1573631919, species:long-tailed alligator, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-tailed alligator, action:160
+INFO: pestcontrol: site:1199528129, observed populations {"great duck-billed rat":6,"short-haired mole":58,"great duck-billed ostrich":168,"lesser three-legged mosquito":43,"lesser three-legged shark":19,"giant short-haired duck":97,"short-haired elephant":107,"pygmy flightless dog":150,"bird-eating platypus":40,"common short-haired horse":21}
+INFO: handling site: 1199528129
+INFO: pestcontrol: site:1199528129, target populations {"great duck-billed rat":{"min":62,"max":153},"short-haired shark":{"min":49,"max":72},"short-haired mole":{"min":21,"max":53},"great duck-billed ostrich":{"min":53,"max":135},"long-haired shark":{"min":95,"max":193},"lesser three-legged mosquito":{"min":37,"max":83},"lesser three-legged shark":{"min":27,"max":106},"giant short-haired duck":{"min":47,"max":58},"short-haired elephant":{"min":76,"max":165},"common duck-billed otter":{"min":46,"max":107},"pygmy flightless dog":{"min":84,"max":158}}
+INFO: advisePolicy: site:1199528129, species:great duck-billed rat, advice:conserve
+INFO: createPolicy: site:1199528129, species:great duck-billed rat, action:160
+INFO: pestcontrol: site:1948981659, observed populations {"long-haired mouse":8,"bird-eating spider":10,"three-legged dog":29,"lesser-spotted flightless dog":62,"African bird-eating rhinoceros":28,"pygmy short-haired rhinoceros":6,"short-haired ostrich":75,"bird-eating mole":66,"long-tailed cat":14,"African long-haired platypus":60,"long-tailed rat":75,"lesser long-tailed mosquito":60}
+INFO: handling site: 1948981659
+INFO: pestcontrol: site:1948981659, target populations {"long-haired mouse":{"min":15,"max":100},"bird-eating spider":{"min":32,"max":98},"three-legged dog":{"min":12,"max":35},"lesser-spotted flightless dog":{"min":95,"max":148},"long-tailed hobbit":{"min":32,"max":76},"giant long-tailed mouse":{"min":9,"max":101},"African bird-eating rhinoceros":{"min":22,"max":41},"long-tailed elephant":{"min":32,"max":45},"pygmy short-haired rhinoceros":{"min":6,"max":6},"short-haired ostrich":{"min":63,"max":83},"bird-eating mole":{"min":14,"max":45},"long-tailed cat":{"min":52,"max":114},"African long-haired platypus":{"min":83,"max":123},"lesser-spotted bird-eating platypus":{"min":66,"max":147}}
+INFO: advisePolicy: site:1948981659, species:three-legged dog, advice:none
+INFO: deletePolicy: site:1948981659, species:three-legged dog, policyNumber:9
+INFO: pestcontrol: site:2363637502, observed populations {"lesser flightless octopus":146,"lesser short-tailed swallow":22,"pygmy duck-billed octopus":104,"long-tailed dog":42,"long-tailed cat":83,"duck-billed iguana":72,"lesser long-tailed tortoise":92,"African bird-eating dodo":75,"bird-eating swallow":218,"African three-legged swallow":29,"pygmy short-haired turtle":27}
+INFO: handling site: 2363637502
+INFO: pestcontrol: site:2363637502, target populations {"lesser flightless octopus":{"min":66,"max":152},"African duck-billed tortoise":{"min":11,"max":11},"pygmy three-legged rhinoceros":{"min":41,"max":73},"lesser short-tailed swallow":{"min":22,"max":31},"pygmy duck-billed octopus":{"min":93,"max":157},"long-tailed dog":{"min":50,"max":143},"long-tailed cat":{"min":12,"max":87},"duck-billed iguana":{"min":85,"max":123},"great three-legged otter":{"min":11,"max":12},"giant long-tailed spider":{"min":15,"max":65},"lesser long-tailed tortoise":{"min":88,"max":98},"African bird-eating dodo":{"min":16,"max":76},"bird-eating swallow":{"min":77,"max":168}}
+INFO: advisePolicy: site:2363637502, species:lesser flightless octopus, advice:none
+INFO: deletePolicy: site:2363637502, species:lesser flightless octopus, policyNumber:0
+INFO: advisePolicy: site:1573631919, species:European long-haired cat, advice:cull
+INFO: createPolicy: site:1573631919, species:European long-haired cat, action:144
+INFO: createPolicy: site:394554793, species:short-tailed hamster, action:144
+INFO: advisePolicy: site:2793565526, species:flightless swallow, advice:none
+INFO: advisePolicy: site:2793565526, species:short-haired dinosaur, advice:none
+INFO: deletePolicy: site:2793565526, species:short-haired dinosaur, policyNumber:1
+INFO: advisePolicy: site:1199528129, species:great duck-billed ostrich, advice:cull
+INFO: deletePolicy: site:1199528129, species:great duck-billed ostrich, policyNumber:2
+INFO: advisePolicy: site:1948981659, species:giant long-tailed mouse, advice:conserve
+INFO: createPolicy: site:1948981659, species:giant long-tailed mouse, action:160
+INFO: advisePolicy: site:2363637502, species:African duck-billed tortoise, advice:conserve
+INFO: deletePolicy: site:2363637502, species:African duck-billed tortoise, policyNumber:9
+INFO: advisePolicy: site:1573631919, species:lesser-spotted long-haired ostrich, advice:cull
+INFO: deletePolicy: site:1573631919, species:lesser-spotted long-haired ostrich, policyNumber:2
+INFO: advisePolicy: site:394554793, species:European long-haired wagtail, advice:conserve
+INFO: deletePolicy: site:394554793, species:European long-haired wagtail, policyNumber:11
+INFO: advisePolicy: site:2793565526, species:bird-eating rat, advice:conserve
+INFO: createPolicy: site:2793565526, species:bird-eating rat, action:160
+INFO: createPolicy: site:1199528129, species:great duck-billed ostrich, action:144
+INFO: advisePolicy: site:1948981659, species:African bird-eating rhinoceros, advice:none
+INFO: deletePolicy: site:1948981659, species:African bird-eating rhinoceros, policyNumber:11
+INFO: createPolicy: site:2363637502, species:African duck-billed tortoise, action:160
+INFO: createPolicy: site:1573631919, species:lesser-spotted long-haired ostrich, action:144
+INFO: createPolicy: site:394554793, species:European long-haired wagtail, action:160
+INFO: advisePolicy: site:1573631919, species:great duck-billed shark, advice:none
+INFO: advisePolicy: site:1573631919, species:long-tailed platypus, advice:conserve
+INFO: deletePolicy: site:1573631919, species:long-tailed platypus, policyNumber:3
+INFO: advisePolicy: site:1199528129, species:long-haired shark, advice:conserve
+INFO: createPolicy: site:1199528129, species:long-haired shark, action:160
+INFO: advisePolicy: site:1948981659, species:long-tailed elephant, advice:conserve
+INFO: createPolicy: site:1948981659, species:long-tailed elephant, action:160
+INFO: advisePolicy: site:2363637502, species:lesser short-tailed swallow, advice:none
+INFO: advisePolicy: site:2363637502, species:pygmy duck-billed octopus, advice:none
+INFO: advisePolicy: site:2363637502, species:long-tailed dog, advice:conserve
+INFO: createPolicy: site:2363637502, species:long-tailed dog, action:160
+INFO: advisePolicy: site:2793565526, species:long-tailed swallow, advice:none
+INFO: deletePolicy: site:2793565526, species:long-tailed swallow, policyNumber:11
+INFO: createPolicy: site:1573631919, species:long-tailed platypus, action:160
+INFO: advisePolicy: site:394554793, species:common long-haired dog, advice:conserve
+INFO: createPolicy: site:394554793, species:common long-haired dog, action:160
+INFO: advisePolicy: site:1199528129, species:lesser three-legged mosquito, advice:none
+INFO: deletePolicy: site:1199528129, species:lesser three-legged mosquito, policyNumber:3
+INFO: advisePolicy: site:1948981659, species:pygmy short-haired rhinoceros, advice:none
+INFO: deletePolicy: site:1948981659, species:pygmy short-haired rhinoceros, policyNumber:4
+INFO: advisePolicy: site:2363637502, species:long-tailed cat, advice:none
+INFO: advisePolicy: site:2363637502, species:duck-billed iguana, advice:conserve
+INFO: createPolicy: site:2363637502, species:duck-billed iguana, action:160
+INFO: advisePolicy: site:2793565526, species:short-tailed horse, advice:conserve
+INFO: createPolicy: site:2793565526, species:short-tailed horse, action:160
+INFO: advisePolicy: site:1573631919, species:long-haired swallow, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-haired swallow, action:160
+INFO: advisePolicy: site:394554793, species:lesser short-haired mole, advice:none
+INFO: deletePolicy: site:394554793, species:lesser short-haired mole, policyNumber:12
+INFO: advisePolicy: site:1199528129, species:giant short-haired duck, advice:cull
+INFO: createPolicy: site:1199528129, species:giant short-haired duck, action:144
+INFO: advisePolicy: site:1948981659, species:short-haired ostrich, advice:none
+INFO: deletePolicy: site:1948981659, species:short-haired ostrich, policyNumber:12
+INFO: advisePolicy: site:2363637502, species:lesser long-tailed tortoise, advice:none
+INFO: advisePolicy: site:2363637502, species:African bird-eating dodo, advice:none
+INFO: deletePolicy: site:2363637502, species:African bird-eating dodo, policyNumber:7
+INFO: advisePolicy: site:2793565526, species:great long-haired hamster, advice:none
+INFO: advisePolicy: site:2793565526, species:European long-tailed elephant, advice:none
+INFO: deletePolicy: site:2793565526, species:European long-tailed elephant, policyNumber:12
+INFO: advisePolicy: site:1573631919, species:long-tailed hippopotamus, advice:none
+INFO: deletePolicy: site:1573631919, species:long-tailed hippopotamus, policyNumber:14
+INFO: advisePolicy: site:394554793, species:giant duck-billed dodo, advice:none
+INFO: deletePolicy: site:394554793, species:giant duck-billed dodo, policyNumber:13
+INFO: advisePolicy: site:1199528129, species:short-haired elephant, advice:none
+INFO: advisePolicy: site:1199528129, species:common duck-billed otter, advice:conserve
+INFO: deletePolicy: site:1199528129, species:common duck-billed otter, policyNumber:7
+INFO: advisePolicy: site:1948981659, species:African long-haired platypus, advice:conserve
+INFO: deletePolicy: site:1948981659, species:African long-haired platypus, policyNumber:14
+INFO: advisePolicy: site:2793565526, species:lesser-spotted three-legged dodo, advice:none
+INFO: deletePolicy: site:2793565526, species:lesser-spotted three-legged dodo, policyNumber:7
+INFO: advisePolicy: site:1573631919, species:lesser duck-billed mole, advice:cull
+INFO: createPolicy: site:1573631919, species:lesser duck-billed mole, action:144
+INFO: advisePolicy: site:394554793, species:lesser-spotted long-tailed dog, advice:none
+INFO: deletePolicy: site:394554793, species:lesser-spotted long-tailed dog, policyNumber:4
+INFO: advisePolicy: site:1573631919, species:duck-billed horse, advice:cull
+INFO: createPolicy: site:1573631919, species:duck-billed horse, action:144
+INFO: createPolicy: site:1199528129, species:common duck-billed otter, action:160
+INFO: advisePolicy: site:2793565526, species:short-tailed platypus, advice:conserve
+INFO: createPolicy: site:2793565526, species:short-tailed platypus, action:160
+INFO: createPolicy: site:1948981659, species:African long-haired platypus, action:160
+INFO: advisePolicy: site:1573631919, species:short-haired wagtail, advice:none
+INFO: deletePolicy: site:1573631919, species:short-haired wagtail, policyNumber:15
+INFO: advisePolicy: site:394554793, species:long-haired platypus, advice:conserve
+INFO: deletePolicy: site:394554793, species:long-haired platypus, policyNumber:14
+INFO: advisePolicy: site:1199528129, species:pygmy flightless dog, advice:none
+INFO: deletePolicy: site:1199528129, species:pygmy flightless dog, policyNumber:10
+INFO: advisePolicy: site:1948981659, species:lesser-spotted bird-eating platypus, advice:conserve
+INFO: createPolicy: site:1948981659, species:lesser-spotted bird-eating platypus, action:160
+INFO: advisePolicy: site:2793565526, species:flightless iguana, advice:none
+INFO: advisePolicy: site:1573631919, species:great long-tailed tortoise, advice:cull
+INFO: deletePolicy: site:1573631919, species:great long-tailed tortoise, policyNumber:16
+INFO: createPolicy: site:394554793, species:long-haired platypus, action:160
+INFO: createPolicy: site:1573631919, species:great long-tailed tortoise, action:144
+INFO: advisePolicy: site:394554793, species:long-haired rat, advice:none
+INFO: deletePolicy: site:394554793, species:long-haired rat, policyNumber:15
+INFO: advisePolicy: site:1573631919, species:African duck-billed hobbit, advice:conserve
+INFO: createPolicy: site:1573631919, species:African duck-billed hobbit, action:160
+INFO: advisePolicy: site:394554793, species:long-tailed rat, advice:conserve
+INFO: deletePolicy: site:394554793, species:long-tailed rat, policyNumber:16
+INFO: advisePolicy: site:1573631919, species:lesser long-tailed wagtail, advice:cull
+INFO: deletePolicy: site:1573631919, species:lesser long-tailed wagtail, policyNumber:11
+INFO: createPolicy: site:1573631919, species:lesser long-tailed wagtail, action:144
+INFO: createPolicy: site:394554793, species:long-tailed rat, action:160
+INFO: advisePolicy: site:1573631919, species:African long-tailed mosquito, advice:conserve
+INFO: deletePolicy: site:1573631919, species:African long-tailed mosquito, policyNumber:17
+INFO: advisePolicy: site:394554793, species:flightless wagtail, advice:none
+INFO: deletePolicy: site:394554793, species:flightless wagtail, policyNumber:17
+INFO: createPolicy: site:1573631919, species:African long-tailed mosquito, action:160
+INFO: advisePolicy: site:394554793, species:short-haired alligator, advice:conserve
+INFO: createPolicy: site:394554793, species:short-haired alligator, action:160
+INFO: pestcontrol: site:2793565526, observed populations {"pygmy long-tailed dodo":87,"short-haired dinosaur":200,"European short-tailed rhinoceros":63,"long-tailed swallow":107,"short-tailed wagtail":58,"short-tailed horse":35,"great long-haired hamster":88,"European long-tailed elephant":273,"short-tailed platypus":79,"flightless iguana":75}
+INFO: handling site: 2793565526
+INFO: pestcontrol: site:2793565526, target populations {"pygmy long-tailed dodo":{"min":84,"max":87},"flightless swallow":{"min":16,"max":38},"short-haired dinosaur":{"min":19,"max":101},"European short-tailed rhinoceros":{"min":57,"max":65},"bird-eating rat":{"min":56,"max":110},"long-tailed swallow":{"min":48,"max":92},"short-tailed wagtail":{"min":47,"max":122},"short-tailed horse":{"min":14,"max":45},"great long-haired hamster":{"min":52,"max":137},"European long-tailed elephant":{"min":78,"max":166},"lesser-spotted three-legged dodo":{"min":6,"max":48},"short-tailed platypus":{"min":70,"max":130},"flightless iguana":{"min":43,"max":129}}
+INFO: advisePolicy: site:2793565526, species:pygmy long-tailed dodo, advice:none
+INFO: advisePolicy: site:2793565526, species:flightless swallow, advice:conserve
+INFO: createPolicy: site:2793565526, species:flightless swallow, action:160
+INFO: pestcontrol: site:1199528129, observed populations {"short-haired mole":29,"great duck-billed ostrich":77,"long-haired shark":105,"lesser three-legged mosquito":42,"lesser three-legged shark":103,"giant short-haired duck":38,"common duck-billed otter":61,"pygmy flightless dog":44,"lesser flightless rabbit":8,"lesser three-legged hippopotamus":85,"long-tailed alligator":49}
+INFO: handling site: 1199528129
+INFO: pestcontrol: site:1199528129, target populations {"great duck-billed rat":{"min":62,"max":153},"short-haired shark":{"min":49,"max":72},"short-haired mole":{"min":21,"max":53},"great duck-billed ostrich":{"min":53,"max":135},"long-haired shark":{"min":95,"max":193},"lesser three-legged mosquito":{"min":37,"max":83},"lesser three-legged shark":{"min":27,"max":106},"giant short-haired duck":{"min":47,"max":58},"short-haired elephant":{"min":76,"max":165},"common duck-billed otter":{"min":46,"max":107},"pygmy flightless dog":{"min":84,"max":158}}
+INFO: advisePolicy: site:1199528129, species:short-haired mole, advice:none
+INFO: deletePolicy: site:1199528129, species:short-haired mole, policyNumber:9
+INFO: pestcontrol: site:394554793, observed populations {"short-tailed hamster":104,"European long-haired wagtail":181,"common long-haired dog":8,"lesser short-haired mole":83,"giant duck-billed dodo":110,"lesser-spotted long-tailed dog":212,"long-haired platypus":181,"long-haired rat":212,"great duck-billed squid":74,"short-haired alligator":118,"African flightless hobbit":71,"flightless shark":64,"duck-billed rat":61}
+INFO: handling site: 394554793
+INFO: pestcontrol: site:394554793, target populations {"short-tailed hamster":{"min":13,"max":56},"European long-haired wagtail":{"min":63,"max":125},"common long-haired dog":{"min":9,"max":33},"lesser short-haired mole":{"min":28,"max":104},"giant duck-billed dodo":{"min":49,"max":117},"lesser-spotted long-tailed dog":{"min":95,"max":149},"long-haired platypus":{"min":86,"max":152},"long-haired rat":{"min":76,"max":144},"long-tailed rat":{"min":13,"max":77},"flightless wagtail":{"min":21,"max":79},"great duck-billed squid":{"min":56,"max":153},"short-haired alligator":{"min":69,"max":116}}
+INFO: advisePolicy: site:394554793, species:European long-haired wagtail, advice:cull
+INFO: deletePolicy: site:394554793, species:European long-haired wagtail, policyNumber:20
+INFO: pestcontrol: site:1573631919, observed populations {"long-haired mole":219,"long-tailed alligator":25,"short-tailed iguana":84,"European long-haired cat":45,"great duck-billed shark":30,"long-tailed platypus":30,"lesser flightless hippopotamus":156,"long-haired otter":5,"long-haired swallow":144,"long-tailed hippopotamus":110,"bird-eating ostrich":93,"duck-billed horse":114,"short-haired wagtail":144,"European three-legged octopus":161,"African duck-billed hobbit":53,"lesser long-tailed wagtail":341,"African long-tailed mosquito":101,"short-haired rat":23,"lesser-spotted bird-eating shark":37}
+INFO: handling site: 1573631919
+INFO: pestcontrol: site:1573631919, target populations {"long-haired mole":{"min":32,"max":126},"long-tailed alligator":{"min":19,"max":105},"short-tailed iguana":{"min":61,"max":93},"European long-haired cat":{"min":75,"max":145},"lesser-spotted long-haired ostrich":{"min":52,"max":94},"great duck-billed shark":{"min":0,"max":41},"long-tailed platypus":{"min":14,"max":36},"lesser flightless hippopotamus":{"min":53,"max":125},"long-haired otter":{"min":13,"max":17},"long-haired swallow":{"min":74,"max":97},"long-tailed hippopotamus":{"min":89,"max":126},"lesser duck-billed mole":{"min":56,"max":117},"bird-eating ostrich":{"min":64,"max":90},"duck-billed horse":{"min":99,"max":119},"short-haired wagtail":{"min":6,"max":81},"European three-legged octopus":{"min":31,"max":118},"great long-tailed tortoise":{"min":6,"max":94},"African duck-billed hobbit":{"min":53,"max":81},"lesser long-tailed wagtail":{"min":88,"max":180},"African long-tailed mosquito":{"min":33,"max":90}}
+INFO: advisePolicy: site:1573631919, species:long-haired mole, advice:cull
+INFO: deletePolicy: site:1573631919, species:long-haired mole, policyNumber:0
+INFO: pestcontrol: site:2363637502, observed populations {"lesser flightless octopus":128,"African duck-billed tortoise":11,"pygmy three-legged rhinoceros":53,"pygmy duck-billed octopus":99,"duck-billed iguana":189,"great three-legged otter":19,"giant long-tailed spider":56,"lesser long-tailed tortoise":169,"African bird-eating dodo":71,"common long-tailed mosquito":95}
+INFO: handling site: 2363637502
+INFO: pestcontrol: site:2363637502, target populations {"lesser flightless octopus":{"min":66,"max":152},"African duck-billed tortoise":{"min":11,"max":11},"pygmy three-legged rhinoceros":{"min":41,"max":73},"lesser short-tailed swallow":{"min":22,"max":31},"pygmy duck-billed octopus":{"min":93,"max":157},"long-tailed dog":{"min":50,"max":143},"long-tailed cat":{"min":12,"max":87},"duck-billed iguana":{"min":85,"max":123},"great three-legged otter":{"min":11,"max":12},"giant long-tailed spider":{"min":15,"max":65},"lesser long-tailed tortoise":{"min":88,"max":98},"African bird-eating dodo":{"min":16,"max":76},"bird-eating swallow":{"min":77,"max":168}}
+INFO: advisePolicy: site:2363637502, species:lesser flightless octopus, advice:none
+INFO: advisePolicy: site:2363637502, species:African duck-billed tortoise, advice:none
+INFO: deletePolicy: site:2363637502, species:African duck-billed tortoise, policyNumber:12
+INFO: pestcontrol: site:1948981659, observed populations {"long-haired mouse":47,"bird-eating spider":92,"three-legged dog":37,"long-tailed hobbit":71,"giant long-tailed mouse":0,"long-tailed elephant":8,"pygmy short-haired rhinoceros":6,"short-haired ostrich":164,"long-tailed cat":107,"long-haired hobbit":4,"lesser-spotted long-haired hobbit":52,"flightless mouse":92,"short-haired duck":67}
+INFO: handling site: 1948981659
+INFO: pestcontrol: site:1948981659, target populations {"long-haired mouse":{"min":15,"max":100},"bird-eating spider":{"min":32,"max":98},"three-legged dog":{"min":12,"max":35},"lesser-spotted flightless dog":{"min":95,"max":148},"long-tailed hobbit":{"min":32,"max":76},"giant long-tailed mouse":{"min":9,"max":101},"African bird-eating rhinoceros":{"min":22,"max":41},"long-tailed elephant":{"min":32,"max":45},"pygmy short-haired rhinoceros":{"min":6,"max":6},"short-haired ostrich":{"min":63,"max":83},"bird-eating mole":{"min":14,"max":45},"long-tailed cat":{"min":52,"max":114},"African long-haired platypus":{"min":83,"max":123},"lesser-spotted bird-eating platypus":{"min":66,"max":147}}
+INFO: advisePolicy: site:1948981659, species:long-haired mouse, advice:none
+INFO: deletePolicy: site:1948981659, species:long-haired mouse, policyNumber:8
+INFO: advisePolicy: site:2793565526, species:short-haired dinosaur, advice:cull
+INFO: createPolicy: site:2793565526, species:short-haired dinosaur, action:144
+INFO: advisePolicy: site:1199528129, species:great duck-billed ostrich, advice:none
+INFO: deletePolicy: site:1199528129, species:great duck-billed ostrich, policyNumber:12
+INFO: createPolicy: site:394554793, species:European long-haired wagtail, action:144
+INFO: createPolicy: site:1573631919, species:long-haired mole, action:144
+INFO: advisePolicy: site:2363637502, species:pygmy three-legged rhinoceros, advice:none
+INFO: deletePolicy: site:2363637502, species:pygmy three-legged rhinoceros, policyNumber:10
+INFO: advisePolicy: site:1948981659, species:bird-eating spider, advice:none
+INFO: deletePolicy: site:1948981659, species:bird-eating spider, policyNumber:0
+INFO: advisePolicy: site:394554793, species:lesser short-haired mole, advice:none
+INFO: advisePolicy: site:394554793, species:giant duck-billed dodo, advice:none
+INFO: advisePolicy: site:394554793, species:lesser-spotted long-tailed dog, advice:cull
+INFO: createPolicy: site:394554793, species:lesser-spotted long-tailed dog, action:144
+INFO: advisePolicy: site:1199528129, species:long-haired shark, advice:none
+INFO: deletePolicy: site:1199528129, species:long-haired shark, policyNumber:13
+INFO: advisePolicy: site:2793565526, species:European short-tailed rhinoceros, advice:none
+INFO: deletePolicy: site:2793565526, species:European short-tailed rhinoceros, policyNumber:10
+INFO: advisePolicy: site:1573631919, species:long-tailed alligator, advice:none
+INFO: deletePolicy: site:1573631919, species:long-tailed alligator, policyNumber:18
+INFO: advisePolicy: site:2363637502, species:lesser short-tailed swallow, advice:conserve
+INFO: createPolicy: site:2363637502, species:lesser short-tailed swallow, action:160
+INFO: advisePolicy: site:1948981659, species:three-legged dog, advice:cull
+INFO: createPolicy: site:1948981659, species:three-legged dog, action:144
+INFO: advisePolicy: site:394554793, species:long-haired platypus, advice:cull
+INFO: deletePolicy: site:394554793, species:long-haired platypus, policyNumber:22
+INFO: advisePolicy: site:1199528129, species:lesser three-legged mosquito, advice:none
+INFO: advisePolicy: site:1199528129, species:lesser three-legged shark, advice:none
+INFO: deletePolicy: site:1199528129, species:lesser three-legged shark, policyNumber:4
+INFO: advisePolicy: site:2793565526, species:long-tailed swallow, advice:cull
+INFO: createPolicy: site:2793565526, species:long-tailed swallow, action:144
+INFO: advisePolicy: site:1573631919, species:short-tailed iguana, advice:none
+INFO: deletePolicy: site:1573631919, species:short-tailed iguana, policyNumber:1
+INFO: createPolicy: site:394554793, species:long-haired platypus, action:144
+INFO: advisePolicy: site:1948981659, species:long-tailed hobbit, advice:none
+INFO: deletePolicy: site:1948981659, species:long-tailed hobbit, policyNumber:1
+INFO: advisePolicy: site:2363637502, species:pygmy duck-billed octopus, advice:none
+INFO: advisePolicy: site:2363637502, species:long-tailed cat, advice:conserve
+INFO: createPolicy: site:2363637502, species:long-tailed cat, action:160
+INFO: advisePolicy: site:1199528129, species:giant short-haired duck, advice:conserve
+INFO: deletePolicy: site:1199528129, species:giant short-haired duck, policyNumber:14
+INFO: advisePolicy: site:2793565526, species:short-tailed wagtail, advice:none
+INFO: deletePolicy: site:2793565526, species:short-tailed wagtail, policyNumber:5
+INFO: advisePolicy: site:1573631919, species:European long-haired cat, advice:conserve
+INFO: deletePolicy: site:1573631919, species:European long-haired cat, policyNumber:19
+INFO: advisePolicy: site:394554793, species:long-haired rat, advice:cull
+INFO: createPolicy: site:394554793, species:long-haired rat, action:144
+INFO: advisePolicy: site:1948981659, species:African bird-eating rhinoceros, advice:conserve
+INFO: createPolicy: site:1948981659, species:African bird-eating rhinoceros, action:160
+INFO: advisePolicy: site:2363637502, species:duck-billed iguana, advice:cull
+INFO: deletePolicy: site:2363637502, species:duck-billed iguana, policyNumber:14
+INFO: createPolicy: site:1199528129, species:giant short-haired duck, action:160
+INFO: advisePolicy: site:2793565526, species:short-tailed horse, advice:none
+INFO: deletePolicy: site:2793565526, species:short-tailed horse, policyNumber:14
+INFO: createPolicy: site:1573631919, species:European long-haired cat, action:160
+INFO: advisePolicy: site:1573631919, species:lesser-spotted long-haired ostrich, advice:conserve
+INFO: deletePolicy: site:1573631919, species:lesser-spotted long-haired ostrich, policyNumber:20
+INFO: advisePolicy: site:394554793, species:flightless wagtail, advice:conserve
+INFO: createPolicy: site:394554793, species:flightless wagtail, action:160
+INFO: advisePolicy: site:1948981659, species:pygmy short-haired rhinoceros, advice:none
+INFO: advisePolicy: site:1948981659, species:short-haired ostrich, advice:cull
+INFO: createPolicy: site:1948981659, species:short-haired ostrich, action:144
+INFO: advisePolicy: site:1199528129, species:short-haired elephant, advice:conserve
+INFO: createPolicy: site:1199528129, species:short-haired elephant, action:160
+INFO: createPolicy: site:2363637502, species:duck-billed iguana, action:144
+INFO: advisePolicy: site:2793565526, species:great long-haired hamster, advice:none
+INFO: advisePolicy: site:2793565526, species:European long-tailed elephant, advice:cull
+INFO: createPolicy: site:2793565526, species:European long-tailed elephant, action:144
+INFO: createPolicy: site:1573631919, species:lesser-spotted long-haired ostrich, action:160
+INFO: advisePolicy: site:394554793, species:great duck-billed squid, advice:none
+INFO: deletePolicy: site:394554793, species:great duck-billed squid, policyNumber:18
+INFO: advisePolicy: site:1948981659, species:bird-eating mole, advice:conserve
+INFO: deletePolicy: site:1948981659, species:bird-eating mole, policyNumber:13
+INFO: advisePolicy: site:1199528129, species:common duck-billed otter, advice:none
+INFO: deletePolicy: site:1199528129, species:common duck-billed otter, policyNumber:15
+INFO: advisePolicy: site:2363637502, species:great three-legged otter, advice:cull
+INFO: deletePolicy: site:2363637502, species:great three-legged otter, policyNumber:11
+INFO: advisePolicy: site:2793565526, species:lesser-spotted three-legged dodo, advice:conserve
+INFO: createPolicy: site:2793565526, species:lesser-spotted three-legged dodo, action:160
+INFO: advisePolicy: site:1573631919, species:great duck-billed shark, advice:none
+INFO: advisePolicy: site:1573631919, species:long-tailed platypus, advice:none
+INFO: deletePolicy: site:1573631919, species:long-tailed platypus, policyNumber:21
+INFO: advisePolicy: site:394554793, species:short-haired alligator, advice:cull
+INFO: deletePolicy: site:394554793, species:short-haired alligator, policyNumber:24
+INFO: createPolicy: site:1948981659, species:bird-eating mole, action:160
+INFO: advisePolicy: site:1199528129, species:pygmy flightless dog, advice:conserve
+INFO: createPolicy: site:1199528129, species:pygmy flightless dog, action:160
+INFO: createPolicy: site:2363637502, species:great three-legged otter, action:144
+INFO: advisePolicy: site:2793565526, species:short-tailed platypus, advice:none
+INFO: deletePolicy: site:2793565526, species:short-tailed platypus, policyNumber:15
+INFO: advisePolicy: site:1573631919, species:lesser flightless hippopotamus, advice:cull
+INFO: deletePolicy: site:1573631919, species:lesser flightless hippopotamus, policyNumber:4
+INFO: createPolicy: site:394554793, species:short-haired alligator, action:144
+INFO: advisePolicy: site:1948981659, species:long-tailed cat, advice:none
+INFO: deletePolicy: site:1948981659, species:long-tailed cat, policyNumber:6
+INFO: advisePolicy: site:2363637502, species:giant long-tailed spider, advice:none
+INFO: deletePolicy: site:2363637502, species:giant long-tailed spider, policyNumber:5
+INFO: advisePolicy: site:2793565526, species:flightless iguana, advice:none
+INFO: createPolicy: site:1573631919, species:lesser flightless hippopotamus, action:144
+INFO: advisePolicy: site:1573631919, species:long-haired otter, advice:conserve
+INFO: deletePolicy: site:1573631919, species:long-haired otter, policyNumber:13
+INFO: advisePolicy: site:2363637502, species:lesser long-tailed tortoise, advice:cull
+INFO: createPolicy: site:2363637502, species:lesser long-tailed tortoise, action:144
+INFO: createPolicy: site:1573631919, species:long-haired otter, action:160
+INFO: advisePolicy: site:2363637502, species:African bird-eating dodo, advice:none
+INFO: advisePolicy: site:2363637502, species:bird-eating swallow, advice:conserve
+INFO: deletePolicy: site:2363637502, species:bird-eating swallow, policyNumber:8
+INFO: advisePolicy: site:1573631919, species:long-haired swallow, advice:cull
+INFO: deletePolicy: site:1573631919, species:long-haired swallow, policyNumber:22
+INFO: createPolicy: site:2363637502, species:bird-eating swallow, action:160
+INFO: createPolicy: site:1573631919, species:long-haired swallow, action:144
+INFO: advisePolicy: site:1573631919, species:long-tailed hippopotamus, advice:none
+INFO: advisePolicy: site:1573631919, species:lesser duck-billed mole, advice:conserve
+INFO: deletePolicy: site:1573631919, species:lesser duck-billed mole, policyNumber:23
+INFO: createPolicy: site:1573631919, species:lesser duck-billed mole, action:160
+INFO: advisePolicy: site:1573631919, species:bird-eating ostrich, advice:cull
+INFO: deletePolicy: site:1573631919, species:bird-eating ostrich, policyNumber:8
+INFO: createPolicy: site:1573631919, species:bird-eating ostrich, action:144
+INFO: advisePolicy: site:1573631919, species:duck-billed horse, advice:none
+INFO: deletePolicy: site:1573631919, species:duck-billed horse, policyNumber:24
+INFO: advisePolicy: site:1573631919, species:short-haired wagtail, advice:cull
+INFO: createPolicy: site:1573631919, species:short-haired wagtail, action:144
+INFO: advisePolicy: site:1573631919, species:European three-legged octopus, advice:cull
+INFO: deletePolicy: site:1573631919, species:European three-legged octopus, policyNumber:9
+INFO: createPolicy: site:1573631919, species:European three-legged octopus, action:144
+INFO: advisePolicy: site:1573631919, species:great long-tailed tortoise, advice:conserve
+INFO: deletePolicy: site:1573631919, species:great long-tailed tortoise, policyNumber:25
+INFO: createPolicy: site:1573631919, species:great long-tailed tortoise, action:160
+INFO: advisePolicy: site:1573631919, species:African duck-billed hobbit, advice:none
+INFO: deletePolicy: site:1573631919, species:African duck-billed hobbit, policyNumber:26
+INFO: advisePolicy: site:1573631919, species:African long-tailed mosquito, advice:cull
+INFO: deletePolicy: site:1573631919, species:African long-tailed mosquito, policyNumber:28
+INFO: createPolicy: site:1573631919, species:African long-tailed mosquito, action:144
+INFO: pestcontrol: site:2793565526, observed populations {"pygmy long-tailed dodo":149,"European short-tailed rhinoceros":68,"bird-eating rat":142,"long-tailed swallow":2,"short-tailed horse":12,"great long-haired hamster":207,"European long-tailed elephant":85,"flightless iguana":24,"short-tailed cat":99,"pygmy three-legged cat":33}
+INFO: handling site: 2793565526
+INFO: pestcontrol: site:2793565526, target populations {"pygmy long-tailed dodo":{"min":84,"max":87},"flightless swallow":{"min":16,"max":38},"short-haired dinosaur":{"min":19,"max":101},"European short-tailed rhinoceros":{"min":57,"max":65},"bird-eating rat":{"min":56,"max":110},"long-tailed swallow":{"min":48,"max":92},"short-tailed wagtail":{"min":47,"max":122},"short-tailed horse":{"min":14,"max":45},"great long-haired hamster":{"min":52,"max":137},"European long-tailed elephant":{"min":78,"max":166},"lesser-spotted three-legged dodo":{"min":6,"max":48},"short-tailed platypus":{"min":70,"max":130},"flightless iguana":{"min":43,"max":129}}
+INFO: advisePolicy: site:2793565526, species:pygmy long-tailed dodo, advice:cull
+INFO: createPolicy: site:2793565526, species:pygmy long-tailed dodo, action:144
+INFO: pestcontrol: site:394554793, observed populations {"short-tailed hamster":3,"European long-haired wagtail":125,"common long-haired dog":24,"giant duck-billed dodo":18,"lesser-spotted long-tailed dog":118,"long-haired platypus":137,"long-haired rat":62,"long-tailed rat":51,"great duck-billed squid":146,"short-haired alligator":191,"flightless duck":90}
+INFO: handling site: 394554793
+INFO: pestcontrol: site:394554793, target populations {"short-tailed hamster":{"min":13,"max":56},"European long-haired wagtail":{"min":63,"max":125},"common long-haired dog":{"min":9,"max":33},"lesser short-haired mole":{"min":28,"max":104},"giant duck-billed dodo":{"min":49,"max":117},"lesser-spotted long-tailed dog":{"min":95,"max":149},"long-haired platypus":{"min":86,"max":152},"long-haired rat":{"min":76,"max":144},"long-tailed rat":{"min":13,"max":77},"flightless wagtail":{"min":21,"max":79},"great duck-billed squid":{"min":56,"max":153},"short-haired alligator":{"min":69,"max":116}}
+INFO: advisePolicy: site:394554793, species:short-tailed hamster, advice:conserve
+INFO: deletePolicy: site:394554793, species:short-tailed hamster, policyNumber:19
+INFO: pestcontrol: site:1199528129, observed populations {"short-haired shark":32,"short-haired mole":31,"great duck-billed ostrich":230,"long-haired shark":254,"lesser three-legged mosquito":63,"lesser three-legged shark":72,"giant short-haired duck":48,"common duck-billed otter":91,"pygmy flightless dog":258,"duck-billed dog":45}
+INFO: handling site: 1199528129
+INFO: pestcontrol: site:1199528129, target populations {"great duck-billed rat":{"min":62,"max":153},"short-haired shark":{"min":49,"max":72},"short-haired mole":{"min":21,"max":53},"great duck-billed ostrich":{"min":53,"max":135},"long-haired shark":{"min":95,"max":193},"lesser three-legged mosquito":{"min":37,"max":83},"lesser three-legged shark":{"min":27,"max":106},"giant short-haired duck":{"min":47,"max":58},"short-haired elephant":{"min":76,"max":165},"common duck-billed otter":{"min":46,"max":107},"pygmy flightless dog":{"min":84,"max":158}}
+INFO: advisePolicy: site:1199528129, species:short-haired mole, advice:none
+INFO: advisePolicy: site:1199528129, species:great duck-billed ostrich, advice:cull
+INFO: createPolicy: site:1199528129, species:great duck-billed ostrich, action:144
+INFO: pestcontrol: site:1573631919, observed populations {"long-haired mole":128,"long-tailed alligator":3,"short-tailed iguana":51,"lesser-spotted long-haired ostrich":70,"great duck-billed shark":20,"long-tailed platypus":8,"long-haired otter":19,"long-haired swallow":180,"lesser duck-billed mole":97,"bird-eating ostrich":86,"short-haired wagtail":56,"European three-legged octopus":114,"great long-tailed tortoise":28,"lesser long-tailed wagtail":6,"African long-tailed mosquito":14,"short-haired alligator":33}
+INFO: handling site: 1573631919
+INFO: pestcontrol: site:1573631919, target populations {"long-haired mole":{"min":32,"max":126},"long-tailed alligator":{"min":19,"max":105},"short-tailed iguana":{"min":61,"max":93},"European long-haired cat":{"min":75,"max":145},"lesser-spotted long-haired ostrich":{"min":52,"max":94},"great duck-billed shark":{"min":0,"max":41},"long-tailed platypus":{"min":14,"max":36},"lesser flightless hippopotamus":{"min":53,"max":125},"long-haired otter":{"min":13,"max":17},"long-haired swallow":{"min":74,"max":97},"long-tailed hippopotamus":{"min":89,"max":126},"lesser duck-billed mole":{"min":56,"max":117},"bird-eating ostrich":{"min":64,"max":90},"duck-billed horse":{"min":99,"max":119},"short-haired wagtail":{"min":6,"max":81},"European three-legged octopus":{"min":31,"max":118},"great long-tailed tortoise":{"min":6,"max":94},"African duck-billed hobbit":{"min":53,"max":81},"lesser long-tailed wagtail":{"min":88,"max":180},"African long-tailed mosquito":{"min":33,"max":90}}
+INFO: advisePolicy: site:1573631919, species:long-tailed alligator, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-tailed alligator, action:160
+INFO: pestcontrol: site:1948981659, observed populations {"long-haired mouse":41,"bird-eating spider":32,"lesser-spotted flightless dog":128,"long-tailed hobbit":67,"giant long-tailed mouse":155,"African bird-eating rhinoceros":0,"pygmy short-haired rhinoceros":6,"bird-eating mole":47,"African long-haired platypus":27,"lesser-spotted bird-eating platypus":66,"pygmy flightless cat":12}
+INFO: handling site: 1948981659
+INFO: pestcontrol: site:1948981659, target populations {"long-haired mouse":{"min":15,"max":100},"bird-eating spider":{"min":32,"max":98},"three-legged dog":{"min":12,"max":35},"lesser-spotted flightless dog":{"min":95,"max":148},"long-tailed hobbit":{"min":32,"max":76},"giant long-tailed mouse":{"min":9,"max":101},"African bird-eating rhinoceros":{"min":22,"max":41},"long-tailed elephant":{"min":32,"max":45},"pygmy short-haired rhinoceros":{"min":6,"max":6},"short-haired ostrich":{"min":63,"max":83},"bird-eating mole":{"min":14,"max":45},"long-tailed cat":{"min":52,"max":114},"African long-haired platypus":{"min":83,"max":123},"lesser-spotted bird-eating platypus":{"min":66,"max":147}}
+INFO: advisePolicy: site:1948981659, species:long-haired mouse, advice:none
+INFO: advisePolicy: site:1948981659, species:bird-eating spider, advice:none
+INFO: advisePolicy: site:1948981659, species:three-legged dog, advice:conserve
+INFO: deletePolicy: site:1948981659, species:three-legged dog, policyNumber:19
+disconnected from: ::ffff:127.107.55.134:34509
+disconnected from: ::ffff:127.107.55.134:59899
+disconnected from: ::ffff:127.107.55.134:35595
+disconnected from: ::ffff:127.107.55.134:37257
+disconnected from: ::ffff:127.107.55.134:56825
+disconnected from: ::ffff:127.107.55.134:43689
+INFO: advisePolicy: site:2793565526, species:short-haired dinosaur, advice:conserve
+INFO: deletePolicy: site:2793565526, species:short-haired dinosaur, policyNumber:17
+INFO: advisePolicy: site:1573631919, species:short-tailed iguana, advice:conserve
+INFO: createPolicy: site:1573631919, species:short-tailed iguana, action:160
+INFO: createPolicy: site:394554793, species:short-tailed hamster, action:160
+INFO: advisePolicy: site:1199528129, species:long-haired shark, advice:cull
+INFO: createPolicy: site:1199528129, species:long-haired shark, action:144
+INFO: createPolicy: site:1948981659, species:three-legged dog, action:160
+INFO: createPolicy: site:2793565526, species:short-haired dinosaur, action:160
+INFO: advisePolicy: site:1573631919, species:lesser-spotted long-haired ostrich, advice:none
+INFO: deletePolicy: site:1573631919, species:lesser-spotted long-haired ostrich, policyNumber:31
+INFO: advisePolicy: site:394554793, species:European long-haired wagtail, advice:none
+INFO: deletePolicy: site:394554793, species:European long-haired wagtail, policyNumber:25
+INFO: advisePolicy: site:1573631919, species:great duck-billed shark, advice:none
+INFO: advisePolicy: site:1573631919, species:long-tailed platypus, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-tailed platypus, action:160
+INFO: advisePolicy: site:1199528129, species:lesser three-legged mosquito, advice:none
+INFO: advisePolicy: site:1199528129, species:lesser three-legged shark, advice:none
+INFO: advisePolicy: site:1199528129, species:giant short-haired duck, advice:none
+INFO: deletePolicy: site:1199528129, species:giant short-haired duck, policyNumber:16
+INFO: advisePolicy: site:1948981659, species:lesser-spotted flightless dog, advice:none
+INFO: deletePolicy: site:1948981659, species:lesser-spotted flightless dog, policyNumber:10
+INFO: advisePolicy: site:2793565526, species:European short-tailed rhinoceros, advice:cull
+INFO: createPolicy: site:2793565526, species:European short-tailed rhinoceros, action:144
+INFO: advisePolicy: site:1573631919, species:lesser flightless hippopotamus, advice:conserve
+INFO: deletePolicy: site:1573631919, species:lesser flightless hippopotamus, policyNumber:32
+INFO: advisePolicy: site:394554793, species:common long-haired dog, advice:none
+INFO: deletePolicy: site:394554793, species:common long-haired dog, policyNumber:21
+INFO: advisePolicy: site:1199528129, species:common duck-billed otter, advice:none
+INFO: advisePolicy: site:1199528129, species:pygmy flightless dog, advice:cull
+INFO: deletePolicy: site:1199528129, species:pygmy flightless dog, policyNumber:18
+INFO: advisePolicy: site:1948981659, species:long-tailed hobbit, advice:none
+INFO: advisePolicy: site:1948981659, species:giant long-tailed mouse, advice:cull
+INFO: deletePolicy: site:1948981659, species:giant long-tailed mouse, policyNumber:15
+INFO: advisePolicy: site:2793565526, species:bird-eating rat, advice:cull
+INFO: deletePolicy: site:2793565526, species:bird-eating rat, policyNumber:13
+INFO: createPolicy: site:1573631919, species:lesser flightless hippopotamus, action:160
+INFO: advisePolicy: site:394554793, species:lesser short-haired mole, advice:conserve
+INFO: createPolicy: site:394554793, species:lesser short-haired mole, action:160
+INFO: createPolicy: site:1199528129, species:pygmy flightless dog, action:144
+INFO: createPolicy: site:1948981659, species:giant long-tailed mouse, action:144
+INFO: createPolicy: site:2793565526, species:bird-eating rat, action:144
+INFO: advisePolicy: site:1573631919, species:long-haired otter, advice:cull
+INFO: deletePolicy: site:1573631919, species:long-haired otter, policyNumber:33
+INFO: advisePolicy: site:394554793, species:giant duck-billed dodo, advice:conserve
+INFO: createPolicy: site:394554793, species:giant duck-billed dodo, action:160
+INFO: advisePolicy: site:1948981659, species:pygmy short-haired rhinoceros, advice:none
+INFO: advisePolicy: site:1948981659, species:short-haired ostrich, advice:conserve
+INFO: deletePolicy: site:1948981659, species:short-haired ostrich, policyNumber:21
+INFO: advisePolicy: site:2793565526, species:long-tailed swallow, advice:conserve
+INFO: deletePolicy: site:2793565526, species:long-tailed swallow, policyNumber:18
+INFO: createPolicy: site:1573631919, species:long-haired otter, action:144
+INFO: advisePolicy: site:394554793, species:lesser-spotted long-tailed dog, advice:none
+INFO: deletePolicy: site:394554793, species:lesser-spotted long-tailed dog, policyNumber:26
+INFO: createPolicy: site:1948981659, species:short-haired ostrich, action:160
+INFO: createPolicy: site:2793565526, species:long-tailed swallow, action:160
+INFO: advisePolicy: site:1573631919, species:long-tailed hippopotamus, advice:conserve
+INFO: createPolicy: site:1573631919, species:long-tailed hippopotamus, action:160
+INFO: advisePolicy: site:394554793, species:long-haired platypus, advice:none
+INFO: deletePolicy: site:394554793, species:long-haired platypus, policyNumber:27
+INFO: advisePolicy: site:1948981659, species:bird-eating mole, advice:cull
+INFO: deletePolicy: site:1948981659, species:bird-eating mole, policyNumber:22
+INFO: advisePolicy: site:2793565526, species:short-tailed wagtail, advice:conserve
+INFO: createPolicy: site:2793565526, species:short-tailed wagtail, action:160
+INFO: advisePolicy: site:1573631919, species:lesser duck-billed mole, advice:none
+INFO: deletePolicy: site:1573631919, species:lesser duck-billed mole, policyNumber:35
+INFO: advisePolicy: site:394554793, species:long-haired rat, advice:conserve
+INFO: deletePolicy: site:394554793, species:long-haired rat, policyNumber:28
+INFO: createPolicy: site:1948981659, species:bird-eating mole, action:144
+INFO: advisePolicy: site:2793565526, species:short-tailed horse, advice:conserve
+INFO: createPolicy: site:2793565526, species:short-tailed horse, action:160
+INFO: advisePolicy: site:1573631919, species:bird-eating ostrich, advice:none
+INFO: deletePolicy: site:1573631919, species:bird-eating ostrich, policyNumber:36
+INFO: createPolicy: site:394554793, species:long-haired rat, action:160
+INFO: advisePolicy: site:1948981659, species:long-tailed cat, advice:conserve
+INFO: createPolicy: site:1948981659, species:long-tailed cat, action:160
+INFO: advisePolicy: site:1573631919, species:duck-billed horse, advice:conserve
+INFO: createPolicy: site:1573631919, species:duck-billed horse, action:160
+INFO: advisePolicy: site:2793565526, species:great long-haired hamster, advice:cull
+INFO: createPolicy: site:2793565526, species:great long-haired hamster, action:144
+INFO: advisePolicy: site:394554793, species:long-tailed rat, advice:none
+INFO: deletePolicy: site:394554793, species:long-tailed rat, policyNumber:23
+INFO: advisePolicy: site:1573631919, species:short-haired wagtail, advice:none
+INFO: deletePolicy: site:1573631919, species:short-haired wagtail, policyNumber:37
+INFO: advisePolicy: site:1948981659, species:lesser-spotted bird-eating platypus, advice:none
+INFO: deletePolicy: site:1948981659, species:lesser-spotted bird-eating platypus, policyNumber:18
+INFO: advisePolicy: site:2793565526, species:European long-tailed elephant, advice:none
+INFO: deletePolicy: site:2793565526, species:European long-tailed elephant, policyNumber:19
+INFO: advisePolicy: site:1573631919, species:European three-legged octopus, advice:none
+INFO: deletePolicy: site:1573631919, species:European three-legged octopus, policyNumber:38
+INFO: advisePolicy: site:394554793, species:great duck-billed squid, advice:none
+INFO: advisePolicy: site:2793565526, species:short-tailed platypus, advice:conserve
+INFO: createPolicy: site:2793565526, species:short-tailed platypus, action:160
+INFO: advisePolicy: site:1573631919, species:great long-tailed tortoise, advice:none
+INFO: deletePolicy: site:1573631919, species:great long-tailed tortoise, policyNumber:39
+INFO: advisePolicy: site:2793565526, species:flightless iguana, advice:conserve
+INFO: createPolicy: site:2793565526, species:flightless iguana, action:160
+INFO: advisePolicy: site:1573631919, species:African duck-billed hobbit, advice:conserve
+INFO: createPolicy: site:1573631919, species:African duck-billed hobbit, action:160
+INFO: advisePolicy: site:1573631919, species:lesser long-tailed wagtail, advice:conserve
+INFO: deletePolicy: site:1573631919, species:lesser long-tailed wagtail, policyNumber:27
+INFO: createPolicy: site:1573631919, species:lesser long-tailed wagtail, action:160
+INFO: advisePolicy: site:1573631919, species:African long-tailed mosquito, advice:conserve
+INFO: deletePolicy: site:1573631919, species:African long-tailed mosquito, policyNumber:40
+INFO: createPolicy: site:1573631919, species:African long-tailed mosquito, action:160
+connected from: ::ffff:127.107.55.134:52717
+connected from: ::ffff:127.107.55.134:49897
+connected from: ::ffff:127.107.55.134:54057
+connected from: ::ffff:127.107.55.134:36103
+connected from: ::ffff:127.107.55.134:60143
+connected from: ::ffff:127.107.55.134:46367
+INFO: pestcontrol: site:2373824011, observed populations {"flightless mosquito":3,"three-legged rhinoceros":63,"pygmy long-haired dinosaur":34,"flightless hamster":50,"European duck-billed cat":13,"bird-eating dog":294,"long-tailed mouse":14,"lesser duck-billed wagtail":9,"flightless mole":55,"long-haired mosquito":14}
+INFO: handling site: 2373824011
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:912462360, observed populations {"short-tailed wagtail":53,"bird-eating wagtail":32,"three-legged duck":99,"bird-eating squid":34,"duck-billed platypus":15,"short-haired dinosaur":66,"long-tailed rat":172,"European bird-eating duck":83,"giant long-tailed turtle":17,"lesser-spotted long-tailed mouse":155,"common three-legged mouse":61}
+INFO: handling site: 912462360
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:3675517939, observed populations {"pygmy flightless turtle":49,"African duck-billed platypus":266,"great flightless alligator":112,"European bird-eating spider":79,"great three-legged platypus":185,"European long-tailed tortoise":56,"African long-tailed elephant":85,"great short-tailed otter":308,"European short-haired cat":93,"common three-legged iguana":26,"lesser-spotted flightless otter":248,"three-legged spider":16,"giant short-tailed rhinoceros":51}
+INFO: handling site: 3675517939
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:1224419839, observed populations {"pygmy long-haired hobbit":25,"common flightless otter":5,"long-haired wagtail":168,"European short-tailed turtle":72,"European flightless tortoise":3,"flightless rabbit":2,"European long-haired cat":12,"common three-legged iguana":148,"long-haired cat":49,"great long-haired hippopotamus":10,"great three-legged elephant":81}
+INFO: handling site: 1224419839
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:2373824011, target populations {"flightless mosquito":{"min":10,"max":92},"three-legged rhinoceros":{"min":58,"max":79},"pygmy long-haired dinosaur":{"min":77,"max":93},"flightless hamster":{"min":17,"max":78},"European duck-billed cat":{"min":28,"max":102},"bird-eating dog":{"min":79,"max":150},"long-tailed mouse":{"min":16,"max":89},"short-tailed shark":{"min":70,"max":146},"three-legged dinosaur":{"min":42,"max":99},"lesser duck-billed wagtail":{"min":18,"max":44}}
+INFO: advisePolicy: site:2373824011, species:flightless mosquito, advice:conserve
+INFO: createPolicy: site:2373824011, species:flightless mosquito, action:160
+INFO: pestcontrol: site:912462360, target populations {"African short-tailed otter":{"min":86,"max":119},"short-tailed wagtail":{"min":44,"max":84},"bird-eating iguana":{"min":3,"max":97},"European flightless swallow":{"min":52,"max":90},"bird-eating wagtail":{"min":6,"max":85},"three-legged duck":{"min":93,"max":102},"bird-eating squid":{"min":90,"max":114},"duck-billed platypus":{"min":17,"max":85},"short-haired dinosaur":{"min":30,"max":98},"long-tailed rat":{"min":64,"max":120},"lesser-spotted three-legged turtle":{"min":11,"max":105},"European bird-eating duck":{"min":24,"max":89},"great long-tailed wagtail":{"min":75,"max":149},"giant long-tailed turtle":{"min":75,"max":105},"lesser-spotted long-tailed mouse":{"min":85,"max":143},"duck-billed squid":{"min":94,"max":190},"common three-legged mouse":{"min":26,"max":95}}
+INFO: advisePolicy: site:912462360, species:African short-tailed otter, advice:conserve
+INFO: createPolicy: site:912462360, species:African short-tailed otter, action:160
+INFO: pestcontrol: site:3675517939, target populations {"pygmy flightless turtle":{"min":22,"max":109},"lesser long-tailed alligator":{"min":4,"max":6},"African three-legged swallow":{"min":34,"max":70},"African duck-billed platypus":{"min":98,"max":159},"European short-tailed rabbit":{"min":66,"max":153},"flightless swallow":{"min":87,"max":174},"great flightless alligator":{"min":23,"max":81},"long-haired squid":{"min":94,"max":135},"European bird-eating spider":{"min":54,"max":90},"short-tailed dodo":{"min":32,"max":88},"great three-legged platypus":{"min":64,"max":100},"European long-tailed tortoise":{"min":81,"max":173},"African long-tailed elephant":{"min":4,"max":44},"short-haired shark":{"min":52,"max":134},"great short-tailed otter":{"min":74,"max":154},"European short-haired cat":{"min":81,"max":139},"European long-haired elephant":{"min":73,"max":93},"common three-legged iguana":{"min":66,"max":69},"lesser-spotted flightless otter":{"min":72,"max":124}}
+INFO: advisePolicy: site:3675517939, species:pygmy flightless turtle, advice:none
+INFO: advisePolicy: site:3675517939, species:lesser long-tailed alligator, advice:conserve
+INFO: createPolicy: site:3675517939, species:lesser long-tailed alligator, action:160
+INFO: advisePolicy: site:2373824011, species:three-legged rhinoceros, advice:none
+INFO: advisePolicy: site:2373824011, species:pygmy long-haired dinosaur, advice:conserve
+INFO: createPolicy: site:2373824011, species:pygmy long-haired dinosaur, action:160
+INFO: pestcontrol: site:1224419839, target populations {"pygmy long-haired hobbit":{"min":94,"max":151},"common flightless otter":{"min":12,"max":33},"long-haired wagtail":{"min":85,"max":132},"European short-tailed turtle":{"min":72,"max":94},"long-tailed ostrich":{"min":95,"max":108},"flightless octopus":{"min":35,"max":97},"European flightless tortoise":{"min":6,"max":93},"flightless rabbit":{"min":18,"max":91},"European long-haired cat":{"min":5,"max":55},"common three-legged iguana":{"min":34,"max":82},"long-haired cat":{"min":64,"max":82},"great long-haired hippopotamus":{"min":54,"max":97}}
+INFO: advisePolicy: site:1224419839, species:pygmy long-haired hobbit, advice:conserve
+INFO: createPolicy: site:1224419839, species:pygmy long-haired hobbit, action:160
+INFO: advisePolicy: site:912462360, species:short-tailed wagtail, advice:none
+INFO: advisePolicy: site:912462360, species:bird-eating iguana, advice:conserve
+INFO: createPolicy: site:912462360, species:bird-eating iguana, action:160
+INFO: advisePolicy: site:3675517939, species:African three-legged swallow, advice:conserve
+INFO: createPolicy: site:3675517939, species:African three-legged swallow, action:160
+INFO: advisePolicy: site:2373824011, species:flightless hamster, advice:none
+INFO: advisePolicy: site:2373824011, species:European duck-billed cat, advice:conserve
+INFO: createPolicy: site:2373824011, species:European duck-billed cat, action:160
+INFO: advisePolicy: site:1224419839, species:common flightless otter, advice:conserve
+INFO: createPolicy: site:1224419839, species:common flightless otter, action:160
+INFO: advisePolicy: site:912462360, species:European flightless swallow, advice:conserve
+INFO: createPolicy: site:912462360, species:European flightless swallow, action:160
+INFO: advisePolicy: site:3675517939, species:African duck-billed platypus, advice:cull
+INFO: createPolicy: site:3675517939, species:African duck-billed platypus, action:144
+INFO: advisePolicy: site:2373824011, species:bird-eating dog, advice:cull
+INFO: createPolicy: site:2373824011, species:bird-eating dog, action:144
+INFO: advisePolicy: site:912462360, species:bird-eating wagtail, advice:none
+INFO: advisePolicy: site:912462360, species:three-legged duck, advice:none
+INFO: advisePolicy: site:912462360, species:bird-eating squid, advice:conserve
+INFO: createPolicy: site:912462360, species:bird-eating squid, action:160
+INFO: advisePolicy: site:1224419839, species:long-haired wagtail, advice:cull
+INFO: createPolicy: site:1224419839, species:long-haired wagtail, action:144
+INFO: advisePolicy: site:3675517939, species:European short-tailed rabbit, advice:conserve
+INFO: createPolicy: site:3675517939, species:European short-tailed rabbit, action:160
+INFO: advisePolicy: site:2373824011, species:long-tailed mouse, advice:conserve
+INFO: createPolicy: site:2373824011, species:long-tailed mouse, action:160
+INFO: advisePolicy: site:912462360, species:duck-billed platypus, advice:conserve
+INFO: createPolicy: site:912462360, species:duck-billed platypus, action:160
+INFO: advisePolicy: site:1224419839, species:European short-tailed turtle, advice:none
+INFO: advisePolicy: site:1224419839, species:long-tailed ostrich, advice:conserve
+INFO: createPolicy: site:1224419839, species:long-tailed ostrich, action:160
+INFO: advisePolicy: site:3675517939, species:flightless swallow, advice:conserve
+INFO: createPolicy: site:3675517939, species:flightless swallow, action:160
+INFO: advisePolicy: site:2373824011, species:short-tailed shark, advice:conserve
+INFO: createPolicy: site:2373824011, species:short-tailed shark, action:160
+INFO: advisePolicy: site:912462360, species:short-haired dinosaur, advice:none
+INFO: advisePolicy: site:912462360, species:long-tailed rat, advice:cull
+INFO: createPolicy: site:912462360, species:long-tailed rat, action:144
+INFO: advisePolicy: site:1224419839, species:flightless octopus, advice:conserve
+INFO: createPolicy: site:1224419839, species:flightless octopus, action:160
+INFO: advisePolicy: site:3675517939, species:great flightless alligator, advice:cull
+INFO: createPolicy: site:3675517939, species:great flightless alligator, action:144
+INFO: advisePolicy: site:2373824011, species:three-legged dinosaur, advice:conserve
+INFO: createPolicy: site:2373824011, species:three-legged dinosaur, action:160
+INFO: advisePolicy: site:912462360, species:lesser-spotted three-legged turtle, advice:conserve
+INFO: createPolicy: site:912462360, species:lesser-spotted three-legged turtle, action:160
+INFO: advisePolicy: site:3675517939, species:long-haired squid, advice:conserve
+INFO: createPolicy: site:3675517939, species:long-haired squid, action:160
+INFO: advisePolicy: site:1224419839, species:European flightless tortoise, advice:conserve
+INFO: createPolicy: site:1224419839, species:European flightless tortoise, action:160
+INFO: advisePolicy: site:2373824011, species:lesser duck-billed wagtail, advice:conserve
+INFO: createPolicy: site:2373824011, species:lesser duck-billed wagtail, action:160
+INFO: advisePolicy: site:912462360, species:European bird-eating duck, advice:none
+INFO: advisePolicy: site:912462360, species:great long-tailed wagtail, advice:conserve
+INFO: createPolicy: site:912462360, species:great long-tailed wagtail, action:160
+INFO: advisePolicy: site:3675517939, species:European bird-eating spider, advice:none
+INFO: advisePolicy: site:3675517939, species:short-tailed dodo, advice:conserve
+INFO: createPolicy: site:3675517939, species:short-tailed dodo, action:160
+INFO: advisePolicy: site:1224419839, species:flightless rabbit, advice:conserve
+INFO: createPolicy: site:1224419839, species:flightless rabbit, action:160
+INFO: pestcontrol: site:2373824011, observed populations {"flightless mosquito":27,"three-legged rhinoceros":20,"pygmy long-haired dinosaur":154,"flightless hamster":133,"bird-eating dog":91,"short-tailed shark":116,"three-legged dinosaur":95,"long-haired hobbit":84,"European bird-eating dodo":62}
+INFO: handling site: 2373824011
+INFO: pestcontrol: site:2373824011, target populations {"flightless mosquito":{"min":10,"max":92},"three-legged rhinoceros":{"min":58,"max":79},"pygmy long-haired dinosaur":{"min":77,"max":93},"flightless hamster":{"min":17,"max":78},"European duck-billed cat":{"min":28,"max":102},"bird-eating dog":{"min":79,"max":150},"long-tailed mouse":{"min":16,"max":89},"short-tailed shark":{"min":70,"max":146},"three-legged dinosaur":{"min":42,"max":99},"lesser duck-billed wagtail":{"min":18,"max":44}}
+INFO: advisePolicy: site:2373824011, species:flightless mosquito, advice:none
+INFO: deletePolicy: site:2373824011, species:flightless mosquito, policyNumber:0
+INFO: advisePolicy: site:912462360, species:giant long-tailed turtle, advice:conserve
+INFO: createPolicy: site:912462360, species:giant long-tailed turtle, action:160
+INFO: advisePolicy: site:3675517939, species:great three-legged platypus, advice:cull
+INFO: createPolicy: site:3675517939, species:great three-legged platypus, action:144
+INFO: advisePolicy: site:1224419839, species:European long-haired cat, advice:none
+INFO: advisePolicy: site:1224419839, species:common three-legged iguana, advice:cull
+INFO: createPolicy: site:1224419839, species:common three-legged iguana, action:144
+INFO: advisePolicy: site:2373824011, species:three-legged rhinoceros, advice:conserve
+INFO: createPolicy: site:2373824011, species:three-legged rhinoceros, action:160
+INFO: advisePolicy: site:912462360, species:lesser-spotted long-tailed mouse, advice:cull
+INFO: createPolicy: site:912462360, species:lesser-spotted long-tailed mouse, action:144
+INFO: advisePolicy: site:3675517939, species:European long-tailed tortoise, advice:conserve
+INFO: createPolicy: site:3675517939, species:European long-tailed tortoise, action:160
+INFO: advisePolicy: site:1224419839, species:long-haired cat, advice:conserve
+INFO: createPolicy: site:1224419839, species:long-haired cat, action:160
+INFO: advisePolicy: site:2373824011, species:pygmy long-haired dinosaur, advice:cull
+INFO: deletePolicy: site:2373824011, species:pygmy long-haired dinosaur, policyNumber:1
+INFO: advisePolicy: site:912462360, species:duck-billed squid, advice:conserve
+INFO: createPolicy: site:912462360, species:duck-billed squid, action:160
+INFO: advisePolicy: site:3675517939, species:African long-tailed elephant, advice:cull
+INFO: createPolicy: site:3675517939, species:African long-tailed elephant, action:144
+INFO: advisePolicy: site:1224419839, species:great long-haired hippopotamus, advice:conserve
+INFO: createPolicy: site:1224419839, species:great long-haired hippopotamus, action:160
+INFO: createPolicy: site:2373824011, species:pygmy long-haired dinosaur, action:144
+INFO: advisePolicy: site:912462360, species:common three-legged mouse, advice:none
+INFO: pestcontrol: site:912462360, observed populations {"short-tailed wagtail":57,"bird-eating iguana":81,"European flightless swallow":82,"bird-eating wagtail":165,"three-legged duck":93,"bird-eating squid":104,"short-haired dinosaur":72,"lesser-spotted three-legged turtle":7,"European bird-eating duck":111,"giant long-tailed turtle":92,"lesser-spotted long-tailed mouse":106,"great three-legged mosquito":30,"duck-billed mosquito":79}
+INFO: handling site: 912462360
+INFO: pestcontrol: site:912462360, target populations {"African short-tailed otter":{"min":86,"max":119},"short-tailed wagtail":{"min":44,"max":84},"bird-eating iguana":{"min":3,"max":97},"European flightless swallow":{"min":52,"max":90},"bird-eating wagtail":{"min":6,"max":85},"three-legged duck":{"min":93,"max":102},"bird-eating squid":{"min":90,"max":114},"duck-billed platypus":{"min":17,"max":85},"short-haired dinosaur":{"min":30,"max":98},"long-tailed rat":{"min":64,"max":120},"lesser-spotted three-legged turtle":{"min":11,"max":105},"European bird-eating duck":{"min":24,"max":89},"great long-tailed wagtail":{"min":75,"max":149},"giant long-tailed turtle":{"min":75,"max":105},"lesser-spotted long-tailed mouse":{"min":85,"max":143},"duck-billed squid":{"min":94,"max":190},"common three-legged mouse":{"min":26,"max":95}}
+INFO: advisePolicy: site:912462360, species:short-tailed wagtail, advice:none
+INFO: advisePolicy: site:912462360, species:bird-eating iguana, advice:none
+INFO: deletePolicy: site:912462360, species:bird-eating iguana, policyNumber:1
+INFO: advisePolicy: site:3675517939, species:short-haired shark, advice:conserve
+INFO: createPolicy: site:3675517939, species:short-haired shark, action:160
+INFO: pestcontrol: site:1224419839, observed populations {"pygmy long-haired hobbit":39,"common flightless otter":40,"European short-tailed turtle":88,"long-tailed ostrich":99,"flightless octopus":8,"European flightless tortoise":22,"flightless rabbit":17,"European long-haired cat":0,"common three-legged iguana":79,"great long-haired hippopotamus":104,"lesser bird-eating swallow":62,"flightless duck":29,"common long-tailed dodo":69}
+INFO: handling site: 1224419839
+INFO: pestcontrol: site:1224419839, target populations {"pygmy long-haired hobbit":{"min":94,"max":151},"common flightless otter":{"min":12,"max":33},"long-haired wagtail":{"min":85,"max":132},"European short-tailed turtle":{"min":72,"max":94},"long-tailed ostrich":{"min":95,"max":108},"flightless octopus":{"min":35,"max":97},"European flightless tortoise":{"min":6,"max":93},"flightless rabbit":{"min":18,"max":91},"European long-haired cat":{"min":5,"max":55},"common three-legged iguana":{"min":34,"max":82},"long-haired cat":{"min":64,"max":82},"great long-haired hippopotamus":{"min":54,"max":97}}
+INFO: advisePolicy: site:1224419839, species:common flightless otter, advice:cull
+INFO: deletePolicy: site:1224419839, species:common flightless otter, policyNumber:1
+INFO: advisePolicy: site:2373824011, species:flightless hamster, advice:cull
+INFO: createPolicy: site:2373824011, species:flightless hamster, action:144
+INFO: advisePolicy: site:912462360, species:European flightless swallow, advice:none
+INFO: deletePolicy: site:912462360, species:European flightless swallow, policyNumber:2
+INFO: advisePolicy: site:3675517939, species:great short-tailed otter, advice:cull
+INFO: createPolicy: site:3675517939, species:great short-tailed otter, action:144
+INFO: createPolicy: site:1224419839, species:common flightless otter, action:144
+INFO: advisePolicy: site:2373824011, species:bird-eating dog, advice:none
+INFO: deletePolicy: site:2373824011, species:bird-eating dog, policyNumber:3
+INFO: advisePolicy: site:912462360, species:bird-eating wagtail, advice:cull
+INFO: createPolicy: site:912462360, species:bird-eating wagtail, action:144
+INFO: advisePolicy: site:3675517939, species:European short-haired cat, advice:none
+INFO: advisePolicy: site:3675517939, species:European long-haired elephant, advice:conserve
+INFO: createPolicy: site:3675517939, species:European long-haired elephant, action:160
+INFO: advisePolicy: site:1224419839, species:long-haired wagtail, advice:conserve
+INFO: deletePolicy: site:1224419839, species:long-haired wagtail, policyNumber:2
+INFO: advisePolicy: site:2373824011, species:short-tailed shark, advice:none
+INFO: deletePolicy: site:2373824011, species:short-tailed shark, policyNumber:5
+INFO: advisePolicy: site:912462360, species:three-legged duck, advice:none
+INFO: advisePolicy: site:912462360, species:bird-eating squid, advice:none
+INFO: deletePolicy: site:912462360, species:bird-eating squid, policyNumber:3
+INFO: advisePolicy: site:3675517939, species:common three-legged iguana, advice:conserve
+INFO: createPolicy: site:3675517939, species:common three-legged iguana, action:160
+INFO: createPolicy: site:1224419839, species:long-haired wagtail, action:160
+INFO: advisePolicy: site:2373824011, species:three-legged dinosaur, advice:none
+INFO: deletePolicy: site:2373824011, species:three-legged dinosaur, policyNumber:6
+INFO: advisePolicy: site:912462360, species:short-haired dinosaur, advice:none
+INFO: advisePolicy: site:912462360, species:long-tailed rat, advice:conserve
+INFO: deletePolicy: site:912462360, species:long-tailed rat, policyNumber:5
+INFO: advisePolicy: site:3675517939, species:lesser-spotted flightless otter, advice:cull
+INFO: createPolicy: site:3675517939, species:lesser-spotted flightless otter, action:144
+INFO: advisePolicy: site:1224419839, species:European short-tailed turtle, advice:none
+INFO: advisePolicy: site:1224419839, species:long-tailed ostrich, advice:none
+INFO: deletePolicy: site:1224419839, species:long-tailed ostrich, policyNumber:3
+INFO: pestcontrol: site:2373824011, observed populations {"flightless mosquito":105,"three-legged rhinoceros":78,"pygmy long-haired dinosaur":104,"flightless hamster":134,"European duck-billed cat":18,"long-tailed mouse":120,"three-legged dinosaur":29,"lesser duck-billed wagtail":3}
+INFO: handling site: 2373824011
+INFO: pestcontrol: site:2373824011, target populations {"flightless mosquito":{"min":10,"max":92},"three-legged rhinoceros":{"min":58,"max":79},"pygmy long-haired dinosaur":{"min":77,"max":93},"flightless hamster":{"min":17,"max":78},"European duck-billed cat":{"min":28,"max":102},"bird-eating dog":{"min":79,"max":150},"long-tailed mouse":{"min":16,"max":89},"short-tailed shark":{"min":70,"max":146},"three-legged dinosaur":{"min":42,"max":99},"lesser duck-billed wagtail":{"min":18,"max":44}}
+INFO: advisePolicy: site:2373824011, species:flightless mosquito, advice:cull
+INFO: createPolicy: site:2373824011, species:flightless mosquito, action:144
+INFO: createPolicy: site:912462360, species:long-tailed rat, action:160
+INFO: pestcontrol: site:3675517939, observed populations {"pygmy flightless turtle":39,"African three-legged swallow":43,"African duck-billed platypus":149,"European short-tailed rabbit":39,"flightless swallow":111,"great flightless alligator":60,"long-haired squid":231,"short-tailed dodo":39,"great three-legged platypus":70,"European long-tailed tortoise":158,"African long-tailed elephant":11,"short-haired shark":112,"European short-haired cat":253,"common three-legged iguana":69,"lesser-spotted flightless otter":226,"short-haired ostrich":16}
+INFO: handling site: 3675517939
+INFO: pestcontrol: site:3675517939, target populations {"pygmy flightless turtle":{"min":22,"max":109},"lesser long-tailed alligator":{"min":4,"max":6},"African three-legged swallow":{"min":34,"max":70},"African duck-billed platypus":{"min":98,"max":159},"European short-tailed rabbit":{"min":66,"max":153},"flightless swallow":{"min":87,"max":174},"great flightless alligator":{"min":23,"max":81},"long-haired squid":{"min":94,"max":135},"European bird-eating spider":{"min":54,"max":90},"short-tailed dodo":{"min":32,"max":88},"great three-legged platypus":{"min":64,"max":100},"European long-tailed tortoise":{"min":81,"max":173},"African long-tailed elephant":{"min":4,"max":44},"short-haired shark":{"min":52,"max":134},"great short-tailed otter":{"min":74,"max":154},"European short-haired cat":{"min":81,"max":139},"European long-haired elephant":{"min":73,"max":93},"common three-legged iguana":{"min":66,"max":69},"lesser-spotted flightless otter":{"min":72,"max":124}}
+INFO: advisePolicy: site:3675517939, species:pygmy flightless turtle, advice:none
+INFO: advisePolicy: site:3675517939, species:African three-legged swallow, advice:none
+INFO: deletePolicy: site:3675517939, species:African three-legged swallow, policyNumber:1
+INFO: advisePolicy: site:1224419839, species:European flightless tortoise, advice:none
+INFO: deletePolicy: site:1224419839, species:European flightless tortoise, policyNumber:5
+INFO: advisePolicy: site:2373824011, species:three-legged rhinoceros, advice:none
+INFO: deletePolicy: site:2373824011, species:three-legged rhinoceros, policyNumber:8
+INFO: advisePolicy: site:912462360, species:European bird-eating duck, advice:cull
+INFO: createPolicy: site:912462360, species:European bird-eating duck, action:144
+INFO: advisePolicy: site:3675517939, species:African duck-billed platypus, advice:none
+INFO: deletePolicy: site:3675517939, species:African duck-billed platypus, policyNumber:2
+INFO: advisePolicy: site:1224419839, species:European long-haired cat, advice:conserve
+INFO: createPolicy: site:1224419839, species:European long-haired cat, action:160
+INFO: advisePolicy: site:2373824011, species:bird-eating dog, advice:conserve
+INFO: createPolicy: site:2373824011, species:bird-eating dog, action:160
+INFO: advisePolicy: site:912462360, species:giant long-tailed turtle, advice:none
+INFO: deletePolicy: site:912462360, species:giant long-tailed turtle, policyNumber:8
+INFO: advisePolicy: site:3675517939, species:flightless swallow, advice:none
+INFO: deletePolicy: site:3675517939, species:flightless swallow, policyNumber:4
+INFO: advisePolicy: site:1224419839, species:common three-legged iguana, advice:none
+INFO: deletePolicy: site:1224419839, species:common three-legged iguana, policyNumber:7
+INFO: advisePolicy: site:2373824011, species:long-tailed mouse, advice:cull
+INFO: deletePolicy: site:2373824011, species:long-tailed mouse, policyNumber:4
+INFO: advisePolicy: site:912462360, species:lesser-spotted long-tailed mouse, advice:none
+INFO: deletePolicy: site:912462360, species:lesser-spotted long-tailed mouse, policyNumber:9
+INFO: advisePolicy: site:3675517939, species:great flightless alligator, advice:none
+INFO: deletePolicy: site:3675517939, species:great flightless alligator, policyNumber:5
+INFO: advisePolicy: site:1224419839, species:great long-haired hippopotamus, advice:cull
+INFO: deletePolicy: site:1224419839, species:great long-haired hippopotamus, policyNumber:9
+INFO: createPolicy: site:2373824011, species:long-tailed mouse, action:144
+INFO: advisePolicy: site:912462360, species:common three-legged mouse, advice:conserve
+INFO: createPolicy: site:912462360, species:common three-legged mouse, action:160
+INFO: advisePolicy: site:3675517939, species:long-haired squid, advice:cull
+INFO: deletePolicy: site:3675517939, species:long-haired squid, policyNumber:6
+INFO: createPolicy: site:1224419839, species:great long-haired hippopotamus, action:144
+INFO: advisePolicy: site:2373824011, species:short-tailed shark, advice:conserve
+INFO: createPolicy: site:2373824011, species:short-tailed shark, action:160
+INFO: pestcontrol: site:912462360, observed populations {"African short-tailed otter":108,"short-tailed wagtail":60,"bird-eating iguana":65,"bird-eating wagtail":2,"three-legged duck":189,"bird-eating squid":139,"duck-billed platypus":24,"short-haired dinosaur":54,"European bird-eating duck":48,"great long-tailed wagtail":144,"lesser-spotted long-tailed mouse":95,"duck-billed squid":84,"common three-legged mouse":18,"African long-haired dodo":23,"African bird-eating otter":80,"three-legged cat":64}
+INFO: handling site: 912462360
+INFO: pestcontrol: site:912462360, target populations {"African short-tailed otter":{"min":86,"max":119},"short-tailed wagtail":{"min":44,"max":84},"bird-eating iguana":{"min":3,"max":97},"European flightless swallow":{"min":52,"max":90},"bird-eating wagtail":{"min":6,"max":85},"three-legged duck":{"min":93,"max":102},"bird-eating squid":{"min":90,"max":114},"duck-billed platypus":{"min":17,"max":85},"short-haired dinosaur":{"min":30,"max":98},"long-tailed rat":{"min":64,"max":120},"lesser-spotted three-legged turtle":{"min":11,"max":105},"European bird-eating duck":{"min":24,"max":89},"great long-tailed wagtail":{"min":75,"max":149},"giant long-tailed turtle":{"min":75,"max":105},"lesser-spotted long-tailed mouse":{"min":85,"max":143},"duck-billed squid":{"min":94,"max":190},"common three-legged mouse":{"min":26,"max":95}}
+INFO: advisePolicy: site:912462360, species:African short-tailed otter, advice:none
+INFO: deletePolicy: site:912462360, species:African short-tailed otter, policyNumber:0
+INFO: createPolicy: site:3675517939, species:long-haired squid, action:144
+INFO: pestcontrol: site:1224419839, observed populations {"common flightless otter":31,"European short-tailed turtle":106,"long-tailed ostrich":57,"flightless octopus":35,"flightless rabbit":72,"European long-haired cat":15,"long-haired cat":61,"great long-haired hippopotamus":72}
+INFO: handling site: 1224419839
+INFO: pestcontrol: site:1224419839, target populations {"pygmy long-haired hobbit":{"min":94,"max":151},"common flightless otter":{"min":12,"max":33},"long-haired wagtail":{"min":85,"max":132},"European short-tailed turtle":{"min":72,"max":94},"long-tailed ostrich":{"min":95,"max":108},"flightless octopus":{"min":35,"max":97},"European flightless tortoise":{"min":6,"max":93},"flightless rabbit":{"min":18,"max":91},"European long-haired cat":{"min":5,"max":55},"common three-legged iguana":{"min":34,"max":82},"long-haired cat":{"min":64,"max":82},"great long-haired hippopotamus":{"min":54,"max":97}}
+INFO: advisePolicy: site:1224419839, species:common flightless otter, advice:none
+INFO: deletePolicy: site:1224419839, species:common flightless otter, policyNumber:10
+INFO: advisePolicy: site:2373824011, species:three-legged dinosaur, advice:conserve
+INFO: createPolicy: site:2373824011, species:three-legged dinosaur, action:160
+INFO: advisePolicy: site:912462360, species:short-tailed wagtail, advice:none
+INFO: advisePolicy: site:912462360, species:bird-eating iguana, advice:none
+INFO: advisePolicy: site:912462360, species:European flightless swallow, advice:conserve
+INFO: createPolicy: site:912462360, species:European flightless swallow, action:160
+INFO: advisePolicy: site:3675517939, species:European bird-eating spider, advice:conserve
+INFO: createPolicy: site:3675517939, species:European bird-eating spider, action:160
+INFO: advisePolicy: site:1224419839, species:European short-tailed turtle, advice:cull
+INFO: createPolicy: site:1224419839, species:European short-tailed turtle, action:144
+INFO: pestcontrol: site:2373824011, observed populations {"flightless mosquito":62,"three-legged rhinoceros":38,"pygmy long-haired dinosaur":85,"flightless hamster":15,"European duck-billed cat":57,"long-tailed mouse":15,"short-tailed shark":123,"three-legged dinosaur":64,"lesser-spotted short-tailed duck":77}
+INFO: handling site: 2373824011
+INFO: pestcontrol: site:2373824011, target populations {"flightless mosquito":{"min":10,"max":92},"three-legged rhinoceros":{"min":58,"max":79},"pygmy long-haired dinosaur":{"min":77,"max":93},"flightless hamster":{"min":17,"max":78},"European duck-billed cat":{"min":28,"max":102},"bird-eating dog":{"min":79,"max":150},"long-tailed mouse":{"min":16,"max":89},"short-tailed shark":{"min":70,"max":146},"three-legged dinosaur":{"min":42,"max":99},"lesser duck-billed wagtail":{"min":18,"max":44}}
+INFO: advisePolicy: site:2373824011, species:flightless mosquito, advice:none
+INFO: deletePolicy: site:2373824011, species:flightless mosquito, policyNumber:11
+INFO: advisePolicy: site:912462360, species:bird-eating wagtail, advice:conserve
+INFO: deletePolicy: site:912462360, species:bird-eating wagtail, policyNumber:11
+INFO: advisePolicy: site:3675517939, species:short-tailed dodo, advice:none
+INFO: deletePolicy: site:3675517939, species:short-tailed dodo, policyNumber:7
+INFO: advisePolicy: site:1224419839, species:long-tailed ostrich, advice:conserve
+INFO: createPolicy: site:1224419839, species:long-tailed ostrich, action:160
+INFO: advisePolicy: site:2373824011, species:three-legged rhinoceros, advice:conserve
+INFO: createPolicy: site:2373824011, species:three-legged rhinoceros, action:160
+INFO: createPolicy: site:912462360, species:bird-eating wagtail, action:160
+INFO: advisePolicy: site:3675517939, species:great three-legged platypus, advice:none
+INFO: deletePolicy: site:3675517939, species:great three-legged platypus, policyNumber:8
+INFO: advisePolicy: site:1224419839, species:flightless octopus, advice:none
+INFO: deletePolicy: site:1224419839, species:flightless octopus, policyNumber:4
+INFO: advisePolicy: site:2373824011, species:pygmy long-haired dinosaur, advice:none
+INFO: deletePolicy: site:2373824011, species:pygmy long-haired dinosaur, policyNumber:9
+INFO: advisePolicy: site:912462360, species:three-legged duck, advice:cull
+INFO: createPolicy: site:912462360, species:three-legged duck, action:144
+INFO: advisePolicy: site:3675517939, species:European long-tailed tortoise, advice:none
+INFO: deletePolicy: site:3675517939, species:European long-tailed tortoise, policyNumber:9
+INFO: advisePolicy: site:1224419839, species:European flightless tortoise, advice:conserve
+INFO: createPolicy: site:1224419839, species:European flightless tortoise, action:160
+INFO: advisePolicy: site:2373824011, species:flightless hamster, advice:conserve
+INFO: deletePolicy: site:2373824011, species:flightless hamster, policyNumber:10
+INFO: advisePolicy: site:912462360, species:bird-eating squid, advice:cull
+INFO: createPolicy: site:912462360, species:bird-eating squid, action:144
+INFO: advisePolicy: site:3675517939, species:African long-tailed elephant, advice:none
+INFO: deletePolicy: site:3675517939, species:African long-tailed elephant, policyNumber:10
+INFO: createPolicy: site:2373824011, species:flightless hamster, action:160
+INFO: advisePolicy: site:912462360, species:duck-billed platypus, advice:none
+INFO: deletePolicy: site:912462360, species:duck-billed platypus, policyNumber:4
+INFO: advisePolicy: site:1224419839, species:flightless rabbit, advice:none
+INFO: deletePolicy: site:1224419839, species:flightless rabbit, policyNumber:6
+INFO: advisePolicy: site:3675517939, species:short-haired shark, advice:none
+INFO: deletePolicy: site:3675517939, species:short-haired shark, policyNumber:11
+INFO: advisePolicy: site:2373824011, species:European duck-billed cat, advice:none
+INFO: deletePolicy: site:2373824011, species:European duck-billed cat, policyNumber:2
+INFO: advisePolicy: site:912462360, species:short-haired dinosaur, advice:none
+INFO: advisePolicy: site:912462360, species:European bird-eating duck, advice:none
+INFO: deletePolicy: site:912462360, species:European bird-eating duck, policyNumber:13
+INFO: advisePolicy: site:1224419839, species:European long-haired cat, advice:none
+INFO: deletePolicy: site:1224419839, species:European long-haired cat, policyNumber:12
+INFO: advisePolicy: site:3675517939, species:great short-tailed otter, advice:conserve
+INFO: deletePolicy: site:3675517939, species:great short-tailed otter, policyNumber:12
+INFO: advisePolicy: site:2373824011, species:long-tailed mouse, advice:conserve
+INFO: deletePolicy: site:2373824011, species:long-tailed mouse, policyNumber:13
+INFO: advisePolicy: site:912462360, species:great long-tailed wagtail, advice:none
+INFO: deletePolicy: site:912462360, species:great long-tailed wagtail, policyNumber:7
+INFO: advisePolicy: site:1224419839, species:common three-legged iguana, advice:conserve
+INFO: createPolicy: site:1224419839, species:common three-legged iguana, action:160
+INFO: createPolicy: site:3675517939, species:great short-tailed otter, action:160
+INFO: createPolicy: site:2373824011, species:long-tailed mouse, action:160
+INFO: advisePolicy: site:912462360, species:giant long-tailed turtle, advice:conserve
+INFO: createPolicy: site:912462360, species:giant long-tailed turtle, action:160
+INFO: advisePolicy: site:3675517939, species:European short-haired cat, advice:cull
+INFO: createPolicy: site:3675517939, species:European short-haired cat, action:144
+INFO: advisePolicy: site:1224419839, species:great long-haired hippopotamus, advice:none
+INFO: deletePolicy: site:1224419839, species:great long-haired hippopotamus, policyNumber:13
+INFO: advisePolicy: site:2373824011, species:short-tailed shark, advice:none
+INFO: deletePolicy: site:2373824011, species:short-tailed shark, policyNumber:14
+INFO: advisePolicy: site:912462360, species:lesser-spotted long-tailed mouse, advice:none
+INFO: pestcontrol: site:912462360, observed populations {"African short-tailed otter":117,"short-tailed wagtail":126,"European flightless swallow":164,"bird-eating wagtail":28,"three-legged duck":86,"bird-eating squid":78,"short-haired dinosaur":24,"European bird-eating duck":118,"great long-tailed wagtail":221,"giant long-tailed turtle":92,"lesser-spotted long-tailed mouse":95,"common three-legged mouse":126,"duck-billed horse":37}
+INFO: handling site: 912462360
+INFO: pestcontrol: site:912462360, target populations {"African short-tailed otter":{"min":86,"max":119},"short-tailed wagtail":{"min":44,"max":84},"bird-eating iguana":{"min":3,"max":97},"European flightless swallow":{"min":52,"max":90},"bird-eating wagtail":{"min":6,"max":85},"three-legged duck":{"min":93,"max":102},"bird-eating squid":{"min":90,"max":114},"duck-billed platypus":{"min":17,"max":85},"short-haired dinosaur":{"min":30,"max":98},"long-tailed rat":{"min":64,"max":120},"lesser-spotted three-legged turtle":{"min":11,"max":105},"European bird-eating duck":{"min":24,"max":89},"great long-tailed wagtail":{"min":75,"max":149},"giant long-tailed turtle":{"min":75,"max":105},"lesser-spotted long-tailed mouse":{"min":85,"max":143},"duck-billed squid":{"min":94,"max":190},"common three-legged mouse":{"min":26,"max":95}}
+INFO: advisePolicy: site:912462360, species:African short-tailed otter, advice:none
+INFO: advisePolicy: site:912462360, species:short-tailed wagtail, advice:cull
+INFO: createPolicy: site:912462360, species:short-tailed wagtail, action:144
+INFO: advisePolicy: site:3675517939, species:common three-legged iguana, advice:none
+INFO: deletePolicy: site:3675517939, species:common three-legged iguana, policyNumber:14
+INFO: pestcontrol: site:1224419839, observed populations {"pygmy long-haired hobbit":116,"common flightless otter":20,"long-haired wagtail":144,"European short-tailed turtle":133,"long-tailed ostrich":104,"flightless octopus":91,"European flightless tortoise":116,"European long-haired cat":45,"common three-legged iguana":113,"long-haired cat":112,"great long-haired hippopotamus":86,"long-haired otter":61,"duck-billed mole":47,"lesser long-haired rat":0,"bird-eating dog":94}
+INFO: handling site: 1224419839
+INFO: pestcontrol: site:1224419839, target populations {"pygmy long-haired hobbit":{"min":94,"max":151},"common flightless otter":{"min":12,"max":33},"long-haired wagtail":{"min":85,"max":132},"European short-tailed turtle":{"min":72,"max":94},"long-tailed ostrich":{"min":95,"max":108},"flightless octopus":{"min":35,"max":97},"European flightless tortoise":{"min":6,"max":93},"flightless rabbit":{"min":18,"max":91},"European long-haired cat":{"min":5,"max":55},"common three-legged iguana":{"min":34,"max":82},"long-haired cat":{"min":64,"max":82},"great long-haired hippopotamus":{"min":54,"max":97}}
+INFO: advisePolicy: site:1224419839, species:pygmy long-haired hobbit, advice:none
+INFO: deletePolicy: site:1224419839, species:pygmy long-haired hobbit, policyNumber:0
+INFO: advisePolicy: site:2373824011, species:three-legged dinosaur, advice:none
+INFO: deletePolicy: site:2373824011, species:three-legged dinosaur, policyNumber:15
+INFO: advisePolicy: site:912462360, species:bird-eating iguana, advice:conserve
+INFO: createPolicy: site:912462360, species:bird-eating iguana, action:160
+INFO: pestcontrol: site:3675517939, observed populations {"pygmy flightless turtle":100,"lesser long-tailed alligator":6,"African three-legged swallow":29,"European short-tailed rabbit":270,"flightless swallow":65,"great flightless alligator":36,"short-tailed dodo":118,"great three-legged platypus":81,"European long-tailed tortoise":40,"African long-tailed elephant":27,"short-haired shark":33,"great short-tailed otter":161,"European short-haired cat":104,"European long-haired elephant":88,"common three-legged iguana":69,"lesser-spotted flightless otter":117,"duck-billed elephant":56}
+INFO: handling site: 3675517939
+INFO: pestcontrol: site:3675517939, target populations {"pygmy flightless turtle":{"min":22,"max":109},"lesser long-tailed alligator":{"min":4,"max":6},"African three-legged swallow":{"min":34,"max":70},"African duck-billed platypus":{"min":98,"max":159},"European short-tailed rabbit":{"min":66,"max":153},"flightless swallow":{"min":87,"max":174},"great flightless alligator":{"min":23,"max":81},"long-haired squid":{"min":94,"max":135},"European bird-eating spider":{"min":54,"max":90},"short-tailed dodo":{"min":32,"max":88},"great three-legged platypus":{"min":64,"max":100},"European long-tailed tortoise":{"min":81,"max":173},"African long-tailed elephant":{"min":4,"max":44},"short-haired shark":{"min":52,"max":134},"great short-tailed otter":{"min":74,"max":154},"European short-haired cat":{"min":81,"max":139},"European long-haired elephant":{"min":73,"max":93},"common three-legged iguana":{"min":66,"max":69},"lesser-spotted flightless otter":{"min":72,"max":124}}
+INFO: advisePolicy: site:3675517939, species:pygmy flightless turtle, advice:none
+INFO: advisePolicy: site:3675517939, species:lesser long-tailed alligator, advice:none
+INFO: deletePolicy: site:3675517939, species:lesser long-tailed alligator, policyNumber:0
+INFO: advisePolicy: site:1224419839, species:common flightless otter, advice:none
+INFO: advisePolicy: site:1224419839, species:long-haired wagtail, advice:cull
+INFO: deletePolicy: site:1224419839, species:long-haired wagtail, policyNumber:11
+INFO: pestcontrol: site:2373824011, observed populations {"flightless mosquito":1,"three-legged rhinoceros":73,"pygmy long-haired dinosaur":86,"flightless hamster":43,"European duck-billed cat":70,"bird-eating dog":212,"long-tailed mouse":14,"short-tailed shark":85,"lesser-spotted bird-eating hippopotamus":70,"lesser duck-billed mole":79,"short-haired wagtail":32,"flightless rhinoceros":91}
+INFO: handling site: 2373824011
+INFO: pestcontrol: site:2373824011, target populations {"flightless mosquito":{"min":10,"max":92},"three-legged rhinoceros":{"min":58,"max":79},"pygmy long-haired dinosaur":{"min":77,"max":93},"flightless hamster":{"min":17,"max":78},"European duck-billed cat":{"min":28,"max":102},"bird-eating dog":{"min":79,"max":150},"long-tailed mouse":{"min":16,"max":89},"short-tailed shark":{"min":70,"max":146},"three-legged dinosaur":{"min":42,"max":99},"lesser duck-billed wagtail":{"min":18,"max":44}}
+INFO: advisePolicy: site:2373824011, species:flightless mosquito, advice:conserve
+INFO: createPolicy: site:2373824011, species:flightless mosquito, action:160
+INFO: advisePolicy: site:912462360, species:European flightless swallow, advice:cull
+INFO: deletePolicy: site:912462360, species:European flightless swallow, policyNumber:15
+INFO: advisePolicy: site:3675517939, species:African three-legged swallow, advice:conserve
+INFO: createPolicy: site:3675517939, species:African three-legged swallow, action:160
+INFO: createPolicy: site:1224419839, species:long-haired wagtail, action:144
+INFO: advisePolicy: site:2373824011, species:three-legged rhinoceros, advice:none
+INFO: deletePolicy: site:2373824011, species:three-legged rhinoceros, policyNumber:16
+INFO: createPolicy: site:912462360, species:European flightless swallow, action:144
+INFO: advisePolicy: site:3675517939, species:African duck-billed platypus, advice:conserve
+INFO: createPolicy: site:3675517939, species:African duck-billed platypus, action:160
+INFO: advisePolicy: site:1224419839, species:long-tailed ostrich, advice:none
+INFO: deletePolicy: site:1224419839, species:long-tailed ostrich, policyNumber:15
+INFO: advisePolicy: site:2373824011, species:pygmy long-haired dinosaur, advice:none
+INFO: advisePolicy: site:2373824011, species:flightless hamster, advice:none
+INFO: deletePolicy: site:2373824011, species:flightless hamster, policyNumber:17
+INFO: advisePolicy: site:912462360, species:bird-eating wagtail, advice:none
+INFO: deletePolicy: site:912462360, species:bird-eating wagtail, policyNumber:16
+INFO: advisePolicy: site:3675517939, species:European short-tailed rabbit, advice:cull
+INFO: deletePolicy: site:3675517939, species:European short-tailed rabbit, policyNumber:3
+INFO: advisePolicy: site:1224419839, species:flightless octopus, advice:none
+INFO: advisePolicy: site:1224419839, species:European flightless tortoise, advice:cull
+INFO: deletePolicy: site:1224419839, species:European flightless tortoise, policyNumber:16
+INFO: advisePolicy: site:2373824011, species:European duck-billed cat, advice:none
+INFO: advisePolicy: site:2373824011, species:bird-eating dog, advice:cull
+INFO: deletePolicy: site:2373824011, species:bird-eating dog, policyNumber:12
+INFO: advisePolicy: site:912462360, species:three-legged duck, advice:conserve
+INFO: deletePolicy: site:912462360, species:three-legged duck, policyNumber:17
+INFO: createPolicy: site:3675517939, species:European short-tailed rabbit, action:144
+INFO: createPolicy: site:1224419839, species:European flightless tortoise, action:144
+INFO: createPolicy: site:2373824011, species:bird-eating dog, action:144
+INFO: createPolicy: site:912462360, species:three-legged duck, action:160
+INFO: advisePolicy: site:3675517939, species:flightless swallow, advice:conserve
+INFO: createPolicy: site:3675517939, species:flightless swallow, action:160
+INFO: advisePolicy: site:1224419839, species:flightless rabbit, advice:conserve
+INFO: createPolicy: site:1224419839, species:flightless rabbit, action:160
+INFO: advisePolicy: site:2373824011, species:short-tailed shark, advice:none
+INFO: advisePolicy: site:2373824011, species:three-legged dinosaur, advice:conserve
+INFO: createPolicy: site:2373824011, species:three-legged dinosaur, action:160
+INFO: advisePolicy: site:912462360, species:bird-eating squid, advice:conserve
+INFO: deletePolicy: site:912462360, species:bird-eating squid, policyNumber:18
+INFO: advisePolicy: site:3675517939, species:great flightless alligator, advice:none
+INFO: advisePolicy: site:3675517939, species:long-haired squid, advice:conserve
+INFO: deletePolicy: site:3675517939, species:long-haired squid, policyNumber:16
+INFO: advisePolicy: site:1224419839, species:European long-haired cat, advice:none
+INFO: advisePolicy: site:1224419839, species:common three-legged iguana, advice:cull
+INFO: deletePolicy: site:1224419839, species:common three-legged iguana, policyNumber:17
+INFO: createPolicy: site:912462360, species:bird-eating squid, action:160
+INFO: createPolicy: site:3675517939, species:long-haired squid, action:160
+INFO: createPolicy: site:1224419839, species:common three-legged iguana, action:144
+INFO: advisePolicy: site:912462360, species:duck-billed platypus, advice:conserve
+INFO: createPolicy: site:912462360, species:duck-billed platypus, action:160
+INFO: advisePolicy: site:3675517939, species:short-tailed dodo, advice:cull
+INFO: createPolicy: site:3675517939, species:short-tailed dodo, action:144
+INFO: advisePolicy: site:1224419839, species:long-haired cat, advice:cull
+INFO: deletePolicy: site:1224419839, species:long-haired cat, policyNumber:8
+INFO: advisePolicy: site:912462360, species:short-haired dinosaur, advice:conserve
+INFO: createPolicy: site:912462360, species:short-haired dinosaur, action:160
+INFO: advisePolicy: site:3675517939, species:great three-legged platypus, advice:none
+INFO: advisePolicy: site:3675517939, species:European long-tailed tortoise, advice:conserve
+INFO: createPolicy: site:3675517939, species:European long-tailed tortoise, action:160
+INFO: createPolicy: site:1224419839, species:long-haired cat, action:144
+INFO: advisePolicy: site:912462360, species:European bird-eating duck, advice:cull
+INFO: createPolicy: site:912462360, species:European bird-eating duck, action:144
+INFO: advisePolicy: site:3675517939, species:African long-tailed elephant, advice:none
+INFO: advisePolicy: site:3675517939, species:short-haired shark, advice:conserve
+INFO: createPolicy: site:3675517939, species:short-haired shark, action:160
+INFO: advisePolicy: site:1224419839, species:great long-haired hippopotamus, advice:none
+INFO: pestcontrol: site:1224419839, observed populations {"pygmy long-haired hobbit":94,"common flightless otter":28,"European short-tailed turtle":48,"flightless octopus":83,"European flightless tortoise":21,"flightless rabbit":178,"long-haired cat":80,"great long-haired hippopotamus":22}
+INFO: handling site: 1224419839
+INFO: pestcontrol: site:1224419839, target populations {"pygmy long-haired hobbit":{"min":94,"max":151},"common flightless otter":{"min":12,"max":33},"long-haired wagtail":{"min":85,"max":132},"European short-tailed turtle":{"min":72,"max":94},"long-tailed ostrich":{"min":95,"max":108},"flightless octopus":{"min":35,"max":97},"European flightless tortoise":{"min":6,"max":93},"flightless rabbit":{"min":18,"max":91},"European long-haired cat":{"min":5,"max":55},"common three-legged iguana":{"min":34,"max":82},"long-haired cat":{"min":64,"max":82},"great long-haired hippopotamus":{"min":54,"max":97}}
+INFO: advisePolicy: site:1224419839, species:pygmy long-haired hobbit, advice:none
+INFO: advisePolicy: site:1224419839, species:common flightless otter, advice:none
+INFO: advisePolicy: site:1224419839, species:long-haired wagtail, advice:conserve
+INFO: deletePolicy: site:1224419839, species:long-haired wagtail, policyNumber:18
+INFO: advisePolicy: site:912462360, species:great long-tailed wagtail, advice:cull
+INFO: createPolicy: site:912462360, species:great long-tailed wagtail, action:144
+INFO: advisePolicy: site:3675517939, species:great short-tailed otter, advice:cull
+INFO: deletePolicy: site:3675517939, species:great short-tailed otter, policyNumber:18
+INFO: createPolicy: site:1224419839, species:long-haired wagtail, action:160
+INFO: advisePolicy: site:912462360, species:giant long-tailed turtle, advice:none
+INFO: deletePolicy: site:912462360, species:giant long-tailed turtle, policyNumber:19
+INFO: createPolicy: site:3675517939, species:great short-tailed otter, action:144
+INFO: advisePolicy: site:1224419839, species:European short-tailed turtle, advice:conserve
+INFO: deletePolicy: site:1224419839, species:European short-tailed turtle, policyNumber:14
+INFO: advisePolicy: site:912462360, species:lesser-spotted long-tailed mouse, advice:none
+INFO: advisePolicy: site:912462360, species:common three-legged mouse, advice:cull
+INFO: deletePolicy: site:912462360, species:common three-legged mouse, policyNumber:14
+INFO: advisePolicy: site:3675517939, species:European short-haired cat, advice:none
+INFO: deletePolicy: site:3675517939, species:European short-haired cat, policyNumber:19
+INFO: createPolicy: site:1224419839, species:European short-tailed turtle, action:160
+INFO: createPolicy: site:912462360, species:common three-legged mouse, action:144
+INFO: advisePolicy: site:3675517939, species:European long-haired elephant, advice:none
+INFO: deletePolicy: site:3675517939, species:European long-haired elephant, policyNumber:13
+INFO: advisePolicy: site:1224419839, species:long-tailed ostrich, advice:conserve
+INFO: createPolicy: site:1224419839, species:long-tailed ostrich, action:160
+INFO: pestcontrol: site:912462360, observed populations {"short-tailed wagtail":43,"three-legged duck":128,"bird-eating squid":144,"duck-billed platypus":8,"long-tailed rat":90,"European bird-eating duck":7,"great long-tailed wagtail":4,"giant long-tailed turtle":99,"duck-billed squid":358,"common three-legged mouse":65}
+INFO: handling site: 912462360
+INFO: pestcontrol: site:912462360, target populations {"African short-tailed otter":{"min":86,"max":119},"short-tailed wagtail":{"min":44,"max":84},"bird-eating iguana":{"min":3,"max":97},"European flightless swallow":{"min":52,"max":90},"bird-eating wagtail":{"min":6,"max":85},"three-legged duck":{"min":93,"max":102},"bird-eating squid":{"min":90,"max":114},"duck-billed platypus":{"min":17,"max":85},"short-haired dinosaur":{"min":30,"max":98},"long-tailed rat":{"min":64,"max":120},"lesser-spotted three-legged turtle":{"min":11,"max":105},"European bird-eating duck":{"min":24,"max":89},"great long-tailed wagtail":{"min":75,"max":149},"giant long-tailed turtle":{"min":75,"max":105},"lesser-spotted long-tailed mouse":{"min":85,"max":143},"duck-billed squid":{"min":94,"max":190},"common three-legged mouse":{"min":26,"max":95}}
+INFO: advisePolicy: site:912462360, species:African short-tailed otter, advice:conserve
+INFO: createPolicy: site:912462360, species:African short-tailed otter, action:160
+INFO: advisePolicy: site:3675517939, species:common three-legged iguana, advice:none
+INFO: advisePolicy: site:3675517939, species:lesser-spotted flightless otter, advice:none
+INFO: deletePolicy: site:3675517939, species:lesser-spotted flightless otter, policyNumber:15
+INFO: advisePolicy: site:1224419839, species:flightless octopus, advice:none
+INFO: advisePolicy: site:1224419839, species:European flightless tortoise, advice:none
+INFO: deletePolicy: site:1224419839, species:European flightless tortoise, policyNumber:19
+INFO: advisePolicy: site:912462360, species:short-tailed wagtail, advice:conserve
+INFO: deletePolicy: site:912462360, species:short-tailed wagtail, policyNumber:20
+INFO: pestcontrol: site:3675517939, observed populations {"lesser long-tailed alligator":5,"great flightless alligator":110,"long-haired squid":113,"European bird-eating spider":7,"short-tailed dodo":44,"European long-tailed tortoise":23,"short-haired shark":160,"great short-tailed otter":225,"European short-haired cat":269,"European long-haired elephant":121,"common three-legged iguana":66}
+INFO: handling site: 3675517939
+INFO: pestcontrol: site:3675517939, target populations {"pygmy flightless turtle":{"min":22,"max":109},"lesser long-tailed alligator":{"min":4,"max":6},"African three-legged swallow":{"min":34,"max":70},"African duck-billed platypus":{"min":98,"max":159},"European short-tailed rabbit":{"min":66,"max":153},"flightless swallow":{"min":87,"max":174},"great flightless alligator":{"min":23,"max":81},"long-haired squid":{"min":94,"max":135},"European bird-eating spider":{"min":54,"max":90},"short-tailed dodo":{"min":32,"max":88},"great three-legged platypus":{"min":64,"max":100},"European long-tailed tortoise":{"min":81,"max":173},"African long-tailed elephant":{"min":4,"max":44},"short-haired shark":{"min":52,"max":134},"great short-tailed otter":{"min":74,"max":154},"European short-haired cat":{"min":81,"max":139},"European long-haired elephant":{"min":73,"max":93},"common three-legged iguana":{"min":66,"max":69},"lesser-spotted flightless otter":{"min":72,"max":124}}
+INFO: advisePolicy: site:3675517939, species:pygmy flightless turtle, advice:conserve
+INFO: createPolicy: site:3675517939, species:pygmy flightless turtle, action:160
+INFO: advisePolicy: site:1224419839, species:flightless rabbit, advice:cull
+INFO: deletePolicy: site:1224419839, species:flightless rabbit, policyNumber:20
+INFO: createPolicy: site:912462360, species:short-tailed wagtail, action:160
+INFO: advisePolicy: site:3675517939, species:lesser long-tailed alligator, advice:none
+INFO: advisePolicy: site:3675517939, species:European short-tailed rabbit, advice:conserve
+INFO: deletePolicy: site:3675517939, species:European short-tailed rabbit, policyNumber:22
+INFO: createPolicy: site:1224419839, species:flightless rabbit, action:144
+INFO: advisePolicy: site:912462360, species:European flightless swallow, advice:conserve
+INFO: deletePolicy: site:912462360, species:European flightless swallow, policyNumber:22
+INFO: createPolicy: site:3675517939, species:European short-tailed rabbit, action:160
+INFO: advisePolicy: site:1224419839, species:European long-haired cat, advice:conserve
+INFO: createPolicy: site:1224419839, species:European long-haired cat, action:160
+INFO: createPolicy: site:912462360, species:European flightless swallow, action:160
+INFO: advisePolicy: site:3675517939, species:great flightless alligator, advice:cull
+INFO: createPolicy: site:3675517939, species:great flightless alligator, action:144
+INFO: advisePolicy: site:1224419839, species:common three-legged iguana, advice:conserve
+INFO: deletePolicy: site:1224419839, species:common three-legged iguana, policyNumber:21
+INFO: advisePolicy: site:912462360, species:bird-eating wagtail, advice:conserve
+INFO: createPolicy: site:912462360, species:bird-eating wagtail, action:160
+INFO: advisePolicy: site:3675517939, species:long-haired squid, advice:none
+INFO: deletePolicy: site:3675517939, species:long-haired squid, policyNumber:24
+INFO: createPolicy: site:1224419839, species:common three-legged iguana, action:160
+INFO: advisePolicy: site:912462360, species:three-legged duck, advice:cull
+INFO: deletePolicy: site:912462360, species:three-legged duck, policyNumber:23
+INFO: advisePolicy: site:3675517939, species:short-tailed dodo, advice:none
+INFO: deletePolicy: site:3675517939, species:short-tailed dodo, policyNumber:25
+INFO: advisePolicy: site:1224419839, species:long-haired cat, advice:none
+INFO: deletePolicy: site:1224419839, species:long-haired cat, policyNumber:22
+INFO: createPolicy: site:912462360, species:three-legged duck, action:144
+INFO: advisePolicy: site:3675517939, species:great three-legged platypus, advice:conserve
+INFO: createPolicy: site:3675517939, species:great three-legged platypus, action:160
+INFO: advisePolicy: site:1224419839, species:great long-haired hippopotamus, advice:conserve
+INFO: createPolicy: site:1224419839, species:great long-haired hippopotamus, action:160
+INFO: advisePolicy: site:912462360, species:bird-eating squid, advice:cull
+INFO: deletePolicy: site:912462360, species:bird-eating squid, policyNumber:24
+INFO: advisePolicy: site:3675517939, species:African long-tailed elephant, advice:conserve
+INFO: createPolicy: site:3675517939, species:African long-tailed elephant, action:160
+INFO: createPolicy: site:912462360, species:bird-eating squid, action:144
+INFO: advisePolicy: site:3675517939, species:short-haired shark, advice:cull
+INFO: deletePolicy: site:3675517939, species:short-haired shark, policyNumber:27
+INFO: advisePolicy: site:912462360, species:long-tailed rat, advice:none
+INFO: deletePolicy: site:912462360, species:long-tailed rat, policyNumber:12
+INFO: createPolicy: site:3675517939, species:short-haired shark, action:144
+INFO: advisePolicy: site:912462360, species:European bird-eating duck, advice:conserve
+INFO: deletePolicy: site:912462360, species:European bird-eating duck, policyNumber:27
+INFO: advisePolicy: site:3675517939, species:European short-haired cat, advice:cull
+INFO: createPolicy: site:3675517939, species:European short-haired cat, action:144
+INFO: createPolicy: site:912462360, species:European bird-eating duck, action:160
+INFO: advisePolicy: site:3675517939, species:European long-haired elephant, advice:cull
+INFO: createPolicy: site:3675517939, species:European long-haired elephant, action:144
+INFO: advisePolicy: site:912462360, species:great long-tailed wagtail, advice:conserve
+INFO: deletePolicy: site:912462360, species:great long-tailed wagtail, policyNumber:28
+INFO: advisePolicy: site:3675517939, species:common three-legged iguana, advice:none
+INFO: advisePolicy: site:3675517939, species:lesser-spotted flightless otter, advice:conserve
+INFO: createPolicy: site:3675517939, species:lesser-spotted flightless otter, action:160
+INFO: createPolicy: site:912462360, species:great long-tailed wagtail, action:160
+INFO: pestcontrol: site:3675517939, observed populations {"pygmy flightless turtle":132,"lesser long-tailed alligator":4,"African three-legged swallow":111,"African duck-billed platypus":45,"European short-tailed rabbit":24,"flightless swallow":111,"great flightless alligator":19,"long-haired squid":102,"European bird-eating spider":156,"short-tailed dodo":85,"European long-tailed tortoise":91,"African long-tailed elephant":6,"short-haired shark":204,"European short-haired cat":274,"lesser-spotted flightless otter":103,"short-haired hamster":56,"short-tailed elephant":5}
+INFO: handling site: 3675517939
+INFO: pestcontrol: site:3675517939, target populations {"pygmy flightless turtle":{"min":22,"max":109},"lesser long-tailed alligator":{"min":4,"max":6},"African three-legged swallow":{"min":34,"max":70},"African duck-billed platypus":{"min":98,"max":159},"European short-tailed rabbit":{"min":66,"max":153},"flightless swallow":{"min":87,"max":174},"great flightless alligator":{"min":23,"max":81},"long-haired squid":{"min":94,"max":135},"European bird-eating spider":{"min":54,"max":90},"short-tailed dodo":{"min":32,"max":88},"great three-legged platypus":{"min":64,"max":100},"European long-tailed tortoise":{"min":81,"max":173},"African long-tailed elephant":{"min":4,"max":44},"short-haired shark":{"min":52,"max":134},"great short-tailed otter":{"min":74,"max":154},"European short-haired cat":{"min":81,"max":139},"European long-haired elephant":{"min":73,"max":93},"common three-legged iguana":{"min":66,"max":69},"lesser-spotted flightless otter":{"min":72,"max":124}}
+INFO: advisePolicy: site:3675517939, species:pygmy flightless turtle, advice:cull
+INFO: deletePolicy: site:3675517939, species:pygmy flightless turtle, policyNumber:29
+INFO: advisePolicy: site:912462360, species:giant long-tailed turtle, advice:none
+INFO: advisePolicy: site:912462360, species:lesser-spotted long-tailed mouse, advice:conserve
+INFO: createPolicy: site:912462360, species:lesser-spotted long-tailed mouse, action:160
+INFO: createPolicy: site:3675517939, species:pygmy flightless turtle, action:144
+INFO: advisePolicy: site:912462360, species:duck-billed squid, advice:cull
+INFO: deletePolicy: site:912462360, species:duck-billed squid, policyNumber:10
+INFO: advisePolicy: site:3675517939, species:lesser long-tailed alligator, advice:none
+INFO: advisePolicy: site:3675517939, species:African three-legged swallow, advice:cull
+INFO: deletePolicy: site:3675517939, species:African three-legged swallow, policyNumber:20
+INFO: createPolicy: site:912462360, species:duck-billed squid, action:144
+INFO: createPolicy: site:3675517939, species:African three-legged swallow, action:144
+INFO: advisePolicy: site:912462360, species:common three-legged mouse, advice:none
+INFO: deletePolicy: site:912462360, species:common three-legged mouse, policyNumber:29
+INFO: advisePolicy: site:3675517939, species:flightless swallow, advice:none
+INFO: deletePolicy: site:3675517939, species:flightless swallow, policyNumber:23
+INFO: advisePolicy: site:3675517939, species:great flightless alligator, advice:conserve
+INFO: deletePolicy: site:3675517939, species:great flightless alligator, policyNumber:31
+INFO: createPolicy: site:3675517939, species:great flightless alligator, action:160
+INFO: advisePolicy: site:3675517939, species:long-haired squid, advice:none
+INFO: advisePolicy: site:3675517939, species:European bird-eating spider, advice:cull
+INFO: deletePolicy: site:3675517939, species:European bird-eating spider, policyNumber:17
+INFO: createPolicy: site:3675517939, species:European bird-eating spider, action:144
+INFO: advisePolicy: site:3675517939, species:short-tailed dodo, advice:none
+INFO: advisePolicy: site:3675517939, species:European long-tailed tortoise, advice:none
+INFO: deletePolicy: site:3675517939, species:European long-tailed tortoise, policyNumber:26
+INFO: advisePolicy: site:3675517939, species:African long-tailed elephant, advice:none
+INFO: deletePolicy: site:3675517939, species:African long-tailed elephant, policyNumber:33
+INFO: advisePolicy: site:3675517939, species:great short-tailed otter, advice:conserve
+INFO: deletePolicy: site:3675517939, species:great short-tailed otter, policyNumber:28
+INFO: createPolicy: site:3675517939, species:great short-tailed otter, action:160
+INFO: advisePolicy: site:3675517939, species:European long-haired elephant, advice:conserve
+INFO: deletePolicy: site:3675517939, species:European long-haired elephant, policyNumber:36
+INFO: createPolicy: site:3675517939, species:European long-haired elephant, action:160
+INFO: advisePolicy: site:3675517939, species:common three-legged iguana, advice:conserve
+INFO: createPolicy: site:3675517939, species:common three-legged iguana, action:160
+INFO: advisePolicy: site:3675517939, species:lesser-spotted flightless otter, advice:none
+INFO: deletePolicy: site:3675517939, species:lesser-spotted flightless otter, policyNumber:37
+disconnected from: ::ffff:127.107.55.134:49897
+disconnected from: ::ffff:127.107.55.134:52717
+disconnected from: ::ffff:127.107.55.134:36103
+disconnected from: ::ffff:127.107.55.134:54057
+connected from: ::ffff:127.107.55.134:46755
+connected from: ::ffff:127.107.55.134:60169
+connected from: ::ffff:127.107.55.134:40115
+connected from: ::ffff:127.107.55.134:48123
+connected from: ::ffff:127.107.55.134:53141
+INFO: pestcontrol: site:1723911025, observed populations {"flightless octopus":24,"African three-legged duck":6,"short-tailed cat":90,"short-tailed swallow":145,"long-tailed otter":94,"giant flightless tortoise":28,"African duck-billed dog":254,"lesser-spotted flightless cat":12,"great long-tailed horse":50,"lesser-spotted bird-eating mosquito":70}
+INFO: handling site: 1723911025
+INFO: authority: connecting to pestcontrol.protohackers.com:20547
+INFO: pestcontrol: site:1723911025, observed populations {"flightless octopus":109,"African three-legged duck":94,"great flightless cat":91,"short-tailed otter":80,"short-tailed cat":130,"bird-eating mole":90,"great short-tailed cat":66,"short-tailed swallow":50,"European long-haired dinosaur":112,"long-tailed otter":106,"giant flightless tortoise":123,"African duck-billed dog":100,"lesser-spotted flightless cat":218,"giant flightless rat":23,"great long-tailed horse":193,"short-haired duck":36,"lesser-spotted bird-eating mosquito":75,"great bird-eating hobbit":5,"great short-haired mouse":21}
+INFO: handling site: 1723911025
+INFO: pestcontrol: site:1723911025, observed populations {"flightless octopus":61,"African three-legged duck":141,"great flightless cat":63,"bird-eating mole":18,"short-tailed swallow":43,"European long-haired dinosaur":73,"long-tailed otter":151,"giant flightless tortoise":64,"African duck-billed dog":22,"lesser-spotted flightless cat":61,"giant flightless rat":92,"great long-tailed horse":101,"lesser-spotted duck-billed horse":103,"short-haired duck":59,"lesser-spotted bird-eating mosquito":17,"long-tailed platypus":19,"African short-tailed iguana":39}
+INFO: handling site: 1723911025
+INFO: pestcontrol: site:1723911025, observed populations {"flightless octopus":126,"African three-legged duck":41,"short-tailed otter":216,"short-tailed cat":24,"short-tailed swallow":85,"European long-haired dinosaur":55,"long-tailed otter":173,"African duck-billed dog":99,"giant flightless platypus":36,"giant flightless rat":111,"great long-tailed horse":120,"lesser-spotted duck-billed horse":11,"lesser-spotted bird-eating mosquito":129,"pygmy long-haired spider":40}
+INFO: handling site: 1723911025
+INFO: pestcontrol: site:1723911025, observed populations {"flightless octopus":25,"African three-legged duck":66,"great flightless cat":66,"short-tailed otter":101,"bird-eating mole":52,"short-tailed swallow":87,"European long-haired dinosaur":64,"long-tailed otter":91,"giant flightless tortoise":53,"African duck-billed dog":20,"giant flightless rat":69,"lesser-spotted duck-billed horse":21,"short-haired duck":117,"duck-billed rat":73,"short-tailed squid":10,"great long-tailed wagtail":12}
+INFO: handling site: 1723911025
+INFO: pestcontrol: site:1723911025, target populations {"flightless octopus":{"min":65,"max":146},"African three-legged duck":{"min":32,"max":75},"great flightless cat":{"min":76,"max":145},"short-tailed otter":{"min":79,"max":125},"short-tailed cat":{"min":30,"max":93},"bird-eating mole":{"min":76,"max":120},"great short-tailed cat":{"min":25,"max":36},"short-tailed swallow":{"min":70,"max":108},"European long-haired dinosaur":{"min":48,"max":73},"long-tailed otter":{"min":93,"max":174},"giant flightless tortoise":{"min":33,"max":108},"African duck-billed dog":{"min":83,"max":151},"giant flightless platypus":{"min":8,"max":101},"lesser-spotted flightless cat":{"min":50,"max":139},"giant flightless rat":{"min":91,"max":139},"great long-tailed horse":{"min":81,"max":132},"lesser-spotted duck-billed horse":{"min":39,"max":74},"short-haired duck":{"min":42,"max":121},"lesser-spotted bird-eating mosquito":{"min":69,"max":77}}
+INFO: advisePolicy: site:1723911025, species:flightless octopus, advice:conserve
+INFO: createPolicy: site:1723911025, species:flightless octopus, action:160
+INFO: pestcontrol: site:1723911025, target populations {"flightless octopus":{"min":65,"max":146},"African three-legged duck":{"min":32,"max":75},"great flightless cat":{"min":76,"max":145},"short-tailed otter":{"min":79,"max":125},"short-tailed cat":{"min":30,"max":93},"bird-eating mole":{"min":76,"max":120},"great short-tailed cat":{"min":25,"max":36},"short-tailed swallow":{"min":70,"max":108},"European long-haired dinosaur":{"min":48,"max":73},"long-tailed otter":{"min":93,"max":174},"giant flightless tortoise":{"min":33,"max":108},"African duck-billed dog":{"min":83,"max":151},"giant flightless platypus":{"min":8,"max":101},"lesser-spotted flightless cat":{"min":50,"max":139},"giant flightless rat":{"min":91,"max":139},"great long-tailed horse":{"min":81,"max":132},"lesser-spotted duck-billed horse":{"min":39,"max":74},"short-haired duck":{"min":42,"max":121},"lesser-spotted bird-eating mosquito":{"min":69,"max":77}}
+INFO: advisePolicy: site:1723911025, species:flightless octopus, advice:none
+INFO: advisePolicy: site:1723911025, species:African three-legged duck, advice:cull
+INFO: createPolicy: site:1723911025, species:African three-legged duck, action:144
+INFO: pestcontrol: site:1723911025, target populations {"flightless octopus":{"min":65,"max":146},"African three-legged duck":{"min":32,"max":75},"great flightless cat":{"min":76,"max":145},"short-tailed otter":{"min":79,"max":125},"short-tailed cat":{"min":30,"max":93},"bird-eating mole":{"min":76,"max":120},"great short-tailed cat":{"min":25,"max":36},"short-tailed swallow":{"min":70,"max":108},"European long-haired dinosaur":{"min":48,"max":73},"long-tailed otter":{"min":93,"max":174},"giant flightless tortoise":{"min":33,"max":108},"African duck-billed dog":{"min":83,"max":151},"giant flightless platypus":{"min":8,"max":101},"lesser-spotted flightless cat":{"min":50,"max":139},"giant flightless rat":{"min":91,"max":139},"great long-tailed horse":{"min":81,"max":132},"lesser-spotted duck-billed horse":{"min":39,"max":74},"short-haired duck":{"min":42,"max":121},"lesser-spotted bird-eating mosquito":{"min":69,"max":77}}
+INFO: advisePolicy: site:1723911025, species:flightless octopus, advice:conserve
+INFO: createPolicy: site:1723911025, species:flightless octopus, action:160
+INFO: pestcontrol: site:1723911025, target populations {"flightless octopus":{"min":65,"max":146},"African three-legged duck":{"min":32,"max":75},"great flightless cat":{"min":76,"max":145},"short-tailed otter":{"min":79,"max":125},"short-tailed cat":{"min":30,"max":93},"bird-eating mole":{"min":76,"max":120},"great short-tailed cat":{"min":25,"max":36},"short-tailed swallow":{"min":70,"max":108},"European long-haired dinosaur":{"min":48,"max":73},"long-tailed otter":{"min":93,"max":174},"giant flightless tortoise":{"min":33,"max":108},"African duck-billed dog":{"min":83,"max":151},"giant flightless platypus":{"min":8,"max":101},"lesser-spotted flightless cat":{"min":50,"max":139},"giant flightless rat":{"min":91,"max":139},"great long-tailed horse":{"min":81,"max":132},"lesser-spotted duck-billed horse":{"min":39,"max":74},"short-haired duck":{"min":42,"max":121},"lesser-spotted bird-eating mosquito":{"min":69,"max":77}}
+INFO: advisePolicy: site:1723911025, species:flightless octopus, advice:none
+INFO: advisePolicy: site:1723911025, species:African three-legged duck, advice:none
+INFO: advisePolicy: site:1723911025, species:great flightless cat, advice:conserve
+INFO: createPolicy: site:1723911025, species:great flightless cat, action:160
+INFO: pestcontrol: site:1723911025, target populations {"flightless octopus":{"min":65,"max":146},"African three-legged duck":{"min":32,"max":75},"great flightless cat":{"min":76,"max":145},"short-tailed otter":{"min":79,"max":125},"short-tailed cat":{"min":30,"max":93},"bird-eating mole":{"min":76,"max":120},"great short-tailed cat":{"min":25,"max":36},"short-tailed swallow":{"min":70,"max":108},"European long-haired dinosaur":{"min":48,"max":73},"long-tailed otter":{"min":93,"max":174},"giant flightless tortoise":{"min":33,"max":108},"African duck-billed dog":{"min":83,"max":151},"giant flightless platypus":{"min":8,"max":101},"lesser-spotted flightless cat":{"min":50,"max":139},"giant flightless rat":{"min":91,"max":139},"great long-tailed horse":{"min":81,"max":132},"lesser-spotted duck-billed horse":{"min":39,"max":74},"short-haired duck":{"min":42,"max":121},"lesser-spotted bird-eating mosquito":{"min":69,"max":77}}
+INFO: advisePolicy: site:1723911025, species:flightless octopus, advice:conserve
+INFO: createPolicy: site:1723911025, species:flightless octopus, action:160
+INFO: advisePolicy: site:1723911025, species:African three-legged duck, advice:conserve
+INFO: deletePolicy: site:1723911025, species:African three-legged duck, policyNumber:0
+INFO: advisePolicy: site:1723911025, species:great flightless cat, advice:none
+INFO: deletePolicy: site:1723911025, species:great flightless cat, policyNumber:0
+INFO: advisePolicy: site:1723911025, species:African three-legged duck, advice:cull
+INFO: createPolicy: site:1723911025, species:African three-legged duck, action:144
+INFO: advisePolicy: site:1723911025, species:short-tailed otter, advice:cull
+INFO: createPolicy: site:1723911025, species:short-tailed otter, action:144
+INFO: advisePolicy: site:1723911025, species:African three-legged duck, advice:none
+INFO: advisePolicy: site:1723911025, species:great flightless cat, advice:conserve
+INFO: createPolicy: site:1723911025, species:great flightless cat, action:160
+INFO: advisePolicy: site:1723911025, species:short-tailed otter, advice:conserve
+INFO: deletePolicy: site:1723911025, species:short-tailed otter, policyNumber:1
+INFO: advisePolicy: site:1723911025, species:short-tailed cat, advice:conserve
+INFO: createPolicy: site:1723911025, species:short-tailed cat, action:160
+INFO: advisePolicy: site:1723911025, species:short-tailed otter, advice:none
+INFO: advisePolicy: site:1723911025, species:short-tailed cat, advice:conserve
+INFO: createPolicy: site:1723911025, species:short-tailed cat, action:160
+INFO: advisePolicy: site:1723911025, species:bird-eating mole, advice:conserve
+INFO: createPolicy: site:1723911025, species:bird-eating mole, action:160
+INFO: advisePolicy: site:1723911025, species:bird-eating mole, advice:conserve
+INFO: createPolicy: site:1723911025, species:bird-eating mole, action:160
+INFO: advisePolicy: site:1723911025, species:great short-tailed cat, advice:conserve
+INFO: createPolicy: site:1723911025, species:great short-tailed cat, action:160
+INFO: advisePolicy: site:1723911025, species:great short-tailed cat, advice:conserve
+INFO: createPolicy: site:1723911025, species:great short-tailed cat, action:160
+INFO: advisePolicy: site:1723911025, species:short-tailed swallow, advice:none
+INFO: advisePolicy: site:1723911025, species:European long-haired dinosaur, advice:none
+INFO: advisePolicy: site:1723911025, species:long-tailed otter, advice:none
+INFO: advisePolicy: site:1723911025, species:giant flightless tortoise, advice:conserve
+INFO: createPolicy: site:1723911025, species:giant flightless tortoise, action:160
+INFO: advisePolicy: site:1723911025, species:short-tailed swallow, advice:none
+INFO: advisePolicy: site:1723911025, species:European long-haired dinosaur, advice:none
+INFO: advisePolicy: site:1723911025, species:long-tailed otter, advice:conserve
+INFO: createPolicy: site:1723911025, species:long-tailed otter, action:160
+INFO: createPolicy: site:1723911025, species:African three-legged duck, action:160
+INFO: advisePolicy: site:1723911025, species:short-tailed otter, advice:none
+INFO: advisePolicy: site:1723911025, species:short-tailed cat, advice:cull
+INFO: deletePolicy: site:1723911025, species:short-tailed cat, policyNumber:2
+INFO: createPolicy: site:1723911025, species:short-tailed otter, action:160
+INFO: createPolicy: site:1723911025, species:short-tailed cat, action:144
+INFO: advisePolicy: site:1723911025, species:African duck-billed dog, advice:none
+INFO: advisePolicy: site:1723911025, species:giant flightless platypus, advice:none
+INFO: advisePolicy: site:1723911025, species:lesser-spotted flightless cat, advice:conserve
+INFO: createPolicy: site:1723911025, species:lesser-spotted flightless cat, action:160
+INFO: advisePolicy: site:1723911025, species:giant flightless tortoise, advice:none
+INFO: deletePolicy: site:1723911025, species:giant flightless tortoise, policyNumber:5
+INFO: advisePolicy: site:1723911025, species:short-tailed cat, advice:none
+INFO: deletePolicy: site:1723911025, species:short-tailed cat, policyNumber:5
+INFO: advisePolicy: site:1723911025, species:short-tailed cat, advice:conserve
+INFO: createPolicy: site:1723911025, species:short-tailed cat, action:160
+INFO: advisePolicy: site:1723911025, species:bird-eating mole, advice:none
+INFO: deletePolicy: site:1723911025, species:bird-eating mole, policyNumber:3
+INFO: advisePolicy: site:1723911025, species:giant flightless rat, advice:none
+INFO: advisePolicy: site:1723911025, species:great long-tailed horse, advice:none
+INFO: advisePolicy: site:1723911025, species:lesser-spotted duck-billed horse, advice:conserve
+INFO: createPolicy: site:1723911025, species:lesser-spotted duck-billed horse, action:160
+INFO: advisePolicy: site:1723911025, species:bird-eating mole, advice:conserve
+INFO: createPolicy: site:1723911025, species:bird-eating mole, action:160
+INFO: advisePolicy: site:1723911025, species:short-haired duck, advice:conserve
+INFO: createPolicy: site:1723911025, species:short-haired duck, action:160
+INFO: advisePolicy: site:1723911025, species:short-tailed swallow, advice:conserve
+INFO: createPolicy: site:1723911025, species:short-tailed swallow, action:160
+INFO: advisePolicy: site:1723911025, species:African duck-billed dog, advice:conserve
+INFO: createPolicy: site:1723911025, species:African duck-billed dog, action:160
+INFO: advisePolicy: site:1723911025, species:short-tailed swallow, advice:cull
+INFO: createPolicy: site:1723911025, species:short-tailed swallow, action:144
+INFO: advisePolicy: site:1723911025, species:great short-tailed cat, advice:cull
+INFO: deletePolicy: site:1723911025, species:great short-tailed cat, policyNumber:4
+INFO: advisePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, advice:cull
+INFO: createPolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, action:144
+INFO: advisePolicy: site:1723911025, species:European long-haired dinosaur, advice:none
+INFO: advisePolicy: site:1723911025, species:long-tailed otter, advice:none
+INFO: deletePolicy: site:1723911025, species:long-tailed otter, policyNumber:5
+INFO: advisePolicy: site:1723911025, species:giant flightless platypus, advice:conserve
+INFO: createPolicy: site:1723911025, species:giant flightless platypus, action:160
+INFO: advisePolicy: site:1723911025, species:European long-haired dinosaur, advice:conserve
+INFO: createPolicy: site:1723911025, species:European long-haired dinosaur, action:160
+INFO: advisePolicy: site:1723911025, species:giant flightless rat, advice:conserve
+INFO: createPolicy: site:1723911025, species:giant flightless rat, action:160
+INFO: advisePolicy: site:1723911025, species:long-tailed otter, advice:none
+INFO: advisePolicy: site:1723911025, species:giant flightless tortoise, advice:conserve
+INFO: createPolicy: site:1723911025, species:giant flightless tortoise, action:160
+INFO: advisePolicy: site:1723911025, species:great long-tailed horse, advice:conserve
+INFO: createPolicy: site:1723911025, species:great long-tailed horse, action:160
+INFO: advisePolicy: site:1723911025, species:African duck-billed dog, advice:cull
+INFO: deletePolicy: site:1723911025, species:African duck-billed dog, policyNumber:8
+INFO: advisePolicy: site:1723911025, species:short-haired duck, advice:none
+INFO: deletePolicy: site:1723911025, species:short-haired duck, policyNumber:8
+INFO: createPolicy: site:1723911025, species:great short-tailed cat, action:144
+INFO: advisePolicy: site:1723911025, species:giant flightless tortoise, advice:none
+INFO: deletePolicy: site:1723911025, species:giant flightless tortoise, policyNumber:10
+INFO: createPolicy: site:1723911025, species:African duck-billed dog, action:144
+INFO: advisePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, advice:conserve
+INFO: deletePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, policyNumber:9
+INFO: advisePolicy: site:1723911025, species:short-tailed swallow, advice:conserve
+INFO: deletePolicy: site:1723911025, species:short-tailed swallow, policyNumber:8
+INFO: advisePolicy: site:1723911025, species:short-haired duck, advice:conserve
+INFO: createPolicy: site:1723911025, species:short-haired duck, action:160
+INFO: advisePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, advice:none
+connected from: ::ffff:127.107.55.134:49913
+INFO: pestcontrol: site:1723911025, observed populations {"flightless octopus":137,"African three-legged duck":72,"great flightless cat":109,"short-tailed otter":14,"short-tailed cat":61,"bird-eating mole":95,"great short-tailed cat":36,"short-tailed swallow":120,"European long-haired dinosaur":50,"long-tailed otter":179,"giant flightless tortoise":197,"giant flightless platypus":5,"lesser-spotted flightless cat":215,"giant flightless rat":208,"great long-tailed horse":122,"lesser-spotted duck-billed horse":0,"short-haired duck":129,"lesser-spotted bird-eating mosquito":76,"giant short-tailed dinosaur":47,"African short-haired rabbit":63,"African bird-eating spider":27,"lesser duck-billed dog":2}
+INFO: handling site: 1723911025
+INFO: pestcontrol: site:1723911025, target populations {"flightless octopus":{"min":65,"max":146},"African three-legged duck":{"min":32,"max":75},"great flightless cat":{"min":76,"max":145},"short-tailed otter":{"min":79,"max":125},"short-tailed cat":{"min":30,"max":93},"bird-eating mole":{"min":76,"max":120},"great short-tailed cat":{"min":25,"max":36},"short-tailed swallow":{"min":70,"max":108},"European long-haired dinosaur":{"min":48,"max":73},"long-tailed otter":{"min":93,"max":174},"giant flightless tortoise":{"min":33,"max":108},"African duck-billed dog":{"min":83,"max":151},"giant flightless platypus":{"min":8,"max":101},"lesser-spotted flightless cat":{"min":50,"max":139},"giant flightless rat":{"min":91,"max":139},"great long-tailed horse":{"min":81,"max":132},"lesser-spotted duck-billed horse":{"min":39,"max":74},"short-haired duck":{"min":42,"max":121},"lesser-spotted bird-eating mosquito":{"min":69,"max":77}}
+INFO: advisePolicy: site:1723911025, species:flightless octopus, advice:none
+INFO: deletePolicy: site:1723911025, species:flightless octopus, policyNumber:0
+INFO: advisePolicy: site:1723911025, species:African duck-billed dog, advice:conserve
+INFO: deletePolicy: site:1723911025, species:African duck-billed dog, policyNumber:17
+INFO: createPolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, action:160
+INFO: createPolicy: site:1723911025, species:short-tailed swallow, action:160
+INFO: advisePolicy: site:1723911025, species:African three-legged duck, advice:none
+INFO: deletePolicy: site:1723911025, species:African three-legged duck, policyNumber:5
+INFO: createPolicy: site:1723911025, species:African duck-billed dog, action:160
+INFO: advisePolicy: site:1723911025, species:great flightless cat, advice:none
+INFO: deletePolicy: site:1723911025, species:great flightless cat, policyNumber:1
+INFO: advisePolicy: site:1723911025, species:European long-haired dinosaur, advice:cull
+INFO: deletePolicy: site:1723911025, species:European long-haired dinosaur, policyNumber:9
+INFO: advisePolicy: site:1723911025, species:lesser-spotted flightless cat, advice:none
+INFO: deletePolicy: site:1723911025, species:lesser-spotted flightless cat, policyNumber:6
+INFO: advisePolicy: site:1723911025, species:short-tailed cat, advice:none
+INFO: deletePolicy: site:1723911025, species:short-tailed cat, policyNumber:6
+INFO: createPolicy: site:1723911025, species:European long-haired dinosaur, action:144
+INFO: advisePolicy: site:1723911025, species:giant flightless rat, advice:none
+INFO: deletePolicy: site:1723911025, species:giant flightless rat, policyNumber:10
+INFO: advisePolicy: site:1723911025, species:long-tailed otter, advice:none
+INFO: advisePolicy: site:1723911025, species:giant flightless tortoise, advice:cull
+INFO: createPolicy: site:1723911025, species:giant flightless tortoise, action:144
+INFO: advisePolicy: site:1723911025, species:African duck-billed dog, advice:none
+INFO: deletePolicy: site:1723911025, species:African duck-billed dog, policyNumber:20
+INFO: advisePolicy: site:1723911025, species:bird-eating mole, advice:none
+INFO: deletePolicy: site:1723911025, species:bird-eating mole, policyNumber:7
+INFO: advisePolicy: site:1723911025, species:great long-tailed horse, advice:none
+INFO: deletePolicy: site:1723911025, species:great long-tailed horse, policyNumber:11
+INFO: advisePolicy: site:1723911025, species:lesser-spotted flightless cat, advice:cull
+INFO: createPolicy: site:1723911025, species:lesser-spotted flightless cat, action:144
+INFO: advisePolicy: site:1723911025, species:giant flightless rat, advice:conserve
+INFO: createPolicy: site:1723911025, species:giant flightless rat, action:160
+INFO: advisePolicy: site:1723911025, species:great short-tailed cat, advice:none
+INFO: deletePolicy: site:1723911025, species:great short-tailed cat, policyNumber:17
+INFO: advisePolicy: site:1723911025, species:lesser-spotted duck-billed horse, advice:cull
+INFO: deletePolicy: site:1723911025, species:lesser-spotted duck-billed horse, policyNumber:7
+INFO: advisePolicy: site:1723911025, species:great long-tailed horse, advice:cull
+INFO: createPolicy: site:1723911025, species:great long-tailed horse, action:144
+INFO: advisePolicy: site:1723911025, species:lesser-spotted duck-billed horse, advice:conserve
+INFO: createPolicy: site:1723911025, species:lesser-spotted duck-billed horse, action:160
+INFO: advisePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, advice:none
+INFO: deletePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, policyNumber:20
+INFO: advisePolicy: site:1723911025, species:short-tailed swallow, advice:cull
+INFO: deletePolicy: site:1723911025, species:short-tailed swallow, policyNumber:20
+INFO: createPolicy: site:1723911025, species:lesser-spotted duck-billed horse, action:144
+INFO: createPolicy: site:1723911025, species:short-tailed swallow, action:144
+INFO: advisePolicy: site:1723911025, species:short-haired duck, advice:none
+INFO: deletePolicy: site:1723911025, species:short-haired duck, policyNumber:18
+INFO: advisePolicy: site:1723911025, species:European long-haired dinosaur, advice:none
+INFO: deletePolicy: site:1723911025, species:European long-haired dinosaur, policyNumber:21
+INFO: advisePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, advice:conserve
+INFO: createPolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, action:160
+INFO: advisePolicy: site:1723911025, species:long-tailed otter, advice:cull
+INFO: createPolicy: site:1723911025, species:long-tailed otter, action:144
+INFO: advisePolicy: site:1723911025, species:African duck-billed dog, advice:conserve
+INFO: createPolicy: site:1723911025, species:African duck-billed dog, action:160
+INFO: advisePolicy: site:1723911025, species:giant flightless rat, advice:cull
+INFO: deletePolicy: site:1723911025, species:giant flightless rat, policyNumber:28
+INFO: createPolicy: site:1723911025, species:giant flightless rat, action:144
+INFO: advisePolicy: site:1723911025, species:great long-tailed horse, advice:none
+INFO: deletePolicy: site:1723911025, species:great long-tailed horse, policyNumber:29
+INFO: advisePolicy: site:1723911025, species:lesser-spotted duck-billed horse, advice:conserve
+INFO: deletePolicy: site:1723911025, species:lesser-spotted duck-billed horse, policyNumber:33
+INFO: createPolicy: site:1723911025, species:lesser-spotted duck-billed horse, action:160
+INFO: advisePolicy: site:1723911025, species:short-haired duck, advice:cull
+INFO: createPolicy: site:1723911025, species:short-haired duck, action:144
+INFO: advisePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, advice:none
+INFO: deletePolicy: site:1723911025, species:lesser-spotted bird-eating mosquito, policyNumber:34
+Error for ::ffff:127.107.55.134:60143: timeout
+connection error: timeout
+Error for ::ffff:127.107.55.134:46367: timeout
+connection error: timeout
+disconnected from: ::ffff:127.107.55.134:46367
+disconnected from: ::ffff:127.107.55.134:60143
+disconnected from: ::ffff:127.107.55.134:49913
+disconnected from: ::ffff:127.107.55.134:48123
+disconnected from: ::ffff:127.107.55.134:53141
+disconnected from: ::ffff:127.107.55.134:46755
+disconnected from: ::ffff:127.107.55.134:60169
+disconnected from: ::ffff:127.107.55.134:40115

@@ -1,9 +1,10 @@
 import * as assert from 'node:assert';
+import { describe, test } from 'node:test';
 import { MsgError } from './error';
 import { msgType } from '.';
 
 describe('error message', () => {
-    it('should parse a message', () => {
+    test('should parse a message', () => {
         const payload = Buffer.from([
             0x00,
             0x00,
@@ -22,7 +23,7 @@ describe('error message', () => {
         assert.strictEqual(err.message, 'bad');
     });
 
-    it('should encode a message', () => {
+    test('should encode a message', () => {
         const payload = Buffer.from([
             0x00,
             0x00,
@@ -37,7 +38,7 @@ describe('error message', () => {
         assert.deepEqual(err.toPayload(), { kind: msgType.error, payload });
     });
 
-    it('should throw on too big size of the message', () => {
+    test('should throw on too big size of the message', () => {
         const payload = Buffer.from([
             0x00,
             0xff,

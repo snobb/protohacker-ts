@@ -1,4 +1,5 @@
 import * as assert from 'node:assert';
+import { describe, test, beforeEach } from 'node:test';
 import { Price } from './price';
 
 describe('price', () => {
@@ -21,7 +22,7 @@ describe('price', () => {
             ]);
         });
 
-        it('should parse message successfully', () => {
+        test('should parse message successfully', () => {
             const msg = price.parseMessage(data);
             assert.deepEqual(msg, {
                 type: 'I',

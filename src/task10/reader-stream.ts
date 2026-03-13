@@ -1,13 +1,13 @@
 import { Readable } from 'node:stream';
 
-type Handler = (buffer: Buffer) => Buffer | void;
+type Handler = (buffer: Buffer<ArrayBufferLike>) => Buffer<ArrayBufferLike> | void;
 
 const emptyBuffer = Buffer.from('');
 
 // This implementation was highly inspired by George Borisov's implementation of the
 // protohacker challege.
 export class ReaderStream {
-    private buffer = Buffer.alloc(0);
+    private buffer: Buffer<ArrayBufferLike> = Buffer.alloc(0);
     private handlerFn?: Handler = undefined;
 
     constructor(private stream: Readable) {

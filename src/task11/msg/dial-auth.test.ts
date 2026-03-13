@@ -1,9 +1,10 @@
 import * as assert from 'node:assert';
+import { describe, test } from 'node:test';
 import { MsgDialAuth } from './dial-auth';
 import { msgType } from '.';
 
 describe('dial-auth message', () => {
-    it('should parse a message', () => {
+    test('should parse a message', () => {
         const payload = Buffer.from([
             0x00,
             0x00,
@@ -19,7 +20,7 @@ describe('dial-auth message', () => {
         assert.strictEqual(hello.site, 123);
     });
 
-    it('should encode a message', () => {
+    test('should encode a message', () => {
         const payload = Buffer.from([
             0x00,
             0x00,
